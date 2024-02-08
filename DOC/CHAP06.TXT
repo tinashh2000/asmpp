@@ -1,0 +1,186 @@
+CHAPTER 6
+
+This chapter talks about settings you can turn on and off during assembly and
+how you can customize the assembly process.
+
+6.1 OPTIONS
+
+The OPTION directive is one keyword that is used differently in ASM++. The
+reason why I chose this directive is because, I could not think of new
+keywords to use when customizing the assembler. There are so many of them. So
+OPTION is used as a window to all of those keywords. In other assemblers, it
+is used differently.
+The syntax of OPTION is:
+    OPTION <Desired Option> [parameters]
+
+Valid Options are:
+    CLS
+    OUT
+    CASE*
+    BEGIN
+    RESET
+    INSANE*
+    TXTMEM*
+    PRECED*
+
+All the options followed by a '*' can be hardcoded to your assembler using a
+ASM++ tweak that is distributed with the assembler. What this means is that
+whatever options you want to be used as default, the ASM++ tweak will patch
+then into the assembler. If you patch CASE to be always on, the assembler
+will treat all symbols with sensitivity by default.
+
+A detailed explanation of each option is given below. The assembler uses
+these keywords to customize the assembler to suit your needs. It makes no
+sense in restricting the user to difficult means of producing code when easier
+methods can be used. I used to be worried about the misuse of some of these
+keywords but as long as you are given the correct use of each, any misuse is
+your business.
+
+6.1.1   Clearing the screen (CLS)
+
+This option simply clears the screen. The user may desire to print some
+statistics on the screen during assembly as a debug process or for whatever
+reasons. This keyword depends on the operating system the assembler is
+running on. The syntax is:
+    OPTION CLS
+
+6.1.2   Controlling output file naming (OUT)
+
+
+This option is used to specify an output file name. This can be useful when
+producing multiple formats in one source file. The syntax is:
+
+    OPTION OUT [:] <Filename>
+
+The assembler finalizes and closes the current output file then opens a new
+one.
+
+6.1.3   Changing case sensitivity (CASE)
+
+This option turns case sensitivity on or off. Initially case sensitivity is
+off. The programmer can use this option to turn it on or off. The syntax is:
+
+    OPTION CASE [ON|OFF]
+
+This keyword must be used before any symbols are used. When case sensitivity
+is off, the assembler converts all characters to lower case. If you switch
+CASE on, the assembler stores symbols as they are. If you switch it off again
+the assembler will not recognize those symbols defined with upper case
+characters.
+
+6.1.4   Marking source file start (BEGIN)
+
+This option is used to mark the start of the source file's important stuff.
+The reason why you may use it is to prevent the assembler from going beyond
+that line when the assembler is doing more than one pass of code generation.
+
+6.1.5   Resetting all assembler settings (RESET)
+
+This option is used to reset ALL the assembler settings. It is unnecessary
+in most cases and if you must avoid it unless you can not do without it.
+Believe me, there are cases where I needed this keyword thats why it is in
+this assembler.
+
+6.1.6   Extended options (INSANE)
+
+This option is used to express the assembler's extended options. These options
+can be turned on and off using bits. The reason why I put this option is
+because, there are so many features offered in this assembler and some will
+be added later. These features can not all be included in the command-line so
+this is the window to the features. The syntax is:
+    OPTION INSANE [32-BITS string]
+
+If you use this option without any parameters, the assembler simply enables
+the use of the extended options but the extended options are left in their
+state. They are not altered. If they were enabled, they remain enabled.
+A 32-Bits string is divided into two parts. The upper 16-bits are used to
+mask (AND) the current options. The lower 16-Bits are used to enable certain
+options. The options operate on bit-level. The operation can be best explained
+by the following code:
+
+        mov ax,word [Number]    ;Lower 16-Bits
+        mov bx,word [Number+2]  ;Upper 16-Bits
+        and word [Options],bx
+        or  word [Options],ax
+The following table explains what each bit means:
+BIT MEANING
+0.  Enable the extended options. When this bit is zero, the assembler does
+    not use any of the options below. They are disabled.
+1.  Wrap around the program counter if it exceeds the boundary. It
+    does not show the 'Program counter overflow' error in this case.
+2.  Disable the changing of a file extension of .COM to .BIN if the program
+    exceeds 64k* or if ORG 0 is specified.
+3.  Wrap around a file if it exceeds the 64k* boundary.
+4.  Allow many output files to be produced from one source file. This is
+    flavoured by the OUT option which specifies the output file name.
+5.  Allow functions to be used.
+6.  Allow maximum memory usage where memory is used to the fullest as long as
+    it is available. Memory usage is normally limited to 256KB and this
+    option allows the assembler to use as much memory as it needs.
+7.  Allow multiple instructions in one line.
+8.  Allow an extended symbol to be stored on a symbol table boundary. (A
+    warning is given). The symbol data may be truncated to 32-Bits
+9.  Use 64-Bit entries for symbols. (Usually used in 64-Bit address mode)
+    because logical addresses may be greater than 0xFFFFFFFF  
+
+*In  situations where memory is less than 64k then the limit is the output
+buffer size.
+6.1.7   Text memory resize (TXTMEM)
+
+This option is used to tell the assembler how much memory is needed for
+MACROS, FUNCTIONS, EQUATES and REPEAT BLOCKS. This is done to prevent the
+assembler from allocating too much memory. It is also done to prevent the
+assembler from producing errors if the memory goes below the required amount.
+
+6.1.8   Changing the operators' priority order (PRECED)
+
+This option is used to tell the assembler the new priority order for operators.
+This overrides the original priority. The normal priority order can be
+restored or saved too. The syntax is:
+    OPTION PRECED <SAVE|RESTORE|Precedence order>
+
+You can do three things with this option, the first is, you can save the
+current precedence order. The second is you can restore a previously saved
+order. The third is you can specify a new order to be used. For the first two
+you do it like this:
+    OPTION PRECED SAVE
+    or
+    OPTION PRECED RESTORE
+
+The order can only be saved once, if you save an altered one, you will NEVER
+be able to restore the original in that assembly process.
+
+The format you use when expressing the order is simple. You specify operators
+seperated by a comma. When you want to move to the next priority level, you
+use a hash. When done you just feed a line.
+An example of how to go about this thing is as follows:
+
+OPTION PRECED *,/,%,.,<<,>>,ROL,ROR#+,-#,&,^,|,!,=#,!=,<,>,<=,>=,==,&&,^^,||
+
+This is the priority order ASM++ uses by default.
+
+
+6.2 RADIX
+
+This keyword is used to specify the number base to be used for a handling
+numbers whose number base is not obvious. By default the radix is 10. The
+syntax for RADIX is:
+    RADIX   <2|8|10|16>
+You are not allowed to use any number bases that are not 2 (Binary), 8 (Octal),
+10 (Decimal) or 16 (Hexadecimal)
+
+6.3 Aligning data (ALIGN/EVEN)
+
+The ALIGN/EVEN keywords do the same thing, that is to adjusts the program
+counter to point to an address that is exactly divisible by the specified
+number. The syntax is:
+    ALIGN [Number]
+The program counter is aligned to the specified number. If the number is not
+specified, the program counter is aligned according to the address mode as
+follows
+
+Address mode    Align Size
+
+16-Bit              2
+32-Bit              4
+64-Bit              8

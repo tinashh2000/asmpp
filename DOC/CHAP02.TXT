@@ -1,0 +1,406 @@
+CHAPTER 2
+
+This chapter is talks about the assembler's features.
+
+2.1 Numbers And Expressions
+
+This assembler supports expression of numbers using different number bases.
+I can safely say that this assembler decodes hexadecimal number faster than
+any other number base. It is very fast in this assembler and it is faster
+than most assemblers. When expressing any number with a base that is not the
+default (radix), you have to put a trailing 'h','d','o','b' for hexadecimal,decimal,
+octal and binary respectively. For hex numbers, you are allowed to put a
+leading 0x before the number, the trailing 'h' becomes optional in that case.
+Numbers with a trailing x? where ? can be B,Q,D or H are not supported in
+this assembler. I have only seen such numbers in A86. Some numbers become
+unreadable even by the programmer because they are too long. The assembler
+allows you to seperate a number using an underscore (_) anywhere in your
+numbers. It is allowed to have hexadecimal numbers without a leading 0x or
+trailing 'h' and the radix is not hexadecimal as long the number:
+    1. The number starts with a numeric digit
+    2. Has at least an alphabetic character A-F.
+    3. If there is one alpha-character, it can be the last if it is not
+       'd' or 'b' because the assembler will think that the number is a
+        decimal 'D' or binary 'B'.
+
+Following are some examples of legal ASM++ numbers:
+
+10001010001b        -   Valid binary number
+10002343481         -   Depends on radix
+0192243234895d      -   Valid decimal number
+102039856754h       -   Valid hexadecimal number
+0x1020304050h       -   Valid hexadecimal number
+1029AA00BAAC        -   Valid hexadecimal number
+100_1000_1010_1110b -   Valid binary number. Same as 100100010101110b
+0.1029340           -   Valid single precesion number.
+0.028430234284342   -   Valid double precesion number.
+
+2.2 DEFAULT SETTINGS
+
+A blank file is the program skeleton under ASM++ because no red tape is
+needed for you to start coding. You can start entering mnemonics right from
+the first line to the 4 Billionth line. Its allowed. It is sometimes
+important to initialize the program so that the assembler generates code in
+the desired environment. The initializations that can be done include:
+1.  Setting the EIP (by using ORG) to the desired initial address.
+2.  Setting the address mode by using USE16,USE32 or USE64
+3.  Specifying the desired file format. (This can be done in the commandline)
+    or by using the FORMAT directive.
+
+Following are the default settings that the assembler works with:
+1.  The output is .COM unless another is specified in the command-line or in
+    the source file
+2.  The program IP is 100h (Use ORG to change it)
+3.  The address mode is 16-Bits (Use UseXX directives to change it)
+4.  Minimum stack is 400h bytes
+5.  Conditional jumps to be generated can be outsize the -128 and 127 byte
+    boundaries
+6.  The extended INSANE options are disabled. See OPTION for more about these
+7.  The radix is base 10. (see Radix)
+
+2.3 OPERATORS AND CONSTANTS
+
+2.3.1   Operators
+
+In this assembler and this manual, the operators that follow always have the
+same meaning. You can use them in the assembler. These operators are used
+to perform calculations and evaluate expressions. The assembler allows you to
+specify the order of precedence your self by using the PRECEDE option. The
+brackets always come first however.
+
+Following is the default precedence order:
+
+1.  Brackets        ()
+2.  *               Multiply
+    / or DIV        Divide
+    %/MOD           Modulus ;Don't use as operator in macro blocks
+    .               Period
+    <</SHL          Shift Left
+    >>/SHR          Shift right
+    ROL             Rotate Left
+    ROR             Rotate Right
+
+3.  +               Plus
+    -               Minus
+
+4.  &/AND           Bitwise AND ;Don't use '&' as operator in macro blocks
+    |/OR            Bitwise OR
+    ^/XOR           Bitwise XOR
+    !/NOT           NOT
+    =/EQ            Assignment. Not recommended for expressions
+
+5.  Relational operators:
+    !=              Not Equal
+    <               Less than
+    >               Greater than
+    <=              Less than or equal
+    >=              Greater than or equal
+
+    Boolean operators:
+    ==              Equal
+    &&              And
+    ||              OR
+    ^^              XOR
+
+2.3.2   Predefined Constants
+In addition to operators, the assembler offers some constants to ease the
+task of programming. These are:
+
+$           Returns the current instruction pointer
+??OUT       Returns the current output file in the form of a string. It can
+            be blank if the output file is not yet created. The assembler
+            does not rush to create an output file because the programmer
+            may specified their desired output file. This may cause the
+            assembler to go into a third pass since this constant maybe blank
+            in the first pass but not blank in the second. I suggest that you
+            use some characters to pad the file length to a fixed size.
+            For example:
+            Temp=$
+            db  ??OUT
+            db  64-($-Temp) dup (0) ;The fixed size is 64 bytes.
+
+??SRC       This returns the current source file in the form of a string.
+??DATE      Returns the current date in the form of a string
+??TIME      Returns the current time in the form of a string
+??ASMPP     Returns the current ASM++ version. 667 for 6.67 and 689 for 6.89
+??FLAGS     Returns the assembler's flags which you may find meaningful to you
+??OSIZE     Returns the output buffer size. You may be interested in knowing
+            how much memory has been allocated for the output buffer.
+??IFLAGS    Returns the extended assembler flags. You may be interested in
+            knowing the state of these flags before you change them.
+??RFLAGS    You can use this constant to know the current flags about symbol
+            references. Only one bit can be altered. That is to force the
+            assembler into the next pass.
+??FORMAT    Returns the output file format. You can use this to decide which
+            code to include or exclude using this constant. It can only be
+            changed by using FORMAT. Believe me, ASM++ uses this constant!
+            .COM require memory resizing before any allocations but not EXEs.
+            This can be helpful in such instances. You may code it like:
+
+            if ??FORMAT==0  ;True if it is a .COM file
+                MOV     BX,1000h
+                call    ResizeMemory
+            endif
+                MOV     BX,1000h
+                CALL    AllocateMemory
+
+??OUTPOS    Output file position. This is the actual size including the
+            header relocatable information etc.
+
+The constant strings above can be manipulated by using the string directives
+
+Note that all these constants can be used as data of your output code. You
+can use some of the constants to detect changes in your programs etc.
+These constants are not written in the symbol table but the assembler
+identifies them by the leading '??'. Avoid using symbols which begin with
+'??' because they are processed miscroseconds slower! They are first checked
+to detect constants
+
+
+2.4 ADDRESS MODES AND INSTRUCTION POINTER (EIP)
+
+2.4.1   Address Modes
+
+Changing address modes requires a single directive either USE16,USE32 or
+USE64. If you are a NASM programmer, you may leave the [BITS xx] just as
+they are since it is also supported.
+USE16   -   Changes the address mode to 16-Bits. This is used when you want
+            to code instructions to be executed on a 16-Bit processor or
+            in 16-Bit mode. This is the default mode of ASM++.
+USE32   -   Changes the address mode to 32-Bits. This is used when you want
+            to code instructions to be executed on a 32-Bit processor
+            executing in protected mode (386+).
+USE64   -   Changes the address mode to 64-Bits. This is used when you want
+            to code instructions to be executed on a 64-Bit processor
+            executing in protected mode (AMD64+ or EM64T+).
+
+The difference between the address modes is that, instructions are encoded
+differently in each address mode.
+
+In 16-Bit mode, 32-Bit instructions or
+operands are preceeded by an operand size (66h) override or an address size
+overrride (67h). 64-Bit instructions are not allowed.
+
+In 32-Bit mode, 16-Bit instructions or operands are preceeded by an operand
+size override or an address size override. 64-bit instructions are not allowed.
+
+In 64-Bit mode, 16-Bit instructions or operands are preceeded by an operand
+size override and 32-Bit addresses by an address size override. 16-Bit
+addresses are not allowed in this mode. 32-Bit access to stack is not allowed.
+
+2.4.2   Instruction Pointer
+
+Initially the instruction pointer is initialized to 100h. The assembler
+creates the .COM file by default. If a file format is changed, the assembler
+sets it according to the file format.
+The ORG directive changes the EIP. The syntax is:
+    ORG <New EIP value>
+The assembler also supports [ORG xxx] used by NASM.
+If the specified EIP value is greater than the the current, the assembler
+does not pad (New EIP-Old EIP) zeroes or NOP instructions. The EIP is logical
+and it can be changed without affecting the output. If you desire to pad
+bytes until the new EIP. You have to use the DB directive. Instead of
+using:
+    ORG 200h
+you can use
+    DB  (200h-$) dup (0)
+
+2.6 COMPATIBILITY
+
+2.6.1   Overview
+The assembler provides minimum compatibility with red-tape assemblers
+because most of the directives are unnecessary in assembly and should be part
+of high level languages instead!
+I believe that most red tape directives spoil programmers. In the end
+programmers don't know how their code is generated. I had problems in
+using assemblers like FASM because all I knew was some red-tape directives.
+
+ASM++ uses the specified target CPU in cases where it is really needed.These
+situations are:
+
+1.  When a jump goes out of the range of the specified CPU
+2.  When generating instructions for high level PROC procedures. The assembler
+    decides when to use LEAVE etc
+
+At first I found it useless to put high level calling support in my assembler
+but I realized that we need it especially when programming for OSes like
+Windows. Macros could be used but it wastes macro space so I decided to do
+part of it. The assembler now reads the language you specify with MODEL and
+uses it when INVOKEing your procedures and also when defining PROCs with
+arguments. Believe me, this is useful.
+
+The assembler ignores use of registers or instruction greater than the
+specified target CPU. You can not use a register or instruction whose function you
+don't know and its rare for you to know without knowing the CPU on which it
+works.
+The assembler however returns an error on any attempt to use 64-Bit registers
+or addresses without the USE64 directive. This is because 64-Bit REX overrides
+are valid 16-Bit (40h-4Fh)INC/DEC instructions. In 64-Bit mode the INC/DEC are
+encoded differently so the assembler needs to know when it is producing 64-Bit
+code.
+
+2.6.2   Procedure definitions (PROC)
+
+The assembler offers compatibility with the PROC directive but it only
+supports the most important functions only
+
+2.6.3   Label definitions (LABEL)
+
+This directive is good in that it specifies the size of the label symbol. This
+directive is an alternative for ASM++'s label definition. It is accepted.
+ASM++ uses the Dx directives for defining sized labels:
+
+    xxxx  DB ;same as xxxx LABEL BYTE
+    xxxx  DW ;same as xxxx LABEL WORD
+    etc
+
+2.6.4   OFFSET AND PTR
+
+I included OFFSET and PTR because many programmers use them. OFFSET expresses
+that you want the identifier's address to be returned. If it is not used, the
+assembler returns an operand according to how the identifier was defined or
+how it was first used. The OFFSET can be replaced with parenthesis e.g
+
+    mov ax,offset MyLabel
+can be replaced with
+    mov ax,(MyLabel)
+
+ASM++ treats the offset as an ADD operator. mov ax,offset Lab is treated
+as mov ax,+Lab. The assembler will
+perform an operation 0+Lab and returns the address in numeric form.
+    
+The PTR is simply ignored since it means nothing to the assembler.
+
+2.7 EXCLUSIVE STUFF
+
+The assembler comes with some capabilities exclusive to ASM++. These are:
+
+    1.  FUNCTION
+    2.  OPTION
+    3.  ECHO and HALT
+
+2.7.1   FUNCTION
+
+The FUNCTION can help the programmer to process data more easily by allowing
+them to enter some assembly mnemonics that are first assembled then executed on occurance
+of each the FUNCTION symbol. This can be used especially when dealing with
+problems that macros can not solve. FUNCTIONS and macros share the same
+memory space. To get a clear picture consider this:
+
+You have a long list of strings to be converted to CRC values. You are still
+developing the CRC algorithm and you can decide to change it anytime.
+Instead of converting the list over and over again, you can use the raw list of strings
+in your source files with a function. Each string will be like
+DW CRC("HELLO"). You then create a FUNCTION named CRC. When you decide to
+change the algorithm, you simply change the code inside the FUNCTION and
+leave the strings untouched. This is also useful when you decide to change
+the strings!
+
+This idea rose when I was starting on ASM++ 6.89 and I was using ASM++ 6.7.
+I wanted my assembler to use CRC values and I had not yet thought of an
+algorithm. It was difficult for me but this was one working solution.
+
+2.7.2   OPTION
+
+This keyword is used differently in ASM++. It is used to express some options
+that the programmer may desire. I could not make all the options available
+in the command line so I decided to use this keyword to express those
+functions. You can express some insane options to the assembler.
+See chapter 6
+
+2.7.3   ECHO And HALT
+
+The ECHO keyword prints stuff on the screen. It can be used to print
+statistics to make the developer aware of somethings. e.g ECHO $ would
+print the value of the EIP of the output program. It can also be used
+for debugging.
+
+HALT forces the assembler to stop executing instructions right where it is
+specified. It can be used to stop executing under certain conditions. It
+is also helpful for debugging.
+
+I use the two keywords to detect bugs in this assembler. You can try to find
+bugs by monitoring the change of code between passes etc.
+
+2.7.4   CUSTOMIZED EXPRESSIONS
+
+This assembler allows you to express a custom operator priority order that
+pleases you. You can do this by using the PRECEDE option. See Chapter 6 for
+more.
+
+2.7.5   STRING MANIPULATION
+
+The assembler allows you to manipulate strings using STRLEFT,STRRIGHT,STRMID,
+STRSCAN,STRLCASE and STRUCASE. The assembler also allows you to compare strings
+using expressions like:
+     if ??DATE=="09-05-06"
+        .
+        .
+     endif
+
+Syntax for string operations
+
+Note that it is allowed to use constant strings like ??DATE or ??FILENAME in
+any of the operations below. Also note that string lengths have been limited
+and long strings must be avoided.
+
+You must also note that any offsets into strings are 1 based not zero based
+so STRMID("hello",1,2) and STRMID("hello",0,2) return the same result.
+
+STRLEFT ( <String> , <Constant number x>) - Returns the string from the first
+character up to character x
+
+STRRIGHT ( <String> , <Constant number x>) - Returns the string from the last
+down to character x from the last character
+
+STRSCAN ( <String>,<String2> ) - Searches for a character in a given string
+and returns its position. If it is not found, zero is returned.
+
+STRMID ( <String>,<Constant number x> [, Constant number y] ) - Returns the
+string with characters from x. If y is specified, the the characters read
+are (y-x) from x. If y is not specified, it returns characters from x up to
+the end of the string
+
+STRLCASE ( <String> ) - Returns a string converted to lowercase
+STRUCASE ( <String> ) - Returns a string converted to uppercase
+
+
+2.8 DETECTING ASM++
+
+Detecting ASM++ is very simple. A variable ??ASMPP contains a version number
+of the assembler. You can use it with a conditional statement to determine
+whether it is the version number you wanted.
+
+    IF DEF ??ASMPP
+        echo 'ASM++ detected version ',#h,??ASMPP
+    ELSE
+        echo 'ASM++ not found. Assembly stops here'
+        halt    ;or whatever keyword is used to terminate assembly
+    ENDIF
+
+You can also determine which version is allowed to assemble your code by
+using:
+    IF ??ASMPP < 0689h ;version 6.89
+        echo 'This code requires ASM++ v6.89 or better. Assembly stops here'
+        halt
+    ENDIF
+
+2.9 DISABILITIES
+
+The assembler can perform all the basic things that can help you to produce
+good code but it does not:
+
+1.  Support floating point numbers/instructions yet.
+2.  Support '+' concatenated file names in the  command line
+3.  Produce any code for output formats other than the MZ Executables,
+    OMFxx objects and .COM binaries only.
+4.  Use the one pass code generation or referencetables because the method
+    is still under improvements.
+5.  Produce program listings or cross references.
+6.  Support precompiled external modules as yet.
+7.  Support code sizes that exceed 4GB. Infact it might but with some
+    unpredictable results. (Line numbers are wrapped to 4 billion).
+
+Not all of the MMX and SSExx instructions have been implemented. The ones
+implemented have not been tested for accuracy. I coded 64-Bit stuff for a
+document but have not tested them on a 64-Bit machine.

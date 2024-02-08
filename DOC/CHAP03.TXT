@@ -1,0 +1,145 @@
+CHAPTER 3
+
+This chapter talks about the environment where the assembler can work and
+how it can work in its environment.
+
+3.1 COMMAND LINE
+
+The ASM++ commandline is as simple as displayed on screen. You can enter
+source files as long as they are concatenated with a '+'. The file that does
+not have a '+' is considered the output file. All options are given after a
+'/' or '-'.
+The syntax is:
+    A16 <source files> <output file> [options]
+
+options:
+
+/?      Displays the help screen
+/ELF*   Produces an ELF32 or ELF64 program (* can be 32 or 64)
+        This format is common for the Linux operating systems
+        Valid switches are /ELF (Creates ELF32),/ELF32,/ELF64
+/OMF*   Produces an OMF16 or OMF32 object (* can be 16 or 32)
+        The OMF is a common DOS object file format used by DOS and Windows
+        Valid switches are /OMF(Creates OMF16),/OMF16,/OMF32.The assembler
+        also treats /OBJ* as OMF* so you can replace OMF with OBJ.
+/EXE    Produces a DOS MZ EXE file
+        This file is executable under MS-DOS,MT-DOS,PC-DOS and many
+        other DOS operation systems.
+        /MZ and /EXE always create this file type.
+/PE**   Produces a Windows NE 16,PE32 or PE64 (** can be 16,32 or 64)
+        These file formats are common with Microsoft Windows operating
+        systems. They are Win16,Win32 and Win64 respectively.
+        Windows 3.1 compatibles are not PE, they are NE but PE16 is used.
+        Valid switches are /PE (Same as PE32),/PE16,/PE32,/PE64
+/COFF*  Produces a Common Object File Format (* can be 32 or 64)
+        This file format is commonly used to produce PE or ELF output.
+        Valid switches are /COFF (Same as COFF32),COFF32,COFF64
+/al     Tells the assembler to link the output (valid for OMF and COFF)
+        The assembler produces the object code. It then goes through the
+        object code again to produce the corresponding executable.
+/l      Tells the assembler to produce a listing
+        This feature tells the assembler to produce the program's mnemonics
+        listing and the binary code produced for the mnemonics.
+/cs     Switches case sensitivity on
+        When this switch is on, the assembler differentiates between small
+        and capital letters. foo and Foo symbols are different.
+        This is only allowed before any symbol is stored in the symbol
+        table
+/xt     Tells the assembler to switch off reference tables.
+        Reference tables are used to speed up the assembler's code
+        generation by letting the assembler store all information needed
+        about code that has forward references in table. The assembler does
+        not need to go through the source code again thus disk access is
+        reduced because the assembler has all information needed to resolve
+        all references. (This mode has been removed for further refinements
+        but its part of ASM++).
+/js/jn  Tells the assembler to use short (js) jumps always or near (jn)
+        jumps always on conditional jumps
+/jo     Make short jumps where possible. The assembler continues to 
+        make new passes as long as something is optimized.
+/oc/ou  Make short jumps on conditionals where possible (oc) or
+        unconditional (ou). For both use /jo",13,10
+
+On the file formats,* can be replaced with 32 or 64 and ** can be replaced
+with 16,32 or 64. This expresses whether you want to create a 16,32 or 64
+bit file format. If the file format is 32 or 64-Bit, the assembler will
+start encoding instructions compatible in 32-Bit or 64-Bit address modes.
+
+3.2 OPERATING ENVIRONMENTS
+
+This assembler has been designed to run under MS-DOS compatible and it also
+support many operating systems that run in 16/32-bit protected mode. The
+assembler was creating with this flexibility and the only part that is
+altered is one file. Currently the assembler runs under MS-DOS,MT-DOS,DR-DOS
+and many DOS clones. It can also run in a DOS box under MS-Windows. I tested
+it with Windows 98,2000 and XP.
+This assembler uses a very small buffer for source files and its disk activity
+is too much without a caching driver. It is very fast with caching installed.
+
+3.3 OUTPUT FORMATS
+
+This assembler is intended to produce the following formats:
+
+OMF 16 and 32-Bit
+PE 16,32 and 64-Bit
+ELF 32 and 64-Bit
+COFF 32 and 64-Bit
+MZ Executables
+Pure binary .BIN and .COM
+
+PE,ELF and COFF are still being worked on and are not functional.
+Expect them soon
+
+3.3.1   MZ Executables
+
+3.3.1.1 OVERVIEW
+
+These executables are meant to run on MS-DOS based environments. They were
+designed to allow for multiple segments and eliminate the 64K limit of the
+.COM files.
+MZ Executables allow you to put code and data and undefined data in seperate
+segments.
+
+3.3.1.2 FEATURES AND TIPS
+
+1.  If you define a segment, the assembler resets the Instruction Pointer
+    to zero.
+2.  You can specify your stack size by using the STACK keyword.
+3.  You can also use the HEAP keyword to specify extra memory allocation
+    for your program.
+4.  You can specify your entry point address by typing, END <Address>.
+    This must be INSIDE the segment you want the entry point to be.
+5.  ASM++ issues a warning if your file exceeds 1MB but does not do anything
+    beyond that. Any unpredictable effects may result.
+6.  ASM++ does not relocate anything if you reference a symbol that is not
+    a segmet and is outside the current segment.
+7.  You can use the SEG operator to force the assembler to generate a
+    relocation with the operand you want - even a constant!
+
+
+3.3.2   OMF Objects
+
+3.3.2.1 OVERVIEW
+3.3.2.2 FEATURES AND TIPS
+
+1.  You can produce Win16 and Win32 executables using these objects.
+2.  You can define more than one segments
+3.  You can link these objects with other object files
+4.  You can define public symbols using the PUBLIC keyword. These symbols
+    can be used by other objects.
+5.  You can define external symbols using the EXTRN keyword. These symbols
+    can be later used by other modules
+6.  You can group data in different segments using the GROUP keyword
+
+7.  The assembler issues a warning if a segment goes out of range but it
+    continues and creates the object
+8.  The assembler does not generate a segment relocation if you used the
+    SEG operator on symbols that are not external. Infact I have no idea of
+    what happens if you do that. Instead use the appropriate segment name
+    and a relocation is made.
+
+3.3.3   COFF Objects
+3.3.4   Win16,Win32,Win64 Executables
+3.3.5   ELF Executables
+    
+

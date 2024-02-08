@@ -1,0 +1,401 @@
+CHAPTER 4
+
+This chapter talks about how you can define the different data structures.
+
+4.1 DEFINING VARIABLE DATA
+
+4.1.1   Dx DIRECTIVES
+
+DB,DW,DD,DF,DQ,DT,DO/DQW are used to dump data or reserve space in the
+output file.
+
+The syntax is:
+ [Symbol Name] Dx  Data
+
+If a symbol name is specified, it is assigned to the current EIP before the
+data is written. If the symbol had not been encountered before, the symbol's
+size is determined by the directive used. If DB, for example, is used, the
+assembler treats the symbol as a byte.
+
+DIRECTIVE       SIZE OF DATA WRITTEN/RESERVED
+        
+ DB         -       Byte (8-Bit)
+ DW         -       Word (16-Bit)
+ DD         -       DWord (32-Bit)
+ DF         -       FWord (48-Bit)
+ DP         -       FWord (48-Bit)
+ DQ         -       QWord (64-Bit)
+ DT         -       TWord (80-Bit)
+ DO         -       OWord (128-Bit)
+
+The directive must be followed by data with a size valid for the directive.
+If a symbol name has preceeded the directive, it is allowed not to enter any data.
+That will only define a label at the current EIP and the size of the symbol
+is determined by the directive used. For example
+
+    org 200h
+    MyPointer   DW
+
+will make MyPointer a Word symbol at address 200h.
+
+Following are demonstations of how you can use the directives:
+
+ByteSym     DB      ;Defines ByteSym as a byte label
+            DW  1020h,0x5000h   ;Dumps 1020h and 5000h in the output
+            DD  0x10203040  ;Dumps 10203040h
+QWordSym    DQ  0x1020304050607080 ;Dumps 1020304050607080h in output
+OWordSym    DO  0x102030405060708090A0B0C0D0E0F010h,2,6 ;What a big number
+OWordPtr    DO  ;Defines an OWord label.
+            DT  ?   ;Reserves an 80-Bit space. Nothing is written to it.
+            DP  ?,? ;Reserves two 48-Bit spaces.
+
+4.1.2   Uninitialized data
+When the assembler finds a ? as data, it advances the EIP and increaments
+reserved data counter depending on the directive used. This is usually
+necessary at the end of the file so that the reserved data is not written to the
+output file. This reduces output size. If the assembler finds any initialized
+data or instructions after reserved data, it first writes the reserved data as zeroes
+and continues. In this case there is no more reserved data. No instructions
+or initialized data must come after the reserved/uninitialized data.
+
+For the .EXE files, the reserved data is added to the minimum memory required
+by the program.
+
+4.1.3   Using sized labels
+
+What happens with sized labels is that you don't have to bother specifying
+an operand size when using them. Whenever there is no operand size, the
+assembler uses the label's size. For example
+
+    DWordSym    DD
+    MOV     [DWordSym],0    ;Will be treated as MOV DWORD [DWordSym],0
+
+    FWordSym    DF
+    MOV     [FWordSym],0    ;Will be treated as MOV FWORD [FWordSym],0 and
+                            ;This will produce an error!
+
+The LABEL directive can also be used to explicitly define sized labels. See
+section 4.2
+
+4.1.4   Duplicating data (DUP)
+
+The directives mentioned above serve a very good purpose in defining data but
+sometimes it is necessary to define data in large amounts. The assembler
+allows the use of DUP for that. DUP can be used in two ways.
+
+The first one does not require any Dx directives. I saw this crazy one in
+NBASM.  DUP <Number of duplicates>,<Data to be duplicated>.
+The assembler uses the size of data to determine whether bytes,words,dwords
+etc are to be duplicated. In ASM++ you can specify the size using BYTES,WORD
+DWORD,FWORD etc. This is helpful where the size to be duplicated is not
+obvious. To reserve data, you can use the '?'. You can also specify the
+size to make the assembler know what size to reserve.
+
+Following are examples of DUP:
+    DUP 32,1020h    ;duplicates 1020h, 32 times
+    DUP 32, WORD (5)    ;Duplicates 5, 32 times
+    DUP 17,?        ;Reserves 17 bytes
+    DUP 100, WORD ? ;Reserves 100 words.
+
+The second one is popular with most assemblers.The syntax is:
+    [SymbolName] Dx <Number of duplicates> DUP <Data to be duplicated>
+Assemblers like TASM require parenthesis after the DUP. ASM++,FASM and other
+assemblers require a numeric value whether inside or outside.
+
+Following are examples:
+    DW  100 DUP (?) ;reserves 100 words
+    DB  5000 DUP (50) ;Duplicates 50, 5000 times
+    DQ  2   DUP (?) ;Reserves 2 QWords
+
+4.2 DEFINING OTHER ELEMENTS OF A PROGRAM
+
+4.2.1   Using LABEL
+
+The LABEL is added for compatibility. It is useful in other
+assemblers but it is an alternative for the Dx definitions (See section 4.1)
+in ASM++. It defines a sized label and the syntax supported is:
+
+<Symbol Name>   LABEL   [Label size]
+
+If the label size is not mentioned, a simple label is assumed. The valid
+sizes allowed are : BYTE,WORD,DWORD,FWORD/PWORD,QWORD,TWORD,OWORD/DQWORD.
+Following are examples of LABEL:
+
+MyLabel LABEL   ;Same as  'MyLabel:'
+MyLabel LABEL BYTE ;Defines a byte sized label. Same as 'MyLabel DB'
+MyLabel LABEL TWORD ;Defines a TWord label. Same as 'MyLabel DT'
+
+Some assemblers extend the LABEL beyond this but ASM++ ends here.
+
+4.2.2   Defining data structures (STRUC)
+
+4.2.2.1 Using the STRUC directive
+The STRUC is very important to assembly for defining structured data. I like
+it and who ever put it in assembly thinks OK.
+The syntax is:
+
+<Identifier>    STRUC
+    [Structure records]
+    .
+    .
+[Identifier]    ENDS
+
+Structure records are a combination of definitions of elements of the
+structure. Instructions are not allowed. A symbol name can preceed each
+record. The STRUC definition itself
+does not take any space in the output. It is a template of the structures you will define
+later. Following is an example of a STRUC definition:
+
+    MyStruc STRUC
+        FileName    db  'xxxxxxxx'
+        FileExt     db  'xxx'
+        FileSize    dd  ?
+        FileType    db  ?
+        FileVersion dw  ?
+    MyStruc ENDS
+
+The above structure occupies no space but you can use it to define many
+structures.
+
+4.2.2.2 Initializing structures
+
+Following is an example of how to define and initialize a structure using
+STRUC:
+
+    File1   MyStruc
+    File2   MyStruc <'testfile','txt',20,10,50>
+
+The first definition defines a structure called File1 based on the MyStruc
+template. This structure is initialized to zero. Since the structure is 18
+bytes, File1 is initialized to 18 zeros i.e File1[0 to 17]=0.
+
+The second definition defines a structure called File2 based on the MyStruc
+template. This structure is initialized according to the parameters that
+follow. The assembler is strict on definitions. It looks at the size of
+the entry, so every field must not exceed the size.
+When the assembler gets the a string, it dumps it to the output but it first
+checks to see if it does not exceed the field's size. For numeric values,
+the assembler checks if they are inside the range. If the value is less than
+the size of the field, the assembler extends the value so that it fits the
+field.
+If you intend to initialize a field in the structure, you MUST give it a
+symbol name because ASM++ uses the symbol table to initialize fields. It
+looks at the symbol's address and the address of the next symbol. Thats
+how it gets the size of each field.
+For example:
+
+    MyStruc STRUC
+        FileType    dw  ?
+                    dw  ?   ;File Version
+        FileOS      dd  ?
+        FileSize    dd  ?
+    ENDS
+
+    File1   MyStruc <2,49h,293h,9282>
+The definition will result in an error because according to the assembler,
+the STRUC only has 3 symbols thus 3 fields.
+I wonder how the field without a symbol name will be addressed. I think the
+best way of initializing such fields is by using a definition like this:
+    File1   MyStruc <4902h,294h,9282>
+which is allowed since the assembler thinks that each field ends on the
+definition of another symbol inside the structure.
+
+The assembler allows one of the elements of a structure template to be
+another structure template (see example below). It
+does not cause an error. If you initialize it, it is the silliest thing to
+do since the assembler will not remember afterwards.
+I am still thinking about how to initialize a structure that has other
+structures in it. For now I have not coded anything.
+
+    MyDir   STRUC
+        StartCluster    DD  ?
+        CreationTime    DD  ?
+        CreationDate    DD  ?
+        Attributes      DD  ?
+    MyDir   ENDS
+
+   MyFile   STRUC
+        FileInfo    MyDir
+        FileVersion DD  ?
+        FileSize    DD  ?
+    MyFile  ENDS
+
+    File1   MyFile
+
+It is allowed to reference elements of the FileDir but the initialization is
+the problem.
+    mov eax,File1.FileInfor.Attributes
+    mov File1.FileSize,eax
+
+You must note that any symbol defined with STRUC will always have an address
+of zero.
+
+4.2.3   Customizing code generation (FUNCTION,MACRO)
+
+4.2.3.1 FUNCTION
+
+This directive may cause confusion to many programmers but I found it more
+suitable for some functions that can not be peformed by macros. Infact
+macros might be able to do the functions but after you sweat a lot.
+This directive allows the programmer to enter some assembly mnemonics. These
+mnemonics are later used to manipulate data. INT and MOV to and from
+segment registers or CRx or DRx or TRx is not allowed. This prevents too
+much misuse of the directive. The syntax is:
+
+<Symbol Name>   FUNCTION [Arguments]
+    [mnemonics]
+    .
+    .
+    .
+[Symbol Name]   ENDM
+
+Symbols are allowed while in the FUNCTION block but they are erased at the
+end of the FUNCTION.
+
+Functions must preceed code and data. Macros and conditional statements
+are not allowed in functions.
+After you have defined a FUNCTION, you can use it to manipulate data. It
+can return numeric values.
+
+4.2.3.2 MACRO
+
+A macro is simply zero or more statements that are typed in advance and
+assigned to a symbol.
+Every time the assembler encounters a macro symbol, it
+replaces the symbol with the pre-typed statements and continues executing
+these statements as if they were typed instead of the symbol.
+If you dont understand see Chapter 5.
+
+The syntax is:
+
+<Symbol Name> MACRO [Arguments]
+[Statements and instructions]
+.
+.
+.
+[Symbol Name] ENDM
+
+The assembler allows you to pass arguments to a macro. The statements in the
+macro can use these arguments to perform its functions.
+At the end of each macro must be a ENDM to show where the macro ends.
+
+4.2.4   Defining segments (SEGMENT)
+
+The SEGMENT directive marks the start of a new segment in the program. It
+is useful to some file formats like DOS MZ EXE.
+When the assembler encounters this directive, it starts a new logical
+segment. It aligns the start of the segment to the desired address. The
+segment starts at logical address zero unless an address is specified using
+AT keyword. The syntax is:
+
+<Symbol Name>   SEGMENT [ALIGN xxxx] [AT xxxx]
+    mnemonics and definitions
+    .
+    .
+    .
+[ [Symbol Name]   ENDS ]
+
+You can close a segment block with ENDS but in ASM++ you are allowed not to
+close it.
+You can specify the ALIGN followed by a numeric value showing the number of
+bytes by which to align the segment. AT followed by a numeric constant
+specifies the logical address at which the segment starts. Below is an
+example of a segment definition:
+
+DataSeg SEGMENT ALIGN 256  AT 40h
+    mov ax,$
+    mov [InitialLoc],ax
+    .
+    .
+    .
+DataSeg ENDS
+This defines a segment names DataSeg that is aligned to 256 byte boundaries
+and starts at address 40h
+
+4.2.5   Constant symbols (EQU,=)
+
+In ASM++ using the EQU and = to define constant data are two different things
+unlike other assemblers. The following sections will help you understand
+
+4.2.5.1 Numeric constants
+
+To define numeric constants you must use the syntax that follows:
+<Symbol Name>   =   <Numeric expression>
+
+The equal sign is used to define numeric constants but the numeric value
+can be changed anytime in the ASM++. (Its ironic to say constant!)
+
+The reason why I allowed them to change is because some times we define
+constants that are useful for a short period of time. It can also waste your
+symbol space to go around defining more constants when some of the existing
+are no longer useful.
+
+4.2.5.2 Equate constants (EQU)
+
+There are times when you repeat the same words in your code. Sometimes these
+words are long and boring to type. In such cases, you can use the EQU to
+define the sequence of characters/words. When ever the assembler sees the
+symbol assigned to your keystokes, it replaces the symbol with the pre-typed
+keystokes and continues assembling your source files. In ASM++ EQUs are
+treated like macros except that they don't extend to more than one line.
+The syntax is:
+
+<Symbol Name>   EQU [Characters/words]
+
+If you think fast you must have already noted that it is slower to use EQUs
+to define numeric constants. I recommend that you use = definitions for numbers
+since it saves memory and time.
+When the assembler detects an EQU, it reads the whole line and stores it.
+Everytime you decide to use the EQU symbol, the assembler reads back the line
+and replaces the symbol.
+
+4.3 PROC AND CALLING CONVENTIONS
+
+4.3.1   Using the PROC directive
+
+The PROC directive is very common in the world of assembly. It is used to
+define a procedure. The syntax is:
+<Symbol Name> PROC [NEAR|FAR] [USES RegList] [PRIVATE|PUBLIC] [,Args]
+.
+.
+.
+[Symbol Name] ENDP
+
+The PROC directive was supposed to be part of a high-level language and not
+assembly! I included it for compatibility.
+
+NEAR/FAR tells the assembler the location of the procedure in relation to
+the code that will invoke it. NEAR means that the code that will invoke the
+procedure is in the same segment as the procedure itself. FAR means that
+the procedure may be in a different segment. When the assembler encounters
+a RET/RETF, it checks whether the procedure is NEAR or FAR. If it is FAR,
+a RETF is used otherwise a RET is used without regarding the programmer's
+RET or RETF.
+I would like to WARN you that the assembler does not change the type of
+call you make the the procedure whether near or far. If you define a
+procedure as FAR and say: CALL ProcName , the assembler will not generate
+a far call for you. You would better say: PUSH CS .. CALL ProcName on your
+own.
+
+USES is followed by a list of registers. These registers are saved before
+the procedure's code. At the end of the procedure these registers
+are restored. The registers must be general 16-Bit,32-Bit or 64-Bit registers
+e.g (AX,r15w,EDI,RCX,r9) etc
+
+PRIVATE/PUBLIC tells the assembler whether the procedure is to be available
+to modules in this object only (PRIVATE) or to modules outside this object
+(PUBLIC).
+
+When a comma is seen in a PROC definition, the assembler assumes that the
+arguments are following. These arguments are only available to the PROC and
+they are erased after it. They are stored in a local symbol table.
+The symbols are displacements of [EBP]. ESP and EBP must not be changed for the
+period of the procedure. If you feel like changing EBP/ESP, you can define the
+PROC manually by using a label. If the address mode is 32-bits, the assembler
+uses [EBP], if 16-Bit it uses [BP] otherwise it uses [RBP]
+When the RET is encountered while local variables exist, the assembler
+uses RET xxxx where xxxx is the amount of space occupied by the arguments
+on stack.
+
+4.3.2   High-level language support
+4.3.3   Calling conventions

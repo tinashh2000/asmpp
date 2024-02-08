@@ -1,0 +1,2159 @@
+even 2
+        db  0
+Keyword2:
+Keyword2a:
+        DD             0EFB55F5Bh ;ah
+        DD             0E8D89B42h ;al
+        DD             0F2024F3Fh ;ax
+Keyword2b:
+        DD             0F6AE6E1Ah ;bh
+        DD             0F1C3AA03h ;bl
+        DD             0E5C2F64Ch ;bp
+        DD             0E2AF3255h ;bt
+        DD             0EB197E7Eh ;bx
+Keyword2c:
+        DD             0DD833DD9h ;ch
+        DD             0DAEEF9C0h ;cl
+        DD             0B9E89519h ;cs
+        DD             0C0342DBDh ;cx
+Keyword2d:
+        DD             0244DE586h ;db
+        DD             0CD2E40B3h ;dd
+        DD             02320219Fh ;df
+        DD             0C4980C98h ;dh
+        DD             05D915D22h ;di
+        DD             0C3F5C881h ;dl
+        DD             000F94621h ;do
+        DD             0D7F494CEh ;dp
+        DD             04EFDC574h ;dq
+        DD             0A79E6041h ;ds
+        DD             0D09950D7h ;dt
+        DD             04990016Dh ;du
+        DD             0AE282C6Ah ;dw
+        DD             0D92F1CFCh ;dx
+Keyword2e:
+        DD             0EFB2329Fh ;eq
+        DD             001BC53B3h ;es
+Keyword2f:
+        DD             018A762F2h ;fs
+Keyword2g:
+        DD             0C75E8460h ;ge
+        DD             0338A3131h ;gs
+        DD             0448D01A7h ;gt
+Keyword2h:
+Keyword2i:
+        DD             0C0D4F854h ;if
+        DD             0CE0F7066h ;in
+Keyword2j:
+        DD             0BDA461D5h ;ja
+        DD             0DEA20D0Ch ;jb
+        DD             047AB5CB6h ;jc
+        DD             0A9A53D9Ah ;je
+        DD             040C698AFh ;jg
+        DD             0391A200Bh ;jl
+        DD             04E1D109Dh ;jo
+        DD             02D1B7C44h ;jp
+        DD             05A1C4CD2h ;js
+        DD             0CDCE955Ah ;jz
+Keyword2k:
+Keyword2l:
+        DD             09548D72Ah ;le
+        DD             01840DADFh ;lt
+Keyword2m:
+Keyword2n:
+        DD             024AA5DABh ;ne
+Keyword2o:
+        DD             04D359604h ;or
+Keyword2p:
+Keyword2q:
+Keyword2r:
+        DD             0D7072DBFh ;r8
+        DD             04E0E7C05h ;r9
+Keyword2s:
+        DD             00925BA2Bh ;si
+        DD             0842DB7DEh ;sp
+        DD             0F32A8748h ;ss
+        DD             0834073C7h ;st
+Keyword2t:
+Keyword2u:
+        DD             021CE6110h ;ud
+Keyword2v:
+Keyword2w:
+Keyword2x:
+Keyword2y:
+Keyword2z:
+Keyword2desc:
+        db             Reg8,4  ;ah
+        db             Reg8,0  ;al
+        db             Reg16,0  ;ax
+        db             Reg8,7  ;bh
+        db             Reg8,3  ;bl
+        db             Reg16,5  ;bp
+        dw             (btInstr)
+        db             Reg16,3  ;bx
+        db             Reg8,5  ;ch
+        db             Reg8,1  ;cl
+        db             segReg,1    ;cs
+        db             Reg16,1  ;cx
+        dw             (DBDirective)
+        dw             (DDDirective)
+        dw             (DFDirective)
+        db             Reg8,6  ;dh
+        db             Reg16,7  ;di
+        db             Reg8,2  ;dl
+        dw             (DODirective)   ;do
+        dw             (DFDirective)
+        dw             (DQDirective)
+        db             segReg,3    ;ds
+        dw             (DTDirective)
+        dw             (DUDirective)
+        dw             (DWDirective)
+        db             Reg16,2  ;dx
+        db             operator,booleqop  ;eq =
+        db             segReg,0    ;es
+        db             segReg386,0    ;fs
+        db             operator,geop  ;ge >=
+        db             segReg386,1    ;gs
+        db             operator,gtop  ;gt >
+        dw             (IfDirective)
+        dw             (inInstr)
+        dw             (jaInstr)
+        dw             (jbInstr)
+        dw             (jbInstr)
+        dw             (jzInstr)
+        dw             (jgInstr)
+        dw             (jlInstr)
+        dw             (joInstr)
+        dw             (jpInstr)
+        dw             (jsInstr)
+        dw             (jzInstr)
+        db             operator,leop  ;le <=
+        db             operator,ltop  ;lt <
+        db             operator,neop  ;ne !=
+        dw             (orInstr)
+        db             LMReg64,0        ;r8
+        db             LMReg64,1        ;r9
+        db             Reg16,6  ;si
+        db             Reg16,4  ;sp
+        db             segReg,2    ;ss
+        db             FPUReg,0 ;st
+        dw             (udInstr)
+even 2
+        db  0
+Keyword3:
+Keyword3a:
+        DD             0DF1FE581h ;aaa
+        DD             04616B43Bh ;aad
+        DD             0D8722198h ;aam
+        DD             02BCB50D0h ;aas
+        DD             01A3CD76Eh ;adc
+        DD             06D3BE7F8h ;add
+        DD             097D40F72h ;and
+Keyword3b:
+        DD             04C8CD2A8h ;bpl
+        DD             0BA56F29Fh ;bsf
+        DD             0AE57AED0h ;bsr
+        DD             0B85F0A3Dh ;btc
+        DD             0355707C8h ;btr
+        DD             0A5E81A59h ;bts
+Keyword3c:
+        DD             0BC5BD5CEh ;cbw
+        DD             0EA017248h ;cdq
+        DD             0D1618908h ;clc
+        DD             0A666B99Eh ;cld
+        DD             036D9A40Fh ;cli
+        DD             07743BAFAh ;cmc
+        DD             01A9E5E11h ;cmp
+        DD             0BE5540A8h ;cqo
+        DD             0F742B699h ;cr0
+        DD             06926233Ah ;cr1
+        DD             01E2113ACh ;cr2
+        DD             087284216h ;cr3
+        DD             0FEF4FAB2h ;cr4
+        DD             06E4BE723h ;cr5
+        DD             0194CD7B5h ;cr6
+        DD             08045860Fh ;cr7
+        DD             0F9993EABh ;cr8
+        DD             067FDAB08h ;cr9
+        DD             03D661086h ;cwd
+Keyword3d:
+        DD             0BE585AC5h ;daa
+        DD             04A8CEF94h ;das
+        DD             0DA349FC1h ;dec
+        DD             05051562Dh ;def
+        DD             0E63ECD5Ch ;dil
+        DD             01B5C3426h ;div
+        DD             0072339DCh ;dqw
+        DD             01FE3799Bh ;dr0
+        DD             08187EC38h ;dr1
+        DD             0F1ED18B7h ;dr2
+        DD             068E4490Dh ;dr3
+        DD             0188EBD82h ;dr4
+        DD             08831A013h ;dr5
+        DD             0F680DCAEh ;dr6
+        DD             06F898D14h ;dr7
+        DD             01138F1A9h ;dr8
+        DD             08F5C640Ah ;dr9
+        DD             0FA46AD62h ;dup
+Keyword3e:
+        DD             0EA27421Bh ;eax
+        DD             0FA8A3F71h ;ebp
+        DD             0F451B743h ;ebx
+        DD             0CB7DB8CFh ;ecx
+        DD             08A001E17h ;edi
+        DD             009D39BD0h ;edx
+        DD             0A2EBC52Ch ;end
+        DD             0373789C2h ;equ
+        DD             0F1D55E11h ;esc
+        DD             01100B70Fh ;esi
+        DD             09C08BAFAh ;esp
+Keyword3f:
+        DD             0E2536407h ;far
+        DD             06B10F0FAh ;fld
+        DD             086DF74EAh ;for
+        DD             073C4B1E1h ;fst
+Keyword3g:
+Keyword3h:
+        DD             0612268BFh ;hlt
+Keyword3i:
+        DD             0E9ADAA45h ;inc
+        DD             0F41ABA21h ;ins
+        DD             084704EAEh ;int
+        DD             08B64B6C6h ;irp
+Keyword3j:
+        DD             0BCDB277Bh ;jae
+        DD             0ADB92A4Bh ;jbe
+        DD             00CF6DDA0h ;jge
+        DD             0DD3466E9h ;jle
+        DD             0FFA814C5h ;jmp
+        DD             0E86FC072h ;jna
+        DD             09F68F0E4h ;jnb
+        DD             00661A15Eh ;jnc
+        DD             0EF02046Bh ;jne
+        DD             0010C6547h ;jng
+        DD             07FBD19FAh ;jnl
+        DD             00FD7ED75h ;jno
+        DD             06567CD87h ;jnp
+        DD             01BD6B13Ah ;jns
+        DD             08C0468B2h ;jnz
+        DD             0D54D5A98h ;jpe
+        DD             032F5779Fh ;jpo
+Keyword3k:
+Keyword3l:            
+        DD             057F44BBEh ;lar
+        DD             0E2BD8DDEh ;lds
+        DD             07FFF456Ch ;lea
+        DD             08B2BF03Dh ;les
+        DD             0D08BEF5Ch ;lfs
+        DD             0FBA6BC9Fh ;lgs
+        DD             03412F28Eh ;low
+        DD             05800663Fh ;lsl
+        DD             03C6BCEFFh ;lss
+        DD             03176CE35h ;ltr
+Keyword3m:
+        DD             0D9E53038h ;mm0
+        DD             040EC6182h ;mm1
+        DD             037EB5114h ;mm2
+        DD             0A98FC4B7h ;mm3
+        DD             0DE88F421h ;mm4
+        DD             04781A59Bh ;mm5
+        DD             03086950Dh ;mm6
+        DD             0BD8E98F8h ;mm7
+        DD             087D5C757h ;mod
+        DD             0746CB61Fh ;mov
+        DD             03923B5BEh ;mul
+Keyword3n:
+        DD             0E5F11450h ;neg
+        DD             072C31831h ;nop
+        DD             075AEDC28h ;not
+Keyword3o:
+        DD             04A9290D7h ;org
+        DD             029CBF986h ;out
+Keyword3p:
+        DD             078F18074h ;pop
+        DD             09F49AD73h ;por
+        DD             00C30381Ah ;ptr
+Keyword3q:
+Keyword3r:
+        DD             00E9B5DC6h ;r10
+        DD             09E244057h ;r11
+        DD             0E92370C1h ;r12
+        DD             0702A217Bh ;r13
+        DD             0072D11EDh ;r14
+        DD             09949844Eh ;r15
+        DD             061BCF8FEh ;r8b
+        DD             08FB299D2h ;r8d
+        DD             0E26F7D39h ;r8w
+        DD             04327E716h ;r9b
+        DD             0A3F20E08h ;r9d
+        DD             0C9422EFAh ;r9w
+        DD             0C2FC4102h ;rax
+        DD             0D2513C68h ;rbp
+        DD             0DC8AB45Ah ;rbx
+        DD             0671F97CCh ;rcl
+        DD             09D10AAAFh ;rcr
+        DD             07DC543B1h ;rcx
+        DD             0E060332Eh ;rdi
+        DD             064DE72F0h ;rdx
+        DD             04128A901h ;rep
+        DD             046456D18h ;ret
+        DD             0EA10F7FDh ;rol
+        DD             017720E87h ;ror
+        DD             0B4D4D427h ;rsi
+        DD             000DF6A11h ;rsm
+        DD             039DCD9D2h ;rsp
+        DD             0964FCBCFh ;rva
+
+Keyword3s:            
+        DD             0B9612A3Bh ;sal
+        DD             04403D341h ;sar
+        DD             0CDA09255h ;sbb
+        DD             08206BCBFh ;seg
+        DD             0D0F757D8h ;shl
+        DD             02AF86ABBh ;shr
+        DD             0780EEC18h ;sil
+        DD             0E7A509E1h ;smi
+        DD             052ECCF81h ;spl
+        DD             0B3E53A5Dh ;st0
+        DD             0235A27CCh ;st1
+        DD             0545D175Ah ;st2
+        DD             0CD5446E0h ;st3
+        DD             0BA537676h ;st4
+        DD             02437E3D5h ;st5
+        DD             05330D343h ;st6
+        DD             0CA3982F9h ;st7
+        DD             0A63F1714h ;stc
+        DD             0D1382782h ;std
+        DD             046EAFE0Ah ;sti
+        DD             0228156CAh ;str
+        DD             056A03B4Dh ;sub
+Keyword3t:            
+        DD             0EAA67FDEh ;tr0
+        DD             074C2EA7Dh ;tr1
+        DD             003C5DAEBh ;tr2
+        DD             09ACC8B51h ;tr3
+        DD             0E31033F5h ;tr4
+        DD             073AF2E64h ;tr5
+        DD             004A81EF2h ;tr6
+        DD             09DA14F48h ;tr7
+Keyword3u:            
+        DD             0A246BF13h ;ud2
+Keyword3v:
+Keyword3w:
+Keyword3x:
+        DD             063723E97h ;xor
+Keyword3y:
+Keyword3z:
+
+Keyword3desc:
+        dw             (aaaInstr)
+        dw             (aadInstr)
+        dw             (aamInstr)
+        dw             (aasInstr)
+        dw             (adcInstr)
+        dw             (addInstr)
+        dw             (andInstr)
+        db             lmlowReg,5      ;bpl
+        dw             (bsfInstr)
+        dw             (bsrInstr)
+        dw             (btcInstr)
+        dw             (btrInstr)
+        dw             (btsInstr)
+        dw             (cbwInstr)
+        dw             (cdqInstr)
+        dw             (clcInstr)
+        dw             (cldInstr)
+        dw             (cliInstr)
+        dw             (cmcInstr)
+        dw             (cmpInstr)
+        dw             (cqoInstr)
+        db             CtrlReg,0  ;cr0
+        db             CtrlReg,1  ;cr1
+        db             CtrlReg,2  ;cr2
+        db             CtrlReg,3  ;cr3
+        db             CtrlReg,4  ;cr4
+        db             CtrlReg,5  ;cr5
+        db             CtrlReg,6  ;cr6
+        db             CtrlReg,7  ;cr7
+        db             CtrlReg64,0  ;cr8
+        db             CtrlReg64,1  ;cr9
+        dw             (cwdInstr)
+        dw             (daaInstr)
+        dw             (dasInstr)
+        dw             (decInstr)
+        db             operator,1  ;def
+        db             lmlowReg,7      ;dil
+        dw             (divInstr)
+        dw             (DODirective)
+        db             DbgReg,0  ;dr0
+        db             DbgReg,1  ;dr1
+        db             DbgReg,2  ;dr2
+        db             DbgReg,3  ;dr3
+        db             DbgReg,4  ;dr4
+        db             DbgReg,5  ;dr5
+        db             DbgReg,6  ;dr6
+        db             DbgReg,7  ;dr7
+        db             DbgReg64,0  ;dr8
+        db             DbgReg64,1  ;dr9
+        dw             (DUPDirective)
+        db             Reg32,0  ;eax
+        db             Reg32,5  ;ebp
+        db             Reg32,3  ;ebx
+        db             Reg32,1  ;ecx
+        db             Reg32,7  ;edi
+        db             Reg32,2  ;edx
+        dw             (ENDDirective)
+        dw             (EQUDirective)
+        dw             (EscInstr)
+        db             Reg32,6  ;esi
+        db             Reg32,4  ;esp
+        db             distspec,3 ;far
+        dw             (fldInstr)
+        dw             (ForDirective)
+        dw             (fstInstr)
+        dw             (hltInstr)
+        dw             (incInstr)
+        dw             (insInstr)
+        dw             (intInstr)
+        dw             (IRPDirective)
+        dw             (jaeInstr)
+        dw             (jbeInstr)
+        dw             (jgeInstr)
+        dw             (jleInstr)
+        dw             (jmpInstr)
+        dw             (jbeInstr)
+        dw             (jaeInstr)
+        dw             (jncInstr)
+        dw             (jnzInstr)
+        dw             (jleInstr)
+        dw             (jgeInstr)
+        dw             (jnoInstr)
+        dw             (jpoInstr)
+        dw             (jnsInstr)
+        dw             (jnzInstr)
+        dw             (jpInstr)
+        dw             (jpoInstr)
+        dw             (larInstr)
+        dw             (ldsInstr)
+        dw             (leaInstr)
+        dw             (lesInstr)
+        dw             (lfsInstr)
+        dw             (lgsInstr)
+        db             operator,2  ;low
+        dw             (lslInstr)
+        dw             (lssInstr)
+        dw             (ltrInstr)
+        db             mmxReg,0  ;mm0
+        db             mmxReg,1  ;mm1
+        db             mmxReg,2  ;mm2
+        db             mmxReg,3  ;mm3
+        db             mmxReg,4  ;mm4
+        db             mmxReg,5  ;mm5
+        db             mmxReg,6  ;mm6
+        db             mmxReg,7  ;mm7
+        db             operator,modop  ;mod
+        dw             (movInstr)
+        dw             (mulInstr)
+        dw             (negInstr)
+        dw             (nopInstr)
+        dw             (notInstr)
+        dw             (OrgDirective)
+        dw             (outInstr)
+        dw             (popInstr)
+        dw             (porInstr)
+        db             operator,SubOp ;ptr
+        db             LMReg64,2      ;r10
+        db             LMReg64,3      ;r11
+        db             LMReg64,4      ;r12
+        db             LMReg64,5      ;r13
+        db             LMReg64,6      ;r14
+        db             LMReg64,7      ;r15
+        db             LMReg8,0      ;r8b
+        db             LMReg32,0      ;r8d
+        db             LMReg16,0      ;r8w
+        db             LMReg8,1      ;r9b
+        db             LMReg32,1      ;r9d
+        db             LMReg16,1      ;r9w
+        db             Reg64,0      ;rax
+        db             Reg64,5      ;rbp
+        db             Reg64,3      ;rbx
+        dw             (rclInstr)
+        dw             (rcrInstr)
+        db             Reg64,1      ;rcx
+        db             Reg64,7      ;rdi
+        db             Reg64,2      ;rdx
+        dw             (repInstr)
+        dw             (retInstr)
+        dw             (rolInstr)
+        dw             (rorInstr)
+        db             Reg64,6      ;rsi
+        dw             (rsmInstr)
+        db             Reg64,4      ;rsp
+        db             Operator,3   ;rva
+        dw             (salInstr)
+        dw             (sarInstr)
+        dw             (sbbInstr)
+        db             operator,4  ;seg
+        dw             (shlInstr)
+        dw             (shrInstr)
+        db             lmlowReg,6      ;sil
+        dw             (smiInstr)
+        db             lmlowReg,4      ;spl
+        db             FPUReg,0  ;st0
+        db             FPUReg,1  ;st1
+        db             FPUReg,2  ;st2
+        db             FPUReg,3  ;st3
+        db             FPUReg,4  ;st4
+        db             FPUReg,5  ;st5
+        db             FPUReg,6  ;st6
+        db             FPUReg,7  ;st7
+        dw             (stcInstr)
+        dw             (stdInstr)
+        dw             (stiInstr)
+        dw             (strInstr)
+        dw             (subInstr)
+        db             TestReg,0  ;tr0
+        db             TestReg,1  ;tr1
+        db             TestReg,2  ;tr2
+        db             TestReg,3  ;tr3
+        db             TestReg,4  ;tr4
+        db             TestReg,5  ;tr5
+        db             TestReg,6  ;tr6
+        db             TestReg,7  ;tr7
+        dw             (ud2Instr)
+        dw             (xorInstr)
+even 2
+        db  0
+Keyword4:
+Keyword4a:
+        DD             0843B3639h ;arpl
+Keyword4b:             
+        DD             01CD075F1h ;byte
+Keyword4c:
+        DD             007EE547Bh ;call
+        DD             0DC3C0CBDh ;cdqe
+        DD             00DD6BB97h ;clts
+        DD             0D4A1AEBCh ;cmps
+        DD             097BBFFABh ;cr10
+        DD             009DF6A08h ;cr11
+        DD             079B59E87h ;cr12
+        DD             0E0BCCF3Dh ;cr13
+        DD             090D63BB2h ;cr14
+        DD             01DDE3647h ;cr15
+        DD             0A75A4071h ;cwde
+Keyword4d:             
+        DD             0795D3F48h ;dr10
+        DD             0E0546EF2h ;dr11
+        DD             097535E64h ;dr12
+        DD             00937CBC7h ;dr13
+        DD             07E30FB51h ;dr14
+        DD             0E739AAEBh ;dr15
+Keyword4e:             
+        DD             08E259730h ;echo
+        DD             0BAB0CB5Eh ;else
+        DD             06E4724CAh ;emms
+        DD             09870CB79h ;endm
+        DD             01578C68Ch ;endp
+        DD             04D108A9Dh ;ends
+        DD             038613BC8h ;even
+Keyword4f:
+        DD             06A4FC486h ;fabs
+        DD             0BFC6E6C7h ;fadd
+        DD             0299D581Ah ;fbld
+        DD             09324F862h ;fchs
+        DD             0FA525068h ;fcom
+        DD             00730A912h ;fcos
+        DD             0FC9EFF47h ;fdiv
+        DD             0E0A9D982h ;feni
+        DD             0790C3D77h ;fild
+        DD             0FFBB840Bh ;fist
+        DD             092B99E6Bh ;fld1
+        DD             09AD4A346h ;fldz
+        DD             0EBDEB481h ;fmul
+        DD             0926C1749h ;fnop
+        DD             04A260439h ;fsin
+        DD             01E7236D9h ;fstp
+        DD             0845D3A72h ;fsub
+        DD             057F862F5h ;ftst
+        DD             0DB93AA15h ;fxam
+        DD             03217B70Dh ;fxch
+Keyword4g:
+Keyword4h:             
+        DD             0C0A1B420h ;halt
+        DD             00B71029Eh ;high
+Keyword4i:
+        DD             05AC3147Bh ;ibts
+        DD             0D8FEBC71h ;idiv
+        DD             0C608BB9Ch ;imul
+        DD             071459F33h ;insb
+        DD             09F4BFE1Fh ;insd
+        DD             0F5FBDEEDh ;insw
+        DD             075EED3D2h ;into
+        DD             03E0409F4h ;invd
+        DD             0B96E633Ah ;iret
+        DD             02289720Fh ;irps
+Keyword4j:
+        DD             00ED01446h ;jcxz
+        DD             01384F796h ;jnae
+        DD             003298AFCh ;jnbe
+        DD             0A2667D17h ;jnge
+        DD             0D6A91EF1h ;jnle
+Keyword4k:
+Keyword4l:             
+        DD             0C27A04D1h ;lahf
+        DD             077914BCEh ;lgdt
+        DD             038BDE038h ;lidt
+        DD             0964E116Dh ;lldt
+        DD             015C71C7Dh ;lmsw
+        DD             089FDE3C6h ;lock
+        DD             0838A4AD1h ;lods
+        DD             0AF2D6526h ;loop
+Keyword4m:             
+        DD             059C751A1h ;movd
+        DD             0DD79107Fh ;movq
+        DD             033777153h ;movs
+Keyword4n:             
+        DD             013600AE7h ;near
+        DD             0AB5E9CB8h ;none
+Keyword4o:
+        DD             098F2020Ch ;orpd
+        DD             0F52FE6E7h ;orps
+        DD             054F79CD0h ;outs
+Keyword4p:
+        DD             02A94EE29h ;pand
+        DD             0F4AC44D1h ;popa
+        DD             084C6B05Eh ;popf
+        DD             06581CC09h ;proc
+        DD             0C761C5B2h ;push
+        DD             0D0218E74h ;pxor
+Keyword4q:
+Keyword4r:
+        DD             0A6B2CC3Ah ;r10b
+        DD             04FD1690Fh ;r10d
+        DD             0256149FDh ;r10w
+        DD             0CF24B1D9h ;r11b
+        DD             0212AD0F5h ;r11d
+        DD             04CF7341Eh ;r11w
+        DD             0D1524481h ;r12b
+        DD             03F5C25ADh ;r12d
+        DD             055EC055Fh ;r12w
+        DD             0FD12D35Bh ;r13b
+        DD             03B1E0AE9h ;r13d
+        DD             07EC1569Ch ;r13w
+        DD             0F008BE55h ;r14b
+        DD             00D6A472Fh ;r14d
+        DD             067DA67DDh ;r14w
+        DD             0454615F1h ;r15b
+        DD             0AC25B0C4h ;r15d
+        DD             0C6959036h ;r15w
+        DD             03D99BD7Eh ;repe
+        DD             059F215BEh ;repz
+        DD             02EF248ECh ;retd
+        DD             0C0FC29C0h ;retf
+        DD             0CE27A1F2h ;retn
+        DD             0AD21CD2Bh ;retq
+        DD             050433451h ;retw
+Keyword4s:
+        DD             00608B9F1h ;sahf
+        DD             057F93FD4h ;scas
+        DD             04537EAE9h ;seta
+        DD             026318630h ;setb
+        DD             0AB398BC5h ;setc
+        DD             0425A2EF0h ;sete
+        DD             0AC544FDCh ;setg
+        DD             0D588F778h ;setl
+        DD             0A28FC7EEh ;seto
+        DD             0C189AB37h ;setp
+        DD             0B68E9BA1h ;sets
+        DD             028EA0E02h ;setz
+        DD             000858CC1h ;sgdt
+        DD             0B5003866h ;shld
+        DD             0A0201A12h ;shrd
+        DD             0B1608B50h ;sidt
+        DD             00E5EE427h ;size
+        DD             055516854h ;sldt
+        DD             095AC3B3Eh ;smsw
+        DD             008C2B476h ;stos
+Keyword4t:             
+        DD             08057A142h ;test
+        DD             01C2F026Fh ;type
+Keyword4u:
+        DD             0A75722EFh ;umov
+        DD             04C8A382Bh ;uses
+Keyword4v:
+        DD             0EE94782Eh ;verr
+        DD             070F0ED8Dh ;verw
+Keyword4w:
+        DD             06745121Dh ;wait
+        DD             0D95AE4E9h ;word
+Keyword4x:
+        DD             077E01B51h ;xadd
+        DD             0715A7B53h ;xbts
+        DD             041D8D189h ;xchg
+        DD             01C7CB84Dh ;xlat
+        DD             0CC2A34F9h ;xmm0
+        DD             0524EA15Ah ;xmm1
+        DD             0254991CCh ;xmm2
+        DD             0BC40C076h ;xmm3
+        DD             0C59C78D2h ;xmm4
+        DD             055236543h ;xmm5
+        DD             0222455D5h ;xmm6
+        DD             0BB2D046Fh ;xmm7
+        DD             0C2F1BCCBh ;xmm8
+        DD             05C952968h ;xmm9
+Keyword4y:
+Keyword4z:
+Keyword4desc:          
+        dw              (arplInstr)
+        db              datatype,1 ;byte
+        dw              (callInstr)
+        dw              (cdqeInstr)
+        dw              (cltsInstr)
+        dw              (cmpsInstr)
+        db              CtrlReg64,2
+        db              CtrlReg64,3
+        db              CtrlReg64,4
+        db              CtrlReg64,5
+        db              CtrlReg64,6
+        db              CtrlReg64,7
+        dw              (cwdeInstr)
+        db              DbgReg64,2
+        db              DbgReg64,3
+        db              DbgReg64,4
+        db              DbgReg64,5
+        db              DbgReg64,6
+        db              DbgReg64,7        
+        dw              (EchoMacro)
+        dw              (ElseDirective)
+        dw              (emmsInstr)
+        dw              (EndMDirective)
+        dw              (EndPDirective)
+        dw              (EndSDirective)
+        dw              (AlignDirective)
+        dw              (fabsInstr)
+        dw              (faddInstr)
+        dw              (fbldInstr)
+        dw              (fchsInstr)
+        dw              (fcomInstr)
+        dw              (fcosInstr)
+        dw              (fdivInstr)
+        dw              (feniInstr)
+        dw              (fildInstr)
+        dw              (fistInstr)
+        dw              (fld1Instr)
+        dw              (fldzInstr)
+        dw              (fmulInstr)
+        dw              (fnopInstr)
+        dw              (fsinInstr)
+        dw              (fstpInstr)
+        dw              (fsubInstr)
+        dw              (ftstInstr)
+        dw              (fxamInstr)
+        dw              (fxchInstr)
+        dw              (HaltMacro)
+        db              operator,5  ;high
+        dw              (ibtsInstr)
+        dw              (idivInstr)
+        dw              (imulInstr)
+        dw              (insbInstr)
+        dw              (insdInstr)
+        dw              (inswInstr)
+        dw              (intoInstr)
+        dw              (invdInstr)
+        dw              (iretInstr)
+        dw              (IRPSMacro)
+        dw              (jcxzInstr)
+        dw              (jbInstr)
+        dw              (jaInstr)
+        dw              (jlInstr)
+        dw              (jgInstr)
+        dw              (lahfInstr)
+        dw              (lgdtInstr)
+        dw              (lidtInstr)
+        dw              (lldtInstr)
+        dw              (lmswInstr)
+        dw              (lockInstr)
+        dw              (lodsInstr)
+        dw              (loopInstr)
+        dw              (movdInstr)
+        dw              (movqInstr)
+        dw              (movsInstr)
+        db              distspec,2 ;near
+        db              options,0  ;none
+        dw              (orpdInstr)
+        dw              (orpsInstr)
+        dw              (outsInstr)
+        dw              (pandInstr)
+        dw              (popaInstr)
+        dw              (popfInstr)
+        dw              (ProcDirective)
+        dw              (pushInstr)
+        dw              (pxorInstr)
+        db              LMReg8,2      ;r10b
+        db              LMReg32,2      ;r10d
+        db              LMReg16,2      ;r10w
+        db              LMReg8,3      ;r11b
+        db              LMReg32,3      ;r11d
+        db              LMReg16,3      ;r11w
+        db              LMReg8,4      ;r12b
+        db              LMReg32,4      ;r12d
+        db              LMReg16,4      ;r12w
+        db              LMReg8,5      ;r13b
+        db              LMReg32,5      ;r13d
+        db              LMReg16,5      ;r13w
+        db              LMReg8,6      ;r14b
+        db              LMReg32,6      ;r14d
+        db              LMReg16,6      ;r14w
+        db              LMReg8,7      ;r15b
+        db              LMReg32,7      ;r15d
+        db              LMReg16,7      ;r15w
+        dw              (repeInstr)
+        dw              (repzInstr)
+        dw              (retdInstr)
+        dw              (retfInstr)
+        dw              (retnInstr)
+        dw              (retqInstr)
+        dw              (retwInstr)
+        dw              (sahfInstr)
+        dw              (scasInstr)
+        dw              (setaInstr)
+        dw              (setbInstr)
+        dw              (setcInstr)
+        dw              (seteInstr)
+        dw              (setgInstr)
+        dw              (setlInstr)
+        dw              (setoInstr)
+        dw              (setpInstr)
+        dw              (setsInstr)
+        dw              (setzInstr)
+        dw              (sgdtInstr)
+        dw              (shldInstr)
+        dw              (shrdInstr)
+        dw              (sidtInstr)
+        db              Operator,6  ;size
+        dw              (sldtInstr)
+        dw              (smswInstr)
+        dw              (stosInstr)
+        dw              (testInstr)
+        db              Operator,7  ;type
+        dw              (umovInstr)
+        db              options,12 ;uses
+        dw              (verrInstr)
+        dw              (verwInstr)
+        dw              (waitInstr)
+        db              datatype,2 ;word
+        dw              (xaddInstr)
+        dw              (xbtsInstr)
+        dw              (xchgInstr)
+        dw              (xlatInstr)
+        db              sseReg,0  ;xmm0
+        db              sseReg,1  ;xmm1
+        db              sseReg,2  ;xmm2
+        db              sseReg,3  ;xmm3
+        db              sseReg,4  ;xmm4
+        db              sseReg,5  ;xmm5
+        db              sseReg,6  ;xmm6
+        db              sseReg,7  ;xmm7
+        db              sse2Reg,0      ;xmm8
+        db              sse2Reg,1      ;xmm9
+even 2
+        db  0
+Keyword5:
+Keyword5a:
+        DD             00E4F8132h ;addpd
+        DD             06A2429F2h ;addps
+        DD             094805870h ;addsd
+        DD             0D632C01Ch ;addss
+        DD             084851DCEh ;align
+        DD             068442D7Dh ;andpd
+        DD             00599C996h ;andps
+Keyword5b:
+        DD             056C9E01Ch ;basic
+        DD             0ECDC7FAEh ;bound
+        DD             022C423E5h ;bswap
+Keyword5c:
+        DD             0FA08D337h ;callf
+        DD             091BC1F49h ;cmova
+        DD             0E6BB2FDFh ;cmovb
+        DD             06BB3222Ah ;cmovc
+        DD             096D1DB50h ;cmove
+        DD             07FB27E65h ;cmovg
+        DD             0010302D8h ;cmovl
+        DD             07169F657h ;cmovo
+        DD             015025E97h ;cmovp
+        DD             04D6A1286h ;cmovs
+        DD             0F5D7B789h ;cmovz
+        DD             0E6C0FA9Fh ;cmppd
+        DD             08B1D1E74h ;cmpps
+        DD             016B86EEBh ;cmpsb
+        DD             0FFDBCBDEh ;cmpsd
+
+        DD             07C084E19h ;cmpsq
+
+        DD             08607737Ah ;cmpss
+        DD             092062F35h ;cmpsw
+        DD             0CAA85FC2h ;cpuid
+Keyword5d:
+        DD             00E2E9CAAh ;divpd
+        DD             06A45346Ah ;divps
+        DD             01E83E1C0h ;divsd
+        DD             0735E052Bh ;divss
+        DD             06799A72Ch ;dword
+Keyword5e:
+        DD             09EFB88ACh ;endif
+        DD             034B2B0ADh ;enter
+        DD             0E01D7D59h ;exitm
+        DD             0312E964Ch ;extrn
+Keyword5f:
+        DD             0DA72EBC9h ;f2xm1
+        DD             0C505FD58h ;faddp
+        DD             0837CAF26h ;fbstp
+        DD             0C73D5799h ;fclex
+        DD             0EEF4337Ch ;fcomi
+        DD             06491FA90h ;fcomp
+        DD             0979F4C9Eh ;fdisi
+        DD             028FE2661h ;fdivp
+        DD             0CF460B66h ;fdivr
+        DD             0BC9F31F2h ;femms
+        DD             04E387BF8h ;ffree
+        DD             0CAAA58CAh ;fiadd
+        DD             0F8BA0A1Bh ;ficom
+        DD             0CC24AB73h ;fidiv
+        DD             03BBFD223h ;fimul
+        DD             06A6BA5B0h ;finit
+        DD             0594C8693h ;fistp
+        DD             081D8A418h ;fisub
+        DD             0617B4EB9h ;fldcw
+        DD             0C8AD50CAh ;fldpi
+        DD             053584D84h ;fmulp
+        DD             0C47EC91Ah ;fneni
+        DD             002A7AA74h ;fprem
+        DD             0C97920FAh ;fptan
+        DD             01497A29Dh ;fsave
+        DD             0EF0E412Eh ;fsqrt
+        DD             015AEEF5Fh ;fstcw
+        DD             05F6CFD0Eh ;fstsw
+        DD             0998D0C80h ;fsubp
+        DD             077836DACh ;fsubr
+        DD             0AC3A8CDFh ;fucom
+        DD             07D448D2Dh ;fwait
+        DD             00B82F1D1h ;fword
+        DD             06176D284h ;fyl2x
+Keyword5g:
+        DD             0358C7B83h ;group
+Keyword5h:
+Keyword5i:
+        DD             034B685C9h ;ifdef
+        DD             0FB6D2206h ;iretd
+        DD             07FD363D8h ;iretq
+        DD             091DD02F4h ;iretw
+Keyword5j:
+        DD             0D3AEAEF3h ;jecxz
+Keyword5k:
+Keyword5l:
+        DD             0E3F82593h ;label
+        DD             07B2D82A7h ;lddqu
+        DD             0E55FA43Bh ;leave
+        DD             0BB626F09h ;local
+        DD             0CC8FFDDFh ;lodsb
+        DD             022819CF3h ;lodsd
+        DD             0A1521934h ;lodsq
+        DD             04831BC01h ;lodsw
+        DD             0EF7A3D4Fh ;loopd
+        DD             0711EA8ECh ;loope
+        DD             01575002Ch ;loopz
+Keyword5m:
+        DD             0BB721C89h ;macro
+        DD             05C323026h ;maxpd
+        DD             031EFD4CDh ;maxps
+        DD             0CF4BA54Fh ;maxsd
+        DD             0A29641A4h ;maxss
+        DD             02B4CF369h ;minpd
+        DD             046911782h ;minps
+        DD             0AFAADAFBh ;minsd
+        DD             09BC40307h ;minss
+        DD             0C8E426F1h ;movsb
+        DD             02831CFEFh ;movsd
+        DD             0A2540603h ;movsq
+        DD             04C5A672Fh ;movss
+        DD             04B37A336h ;movsw
+        DD             032EB1B92h ;movsx
+        DD             0D11FC259h ;movzx
+        DD             0CAB12076h ;mulpd
+        DD             0AEDA88B6h ;mulps
+        DD             0D3AA1137h ;mulsd
+        DD             0BE77F5DCh ;mulss
+        DD             03662BDCEh ;mwait
+Keyword5n:
+Keyword5o:
+        DD             0523C15AAh ;outsb
+        DD             0BB5FB09Fh ;outsd
+        DD             0D859DC46h ;outsw
+        DD             0E088EA92h ;oword
+Keyword5p:
+        DD             075BAD89Ah ;paddb
+        DD             0956F3184h ;paddd
+        DD             01F0AF868h ;paddq
+        DD             0F6695D5Dh ;paddw
+        DD             0782D5D4Ch ;pandn
+        DD             09BB88B13h ;pause
+        DD             0AF3B9D6Bh ;paveb
+        DD             092190781h ;pavgb
+        DD             016A7465Fh ;pavgw
+        DD             0472A173Eh ;pf2id
+        DD             02D9A37CCh ;pf2iw
+        DD             04EDF2E90h ;pfacc
+        DD             0ADCC4F76h ;pfadd
+        DD             023AE7F34h ;pfmax
+        DD             01FA3406Dh ;pfmin
+        DD             0D6BB61B7h ;pfmul
+        DD             0B484A714h ;pfrcp
+        DD             0965793C3h ;pfsub
+        DD             039253B33h ;pi2fd
+        DD             053951BC1h ;pi2fw
+        DD             06B564EAEh ;pmagw
+        DD             0FEBDB7A6h ;pmvzb
+        DD             022F6BAFDh ;popad
+        DD             0B18F2F94h ;popfd
+        DD             0265DF61Ch ;popfq
+        DD             0DB3F0F66h ;popfw
+        DD             0863407C6h ;pslld
+        DD             011E6DE4Eh ;psllq
+        DD             0F8857B7Bh ;psllw
+        DD             0BB410F96h ;psrad
+        DD             0D847634Fh ;psraw
+        DD             058B5D65Dh ;psrld
+        DD             0DB66539Ah ;psrlq
+        DD             02604AAE0h ;psrlw
+        DD             014BC06E7h ;psubb
+        DD             0FAB267CBh ;psubd
+        DD             07961E20Ch ;psubq
+        DD             090024739h ;psubw
+        DD             081797708h ;pusha
+        DD             0187026B2h ;pushd
+        DD             0F67E479Eh ;pushf
+        DD             0CC3D8941h ;pword
+Keyword5q:
+        DD             05FD1862Eh ;qword
+Keyword5r:
+        DD             0AC3FF2E3h ;radix
+        DD             02C633DA3h ;rcpps
+        DD             0BF1AA8CAh ;rcpss
+        DD             067DB1B74h ;rdmsr
+        DD             0F41FBEE7h ;rdpmc
+        DD             0F316163Bh ;rdtsc
+        DD             0CAEA86D3h ;repne
+        DD             0BDEDB645h ;repnz
+        DD             0C57AC797h ;retfw
+        DD             0A67CAB4Eh ;retfd
+        DD             025AF2E89h ;retfq
+Keyword5s:
+        DD             05552DF10h ;scasb
+        DD             0BC317A25h ;scasd
+        DD             03FE2FFE2h ;scasq
+        DD             0D1EC9ECEh ;scasw
+        DD             0484AD6E3h ;segcs
+        DD             05151E7A2h ;segds
+        DD             0F773D450h ;seges
+        DD             0E9052108h ;segfs
+        DD             09B9B4FDCh ;seggs
+        DD             00288C4B2h ;segss
+        DD             0934CC877h ;setae
+        DD             0822EC547h ;setbe
+        DD             02B180EDDh ;setge
+        DD             0FADAB594h ;setle
+        DD             045E3B727h ;setna
+        DD             026E5DBFEh ;setnb
+        DD             0ABEDD60Bh ;setnc
+        DD             0428E733Eh ;setne
+        DD             0AC801212h ;setng
+        DD             0D55CAAB6h ;setnl
+        DD             0A25B9A20h ;setno
+        DD             0C15DF6F9h ;setnp
+        DD             0B65AC66Fh ;setns
+        DD             0283E53CCh ;setnz
+        DD             0F2A389E5h ;setpe
+        DD             0127660FBh ;setpo
+        DD             0E0C62BC0h ;short
+        DD             0020F0626h ;stack
+        DD             06DD5265Fh ;stosb
+        DD             084B6836Ah ;stosd
+        DD             00ED34A86h ;stosq
+        DD             0EE06A398h ;stosw
+        DD             004406056h ;struc
+        DD             0CD16312Eh ;subpd
+        DD             0A7A611DCh ;subps
+        DD             0D40D006Fh ;subsd
+        DD             0B9D0E484h ;subss
+Keyword5t:
+        DD             0EC49DB0Ah ;tbyte
+        DD             0C8A15EFDh ;tword
+Keyword5u:
+        DD             0380C9ADCh ;use16
+        DD             00D573C47h ;use32
+        DD             0457B6E99h ;use64
+Keyword5v:
+Keyword5w:
+        DD             0B226AAB0h ;wrmsr
+Keyword5x:
+        DD             026C54C14h ;xlatb
+        DD             0DA32F671h ;xmm10
+        DD             0445663D2h ;xmm11
+        DD             0343C975Dh ;xmm12
+        DD             0AD35C6E7h ;xmm13
+        DD             0DD5F3268h ;xmm14
+        DD             050573F9Dh ;xmm15
+        DD             06A1E92EAh ;xorpd
+        DD             00E753A2Ah ;xorps
+Keyword5y:
+Keyword5z:
+Keyword5desc:
+        dw             (addpdInstr)
+        dw             (addpsInstr)
+        dw             (addsdInstr)
+        dw             (addssInstr)
+        dw             (AlignDirective)
+        dw             (andpdInstr)
+        dw             (andpsInstr)
+        db             Lang,1   ;Basic
+        dw             (boundInstr)
+        dw             (bswapInstr)
+        dw             (callInstr)
+        dw             (cmovaInstr)
+        dw             (cmovbInstr)
+        dw             (cmovbInstr)
+        dw             (cmovzInstr)
+        dw             (cmovgInstr)
+        dw             (cmovlInstr)
+        dw             (cmovoInstr)
+        dw             (cmovpInstr)
+        dw             (cmovsInstr)
+        dw             (cmovzInstr)
+        dw             (cmppdInstr)
+        dw             (cmppsInstr)
+        dw             (cmpsbInstr)
+        dw             (cmpsdInstr)
+        dw             (cmpsqInstr)
+        dw             (cmpssInstr)
+        dw             (cmpswInstr)
+        dw             (cpuidInstr)
+        dw             (divpdInstr)
+        dw             (divpsInstr)
+        dw             (divsdInstr)
+        dw             (divssInstr)
+        db             datatype,3 ;dword
+        dw             (EndIfDirective)
+        dw             (enterInstr)
+        dw             (ExitMDirective)
+        dw             (ExternDirective)
+        dw             (f2xm1Instr)
+        dw             (faddpInstr)
+        dw             (fbstpInstr)
+        dw             (fclexInstr)
+        dw             (fcomiInstr)
+        dw             (fcompInstr)
+        dw             (fdisiInstr)
+        dw             (fdivpInstr)
+        dw             (fdivrInstr)
+        dw             (femmsInstr)
+        dw             (ffreeInstr)
+        dw             (fiaddInstr)
+        dw             (ficomInstr)
+        dw             (fidivInstr)
+        dw             (fimulInstr)
+        dw             (finitInstr)
+        dw             (fistpInstr)
+        dw             (fisubInstr)
+        dw             (fldcwInstr)
+        dw             (fldpiInstr)
+        dw             (fmulpInstr)
+        dw             (fneniInstr)
+        dw             (fpremInstr)
+        dw             (fptanInstr)
+        dw             (fsaveInstr)
+        dw             (fsqrtInstr)
+        dw             (fstcwInstr)
+        dw             (fstswInstr)
+        dw             (fsubpInstr)
+        dw             (fsubrInstr)
+        dw             (fucomInstr)
+        dw             (waitInstr)
+        db             datatype,4 ;fword
+        dw             (fyl2xInstr)
+        dw             (GroupDirective)
+        dw             (IfDefDirective)
+        dw             (iretdInstr)
+        dw             (iretqInstr)
+        dw             (iretwInstr)
+        dw             (jecxzInstr)
+        dw             (LabelDirective)
+        dw             (lddquInstr)
+        dw             (leaveInstr)
+        dw             (LocalDirective)
+        dw             (lodsbInstr)
+        dw             (lodsdInstr)
+        dw             (lodsqInstr)
+        dw             (lodswInstr)
+        dw             (loopdInstr)
+        dw             (loopzInstr)
+        dw             (loopzInstr)
+        dw             (MacroDirective)
+        dw             (maxpdInstr)
+        dw             (maxpsInstr)
+        dw             (maxsdInstr)
+        dw             (maxssInstr)
+        dw             (minpdInstr)
+        dw             (minpsInstr)
+        dw             (minsdInstr)
+        dw             (minssInstr)
+        dw             (movsbInstr)
+        dw             (movsdInstr)
+        dw             (movsqInstr)
+        dw             (movssInstr)
+        dw             (movswInstr)
+        dw             (movsxInstr)
+        dw             (movzxInstr)
+        dw             (mulpdInstr)
+        dw             (mulpsInstr)
+        dw             (mulsdInstr)
+        dw             (mulssInstr)
+        dw             (mwaitInstr)
+        dw             (outsbInstr)
+        dw             (outsdInstr)
+        dw             (outswInstr)
+        db             datatype,7 ;oword
+        dw             (paddbInstr)
+        dw             (padddInstr)
+        dw             (paddqInstr)
+        dw             (paddwInstr)
+        dw             (pandnInstr)
+        dw             (pauseInstr)
+        dw             (pavebInstr)
+        dw             (pavgbInstr)
+        dw             (pavgwInstr)
+        dw             (pf2idInstr)
+        dw             (pf2iwInstr)
+        dw             (pfaccInstr)
+        dw             (pfaddInstr)
+        dw             (pfmaxInstr)
+        dw             (pfminInstr)
+        dw             (pfmulInstr)
+        dw             (pfrcpInstr)
+        dw             (pfsubInstr)
+        dw             (pi2fdInstr)
+        dw             (pi2fwInstr)
+        dw             (pmagwInstr)
+        dw             (pmvzbInstr)
+        dw             (popadInstr)
+        dw             (popfdInstr)
+        dw             (PopFQInstr)
+        dw             (PopFWInstr)
+        dw             (pslldInstr)
+        dw             (psllqInstr)
+        dw             (psllwInstr)
+        dw             (psradInstr)
+        dw             (psrawInstr)
+        dw             (psrldInstr)
+        dw             (psrlqInstr)
+        dw             (psrlwInstr)
+        dw             (psubbInstr)
+        dw             (psubdInstr)
+        dw             (psubqInstr)
+        dw             (psubwInstr)
+        dw             (pushaInstr)
+        dw             (pushdInstr)
+        dw             (pushfInstr)
+        db             datatype,4 ;pword
+        db             datatype,5 ;qword
+        dw             (RadixDirective)
+        dw             (rcppsInstr)
+        dw             (rcpssInstr)
+        dw             (rdmsrInstr)
+        dw             (rdpmcInstr)
+        dw             (rdtscInstr)
+        dw             (repneInstr)
+        dw             (repnzInstr)
+        dw             (retfwInstr)
+        dw             (retfdInstr)
+        dw             (retfqInstr)
+        dw             (scasbInstr)
+        dw             (scasdInstr)
+        dw             (scasqInstr)
+        dw             (scaswInstr)
+        dw             (segcsInstr)
+        dw             (segdsInstr)
+        dw             (segesInstr)
+        dw             (segfsInstr)
+        dw             (seggsInstr)
+        dw             (segssInstr)
+        dw             (setaeInstr)
+        dw             (setbeInstr)
+        dw             (setgeInstr)
+        dw             (setleInstr)
+        dw             (setnaInstr)
+        dw             (setnbInstr)
+        dw             (setncInstr)
+        dw             (setneInstr)
+        dw             (setngInstr)
+        dw             (setnlInstr)
+        dw             (setnoInstr)
+        dw             (setnpInstr)
+        dw             (setnsInstr)
+        dw             (setnzInstr)
+        dw             (setpeInstr)
+        dw             (setpoInstr)
+        db             distspec,1 ;short
+        dw             (StackDirective)
+        dw             (stosbInstr)
+        dw             (stosdInstr)
+        dw             (stosqInstr)
+        dw             (stoswInstr)
+        dw             (StrucDirective)
+        dw             (subpdInstr)
+        dw             (subpsInstr)
+        dw             (subsdInstr)
+        dw             (subssInstr)
+        db             datatype,6 ;tbyte
+        db             datatype,6 ;tword
+        dw             (Use16Directive)
+        dw             (Use32Directive)
+        dw             (Use64Directive)
+        dw             (wrmsrInstr)
+        dw             (xlatInstr)
+        db             SSE2Reg,2     ;xmm10
+        db             SSE2Reg,3     ;xmm11
+        db             SSE2Reg,4     ;xmm12
+        db             SSE2Reg,5     ;xmm13
+        db             SSE2Reg,6     ;xmm14
+        db             SSE2Reg,7     ;xmm15
+        dw             (xorpdInstr)
+        dw             (xorpsInstr)
+even 2
+        db  0
+Keyword6:
+Keyword6a:
+        DD             0FE9CCAD1h ;andnpd
+        DD             09AF76211h ;andnps
+Keyword6b:
+Keyword6c:
+        DD             0454EE06Ah ;cmovae
+        DD             05C55D12Bh ;cmovbe
+        DD             0777882E8h ;cmovge
+        DD             02CD89D89h ;cmovle
+        DD             019833B12h ;cmovna
+        DD             06E840B84h ;cmovnb
+        DD             0FE3B1615h ;cmovnc
+        DD             01EEEFF0Bh ;cmovne
+        DD             0F78D5A3Eh ;cmovng
+        DD             0893C2683h ;cmovnl
+        DD             0F956D20Ch ;cmovno
+        DD             09D3D7ACCh ;cmovnp
+        DD             0E38C0671h ;cmovns
+        DD             07DE893D2h ;cmovnz
+        DD             024A1A1F8h ;cmovpe
+        DD             0C47448E6h ;cmovpo
+        DD             0886B6910h ;comisd
+        DD             0EC00C1D0h ;comiss
+Keyword6d:
+        DD             0B97074CDh ;dqword
+Keyword6e:
+        DD             0219C4CBDh ;elseif
+        DD             07B85991Eh ;enterd
+        DD             082F4608Ch ;extern
+        DD             0F98A9B00h ;export
+Keyword6f:
+        DD             0B9EFAB2Ah ;fcmovb
+        DD             0C9855FA5h ;fcmove
+        DD             0D4324FC1h ;fcmovu
+        DD             07E5F888Eh ;fcomip
+        DD             0D7694314h ;fcompp
+        DD             0831CC3CCh ;fdivrp
+        DD             0942A03FFh ;ffreep
+        DD             044FC9779h ;ficomp
+        DD             0EEC24587h ;fidivr
+        DD             0F6546163h ;fisttp
+        DD             0DAE16074h ;fisubr
+        DD             0FC773F25h ;fldenv
+        DD             07DD5FD34h ;fldl2e
+        DD             0D604C06Dh ;fldl2t
+        DD             07D20F2F0h ;fldlg2
+        DD             09ED42B3Bh ;fldln2
+        DD             03F497CEEh ;fnclex
+        DD             07F191F0Bh ;fndisi
+        DD             064108B67h ;fninit
+        DD             054D32385h ;fnsave
+        DD             0EAB70031h ;fnstcw
+        DD             0AEAE9A52h ;fnstsw
+        DD             06908FA93h ;format
+        DD             0E528C6C7h ;fpatan
+        DD             09FBD430Fh ;fprem1
+        DD             0878AF624h ;frstor
+        DD             05D7C8CA0h ;fsaved
+        DD             037CCAC52h ;fsavew
+        DD             096E8E20Ch ;fscale
+        DD             0E197AB02h ;fsetpm
+        DD             05022EEDCh ;fstenv
+        DD             0F8152D04h ;fsubrp
+        DD             055A91CA3h ;fucomi
+        DD             0CBCD8900h ;fucomp
+        DD             0C7159721h ;fxsave
+Keyword6g:
+        DD             027675AC2h ;global
+Keyword6h:
+        DD             06285605Ch ;haddpd
+        DD             0083540AEh ;haddps
+        DD             0DD79A842h ;hsubpd
+        DD             0B0A44CA9h ;hsubps
+Keyword6i:
+        DD             07E96CCF0h ;ifndef
+        DD             07BE41E57h ;invlpg
+        DD             06C29BD49h ;invoke
+        DD             082FF86D6h ;import
+Keyword6j:
+Keyword6k:
+Keyword6l:
+        DD             04D573EFCh ;leaved
+        DD             00EF21B00h ;lfence
+        DD             0AC53837Dh ;loopde
+        DD             0CF55EFA4h ;loopdz
+        DD             056BC6BF7h ;loopne
+        DD             032D7C337h ;loopnz
+Keyword6m:
+        DD             04FF2C46Ch ;mfence
+        DD             013285CB5h ;movapd
+        DD             07743F475h ;movaps
+        DD             0C9FDADA3h ;movdqa
+        DD             0D32779DEh ;movdqu
+        DD             0498BA19Dh ;movhpd
+        DD             024564576h ;movhps
+        DD             0F8C59E53h ;movlpd
+        DD             09275BEA1h ;movlps
+        DD             059AC59EBh ;movnti
+        DD             04AC0C1BDh ;movntq
+        DD             023EB8CA4h ;movsxd
+        DD             05E5DF09Fh ;movupd
+        DD             03A36585Fh ;movups
+Keyword6n:
+Keyword6o:
+        DD             0C23A43FCh ;offset
+        DD             03606B021h ;option
+Keyword6p:
+        DD             0A5FBB1F2h ;paddsb
+        DD             02145F02Ch ;paddsw
+        DD             0E6EF7CB5h ;pascal
+        DD             0DA8A9A70h ;pextrw
+        DD             093A1F641h ;pfnacc
+        DD             025F98533h ;pfsubr
+        DD             0941DAE66h ;pinsrw
+        DD             07DE3C90Ah ;pmaxsw
+        DD             0C5B06264h ;pmaxub
+        DD             026D110EAh ;pminsw
+        DD             01D565387h ;pminub
+        DD             070607042h ;pmulhw
+        DD             0FA02D46Ah ;pmullw
+        DD             0EFC3E19Dh ;pmvlzb
+        DD             0EC4735F3h ;pmvnzb
+        DD             0F373D90Ch ;prolog
+        DD             01C088A52h ;psadbw
+        DD             0E983970Eh ;pshufd
+        DD             08333B7FCh ;pshufw
+        DD             0C53C0FB9h ;pslldq
+        DD             04587E9A3h ;psrldq
+        DD             0EF427FA9h ;psubsb
+        DD             06527B645h ;psubsw
+        DD             078343AADh ;pswapd
+        DD             07AB7EA4Fh ;public
+        DD             033826492h ;pushad
+        DD             02A9955D3h ;pushfd
+        DD             0BD4B8C5Bh ;pushfq
+        DD             040297521h ;pushfw
+Keyword6q:
+Keyword6r:
+        DD             0EE353295h ;repeat
+Keyword6s:
+        DD             08EBA71E8h ;setalc
+        DD             0EF90F39Dh ;setnae
+        DD             0F99F3AB4h ;setnbe
+        DD             05E72791Ch ;setnge
+        DD             0816B4A67h ;setnle
+        DD             0C91E19E6h ;sfence
+        DD             094C5182Fh ;shufpd
+        DD             0D6778043h ;shufps
+        DD             05F73EB84h ;sqrtpd
+        DD             026AF5320h ;sqrtps
+        DD             02BEC8D13h ;sqrtsd
+        DD             0463169F8h ;sqrtss
+        DD             0EA9CF651h ;strmid
+        DD             0A2633112h ;struct
+        DD             00AB6288Eh ;swapgs
+        DD             0C9F88FDAh ;sysret
+Keyword6t:
+Keyword6u:
+Keyword6v:
+Keyword6w:
+        DD             03774B059h ;wbinvd
+Keyword6x:
+Keyword6y:
+Keyword6z:
+
+Keyword6desc:
+        dw             (andnpdInstr)
+        dw             (andnpsInstr)
+        dw             (cmovaeInstr)
+        dw             (cmovbeInstr)
+        dw             (cmovgeInstr)
+        dw             (cmovleInstr)
+        dw             (cmovbeInstr)
+        dw             (cmovaeInstr)
+        dw             (cmovaeInstr)
+        dw             (cmovnzInstr)
+        dw             (cmovleInstr)
+        dw             (cmovgeInstr)
+        dw             (cmovnoInstr)
+        dw             (cmovpoInstr)
+        dw             (cmovnsInstr)
+        dw             (cmovnzInstr)
+        dw             (cmovpInstr)
+        dw             (cmovpoInstr)
+        dw             (comisdInstr)
+        dw             (comissInstr)
+        db             DataType,7
+        dw             (ElseIfDirective)
+        dw             (enterdInstr)
+        dw             (ExternDirective)
+        DW             (ExportDirective)
+        dw             (fcmovbInstr)
+        dw             (fcmoveInstr)
+        dw             (fcmovuInstr)
+        dw             (fcomipInstr)
+        dw             (fcomppInstr)
+        dw             (fdivrpInstr)
+        dw             (ffreepInstr)
+        dw             (ficompInstr)
+        dw             (fidivrInstr)
+        dw             (fisttpInstr)
+        dw             (fisubrInstr)
+        dw             (fldenvInstr)
+        dw             (fldl2eInstr)
+        dw             (fldl2tInstr)
+        dw             (fldlg2Instr)
+        dw             (fldln2Instr)
+        dw             (fnclexInstr)
+        dw             (fndisiInstr)
+        dw             (fninitInstr)
+        dw             (fnsaveInstr)
+        dw             (fnstcwInstr)
+        dw             (fnstswInstr)
+        dw             (FormatDirective)
+        dw             (fpatanInstr)
+        dw             (fprem1Instr)
+        dw             (frstorInstr)
+        dw             (fsavedInstr)
+        dw             (fsavewInstr)
+        dw             (fscaleInstr)
+        dw             (fsetpmInstr)
+        dw             (fstenvInstr)
+        dw             (fsubrpInstr)
+        dw             (fucomiInstr)
+        dw             (fucompInstr)
+        dw             (fxsaveInstr)
+        dw             (GlobalDirective)
+        dw             (haddpdInstr)
+        dw             (haddpsInstr)
+        dw             (hsubpdInstr)
+        dw             (hsubpsInstr)
+        dw             (IfNDefDirective)
+        dw             (invlpgInstr)
+        dw             (InvokeDirective)
+        DW             (ImportDirective)
+        dw             (leavedInstr)
+        dw             (lfenceInstr)
+        dw             (loopdzInstr)
+        dw             (loopdzInstr)
+        dw             (loopnzInstr)
+        dw             (loopnzInstr)
+        dw             (mfenceInstr)
+        dw             (movapdInstr)
+        dw             (movapsInstr)
+        dw             (movdqaInstr)
+        dw             (movdquInstr)
+        dw             (movhpdInstr)
+        dw             (movhpsInstr)
+        dw             (movlpdInstr)
+        dw             (movlpsInstr)
+        dw             (movntiInstr)
+        dw             (movntqInstr)
+        dw             (movsxdInstr)
+        dw             (movupdInstr)
+        dw             (movupsInstr)
+        db             operator,AddOp   ;offset
+        dw             (OptionDirective)
+        dw             (paddsbInstr)
+        dw             (paddswInstr)
+        db             Lang,1   ;pascal
+        dw             (pextrwInstr)
+        dw             (pfnaccInstr)
+        dw             (pfsubrInstr)
+        dw             (pinsrwInstr)
+        dw             (pmaxswInstr)
+        dw             (pmaxubInstr)
+        dw             (pminswInstr)
+        dw             (pminubInstr)
+        dw             (pmulhwInstr)
+        dw             (pmullwInstr)
+        dw             (pmvlzbInstr)
+        dw             (pmvnzbInstr)
+        db             Lang,2   ;prolog
+        dw             (psadbwInstr)
+        dw             (pshufdInstr)
+        dw             (pshufwInstr)
+        dw             (pslldqInstr)
+        dw             (psrldqInstr)
+        dw             (psubsbInstr)
+        dw             (psubswInstr)
+        dw             (pswapdInstr)
+        dw             (PublicDirective)
+        dw             (pushadInstr)
+        dw             (pushfdInstr)
+        dw             (pushfqInstr)
+        dw             (pushfwInstr)
+        dw             (RepeatDirective)
+        dw             (setalcInstr)
+        dw             (setnaeInstr)
+        dw             (setnbeInstr)
+        dw             (setngeInstr)
+        dw             (setnleInstr)
+        dw             (sfenceInstr)
+        dw             (shufpdInstr)
+        dw             (shufpsInstr)
+        dw             (sqrtpdInstr)
+        dw             (sqrtpsInstr)
+        dw             (sqrtsdInstr)
+        dw             (sqrtssInstr)
+        db             operator,12  ;strmid
+        dw             (StrucDirective)
+        dw             (SwapGSInstr)
+        dw             (sysretInstr)
+        dw             (wbinvdInstr)
+even 2
+        db  0
+Keyword7:
+Keyword7a:
+Keyword7b:
+Keyword7c:
+        DD             05211E74Eh ;clflush
+        DD             05EC77A35h ;cmovnae
+        DD             04E6A075Fh ;cmovnbe
+        DD             0622A9085h ;cmovnge
+        DD             03EE74BFDh ;cmovnle
+        DD             0776EB8CAh ;cmpeqpd
+        DD             01305100Ah ;cmpeqps
+        DD             06E75898Bh ;cmpeqsd
+        DD             003A86D60h ;cmpeqss
+        DD             0BB403467h ;cmplepd
+        DD             0D1F01495h ;cmpleps
+        DD             0E0E02B06h ;cmplesd
+        DD             08D3DCFEDh ;cmpless
+        DD             0A520294Eh ;cmpltpd
+        DD             0C8FDCDA5h ;cmpltps
+        DD             0BC3B180Fh ;cmpltsd
+        DD             0D850B0CFh ;cmpltss
+        DD             0A3113EE2h ;cmpxchg
+        DD             008C58FAEh ;comment
+Keyword7d:
+Keyword7e:
+Keyword7f:
+        DD             06BD2BE5Fh ;fcmovbe
+        DD             04A6FFCA6h ;fcmovnb
+        DD             03D68CC30h ;fcmovne
+        DD             020DFDC54h ;fcmovnu
+        DD             0BDFAC150h ;fdecstp
+        DD             009F6F9ACh ;fincstp
+        DD             0982E5783h ;fldenvd
+        DD             0F29E7771h ;fldenvw
+        DD             033EB4572h ;fnldenv
+        DD             0FDDBE868h ;fnrstor
+        DD             04E505077h ;fnsaved
+        DD             024E07085h ;fnsavew
+        DD             0518B8955h ;fnstenv
+        DD             0963C199Eh ;frndint
+        DD             0015CFBF0h ;frstord
+        DD             06C811F1Bh ;frstorw
+        DD             0E41D5F60h ;fsincos
+        DD             0B2ED29C6h ;fstenvd
+        DD             0DF30CD2Dh ;fstenvw
+        DD             081EBBFD1h ;fucomip
+        DD             027C98C23h ;fucompp
+        DD             093AE275Bh ;fxrstor
+        DD             049A3D59Ch ;fxtract
+        DD             027CFF7DAh ;fyl2xp1
+Keyword7g:
+Keyword7h:
+Keyword7i:
+        DD             0325584E0h ;include
+Keyword7j:
+Keyword7k:
+Keyword7l:
+        DD             010893CB4h ;ldmxcsr
+        DD             057E308E9h ;loadall
+        DD             0B505400Ah ;loopdne
+        DD             0D16EE8CAh ;loopdnz
+Keyword7m:
+        DD             099C39B5Eh ;monitor
+        DD             06DE54E77h ;movddup
+        DD             0BCB312D6h ;movdq2q
+        DD             039589B8Bh ;movhlps
+        DD             0700AF05Dh ;movlhps
+        DD             084703F5Eh ;movntdq
+        DD             0C7030CE0h ;movntpd
+        DD             0AADEE80Bh ;movntps
+        DD             0E9C453AAh ;movq2dq
+Keyword7n:
+Keyword7o:
+Keyword7p:
+        DD             0D5BC66EDh ;paddsiw
+        DD             0D0F907C1h ;paddusb
+        DD             0532A8206h ;paddusw
+        DD             081C9E954h ;pavgusb
+        DD             0A3DE504Bh ;pcmpeqb
+        DD             0430BB955h ;pcmpeqd
+        DD             0200DD58Ch ;pcmpeqw
+        DD             08B77D7E6h ;pcmpgtb
+        DD             04D7B0E54h ;pcmpgtd
+        DD             008A45221h ;pcmpgtw
+        DD             095BBD731h ;pdistib
+        DD             0A2C0CB50h ;pfcmpeq
+        DD             007231D9Eh ;pfcmpge
+        DD             084F09859h ;pfcmpgt
+        DD             0101105CAh ;pfpnacc
+        DD             0D656A6ADh ;pfrsqrt
+        DD             02E5D2063h ;pmaddwd
+        DD             06E850202h ;pmulhrw
+        DD             0FDFC976Bh ;pmulhuw
+        DD             05751311Ah ;pmuludq
+        DD             0101801E9h ;pmvgezb
+        DD             05FB97032h ;private
+        DD             0F2823595h ;pshufhw
+        DD             07F8D55A4h ;pshuflw
+        DD             0C7413673h ;psubsiw
+        DD             09BB76A48h ;psubusb
+        DD             041D7D298h ;psubusw
+Keyword7q:
+Keyword7r:
+        DD             04BDDD77Ah ;rsqrtps
+        DD             0DFC9860Ah ;rsqrtss
+Keyword7s:
+        DD             034B63970h ;section
+        DD             018358A26h ;segment
+        DD             03E8E26C2h ;stdcall
+        DD             080751149h ;stmxcsr
+        DD             0D12D47C8h ;strleft
+        DD             0FA355014h ;strscan
+        DD             0874E4C40h ;syscall
+        DD             075A8D312h ;sysexit
+Keyword7t:
+        DD             042BAFCFBh ;typedef
+Keyword7u:
+        DD             07E31912Eh ;ucomisd
+        DD             01481B1DCh ;ucomiss
+Keyword7v:
+Keyword7w:
+Keyword7x:
+Keyword7y:
+Keyword7z:
+Keyword7desc:
+        dw             (clflushInstr)
+        dw             (cmovbInstr)
+        dw             (cmovaInstr)
+        dw             (cmovlInstr)
+        dw             (cmovgInstr)
+        dw             (cmpeqpdInstr)
+        dw             (cmpeqpsInstr)
+        dw             (cmpeqsdInstr)
+        dw             (cmpeqssInstr)
+        dw             (cmplepdInstr)
+        dw             (cmplepsInstr)
+        dw             (cmplesdInstr)
+        dw             (cmplessInstr)
+        dw             (cmpltpdInstr)
+        dw             (cmpltpsInstr)
+        dw             (cmpltsdInstr)
+        dw             (cmpltssInstr)
+        dw             (cmpxchgInstr)
+        dw             (CommentDirective)
+        dw             (fcmovbeInstr)
+        dw             (fcmovnbInstr)
+        dw             (fcmovneInstr)
+        dw             (fcmovnuInstr)
+        dw             (fdecstpInstr)
+        dw             (fincstpInstr)
+        dw             (fldenvdInstr)
+        dw             (fldenvwInstr)
+        dw             (fnldenvInstr)
+        dw             (fnrstorInstr)
+        dw             (fnsavedInstr)
+        dw             (fnsavewInstr)
+        dw             (fnstenvInstr)
+        dw             (frndintInstr)
+        dw             (frstordInstr)
+        dw             (frstorwInstr)
+        dw             (fsincosInstr)
+        dw             (fstenvdInstr)
+        dw             (fstenvwInstr)
+        dw             (fucomipInstr)
+        dw             (fucomppInstr)
+        dw             (fxrstorInstr)
+        dw             (fxtractInstr)
+        dw             (fyl2xp1Instr)
+        dw             (IncludeDirective)
+        dw             (ldmxcsrInstr)
+        dw             (loadallInstr)
+        dw             (loopdnzInstr)
+        dw             (loopdnzInstr)
+        dw             (monitorInstr)
+        dw             (movddupInstr)
+        dw             (movdq2qInstr)
+        dw             (movhlpsInstr)
+        dw             (movlhpsInstr)
+        dw             (movntdqInstr)
+        dw             (movntpdInstr)
+        dw             (movntpsInstr)
+        dw             (movq2dqInstr)
+        dw             (paddsiwInstr)
+        dw             (paddusbInstr)
+        dw             (padduswInstr)
+        dw             (pavgusbInstr)
+        dw             (pcmpeqbInstr)
+        dw             (pcmpeqdInstr)
+        dw             (pcmpeqwInstr)
+        dw             (pcmpgtbInstr)
+        dw             (pcmpgtdInstr)
+        dw             (pcmpgtwInstr)
+        dw             (pdistibInstr)
+        dw             (pfcmpeqInstr)
+        dw             (pfcmpgeInstr)
+        dw             (pfcmpgtInstr)
+        dw             (pfpnaccInstr)
+        dw             (pfrsqrtInstr)
+        dw             (pmaddwdInstr)
+        dw             (pmulhrwInstr)
+        dw             (pmulhuwInstr)
+        dw             (pmuludqInstr)
+        dw             (pmvgezbInstr)
+        db             options,11 ;private
+        dw             (pshufhwInstr)
+        dw             (pshuflwInstr)
+        dw             (psubsiwInstr)
+        dw             (psubusbInstr)
+        dw             (psubuswInstr)
+        dw             (rsqrtpsInstr)
+        dw             (rsqrtssInstr)
+        dw             (SegmentDirective)
+        dw             (SegmentDirective)
+        db             Lang,3   ;StdCall
+        dw             (stmxcsrInstr)
+        db             operator,13  ;strleft
+        db             operator,14  ;strscan
+        dw             (syscallInstr)
+        dw             (sysexitInstr)
+        dw             (typedefDirective)
+        dw             (ucomisdInstr)
+        dw             (ucomissInstr)
+even 2
+        db  0
+Keyword8:
+Keyword8a:
+        DD             02189C9E5h ;addsubpd
+        DD             04B39E917h ;addsubps
+Keyword8b:
+Keyword8c:
+        DD             056FE4A55h ;cmpneqpd
+        DD             03C4E6AA7h ;cmpneqps
+        DD             0D21863C7h ;cmpneqsd
+        DD             0BFC5872Ch ;cmpneqss
+        DD             0BEF4574Ch ;cmpnlepd
+        DD             0D329B3A7h ;cmpnleps
+        DD             02D8DC225h ;cmpnlesd
+        DD             0405026CEh ;cmpnless
+        DD             09CD5159Ah ;cmpnltpd
+        DD             0F6653568h ;cmpnltps
+        DD             082A3E0C2h ;cmpnltsd
+        DD             0EF7E0429h ;cmpnltss
+        DD             06F9D12D0h ;cmpordpd
+        DD             00240F63Bh ;cmpordps
+        DD             071EBE788h ;cmpordsd
+        DD             01B5BC77Ah ;cmpordss
+        DD             069932252h ;cvtdq2pd
+        DD             0044EC6B9h ;cvtdq2ps
+        DD             016DDFD12h ;cvtpd2dq
+        DD             0C27C1724h ;cvtpd2pi
+        DD             038732A47h ;cvtpd2ps
+        DD             0D6632B76h ;cvtpi2pd
+        DD             094D1B31Ah ;cvtpi2ps
+        DD             03D8F151Eh ;cvtps2dq
+        DD             0B625ACA8h ;cvtps2pd
+        DD             021F77520h ;cvtps2pi
+        DD             05EA620CCh ;cvtsd2si
+        DD             0AA72959Dh ;cvtsd2ss
+        DD             002CB98C0h ;cvtsi2sd
+        DD             06F167C2Bh ;cvtsi2ss
+        DD             03475D65Fh ;cvtss2sd
+        DD             0A4CACBCEh ;cvtss2si
+Keyword8d:
+Keyword8e:
+Keyword8f:
+        DD             09C436955h ;fcmovnbe
+        DD             0C886DA09h ;fnstenvd
+        DD             0A236FAFBh ;fnstenvw
+        DD             09F31D322h ;function
+Keyword8g:
+Keyword8h:
+Keyword8i:
+Keyword8j:
+Keyword8k:
+Keyword8l:
+Keyword8m:
+        DD             02C27BE4Dh ;maskmovq
+        DD             0C81AC09Eh ;movmskpd
+        DD             0A5C72475h ;movmskps
+        DD             0122D3FCAh ;movshdup
+        DD             03040F480h ;movsldup
+Keyword8n:
+Keyword8o:
+Keyword8p:
+        DD             016ACE408h ;packssdw
+        DD             0C6A642DFh ;packsswb
+        DD             0A2F2E74Dh ;packuswb
+        DD             0CF63F4CAh ;pfrcpit1
+        DD             0B864C45Ch ;pfrcpit2
+        DD             0C96660C9h ;pfrsqit1
+        DD             0A8E26E48h ;pmachriw
+        DD             0A048748Fh ;pmovmskb
+        DD             083470FF8h ;pmulhriw
+        DD             017AEA10Dh ;prefetch
+Keyword8q:
+Keyword8r:
+Keyword8s:
+        DD             0E1871240h ;strlcase
+        DD             098305A02h ;strright
+        DD             05CB942ACh ;strucase
+        DD             08B0335F9h ;sysenter
+Keyword8t:
+Keyword8u:
+        DD             0323CD6A2h ;unpckhpd
+        DD             0588CF650h ;unpckhps
+        DD             0F4F86C4Ah ;unpcklpd
+        DD             0992588A1h ;unpcklps
+Keyword8v:
+Keyword8w:
+Keyword8x:
+Keyword8y:
+Keyword8z:
+Keyword8desc:
+        dw             (addsubpdInstr)
+        dw             (addsubpsInstr)
+        dw             (cmpneqpdInstr)
+        dw             (cmpneqpsInstr)
+        dw             (cmpneqsdInstr)
+        dw             (cmpneqssInstr)
+        dw             (cmpnlepdInstr)
+        dw             (cmpnlepsInstr)
+        dw             (cmpnlesdInstr)
+        dw             (cmpnlessInstr)
+        dw             (cmpnltpdInstr)
+        dw             (cmpnltpsInstr)
+        dw             (cmpnltsdInstr)
+        dw             (cmpnltssInstr)
+        dw             (cmpordpdInstr)
+        dw             (cmpordpsInstr)
+        dw             (cmpordsdInstr)
+        dw             (cmpordssInstr)
+        dw             (cvtdq2pdInstr)
+        dw             (cvtdq2psInstr)
+        dw             (cvtpd2dqInstr)
+        dw             (cvtpd2piInstr)
+        dw             (cvtpd2psInstr)
+        dw             (cvtpi2pdInstr)
+        dw             (cvtpi2psInstr)
+        dw             (cvtps2dqInstr)
+        dw             (cvtps2pdInstr)
+        dw             (cvtps2piInstr)
+        dw             (cvtsd2siInstr)
+        dw             (cvtsd2ssInstr)
+        dw             (cvtsi2sdInstr)
+        dw             (cvtsi2ssInstr)
+        dw             (cvtss2sdInstr)
+        dw             (cvtss2siInstr)
+        dw             (fcmovnbeInstr)
+        dw             (fnstenvdInstr)
+        dw             (fnstenvwInstr)
+        dw             (FunctionDirective)
+        dw             (maskmovqInstr)
+        dw             (movmskpdInstr)
+        dw             (movmskpsInstr)
+        dw             (movshdupInstr)
+        dw             (movsldupInstr)
+        dw             (packssdwInstr)
+        dw             (packsswbInstr)
+        dw             (packuswbInstr)
+        dw             (pfrcpit1Instr)
+        dw             (pfrcpit2Instr)
+        dw             (pfrsqit1Instr)
+        dw             (pmachriwInstr)
+        dw             (pmovmskbInstr)
+        dw             (pmulhriwInstr)
+        dw             (prefetchInstr)
+        db             operator,10  ;strlcase
+        db             operator,15  ;strright
+        db             operator,11  ;strucase
+
+        dw             (sysenterInstr)
+        dw             (unpckhpdInstr)
+        dw             (unpckhpsInstr)
+        dw             (unpcklpdInstr)
+        dw             (unpcklpsInstr)
+even 2
+        db  0
+Keyword9:
+Keyword9a:
+Keyword9b:
+Keyword9c:
+        DD             07716928Ch ;cmpxchg8b
+        DD             0C7E41FE4h ;cvttpd2dq
+        DD             03B474D4Ch ;cvttpd2pi
+        DD             07FFB034Ch ;cvttps2dq
+        DD             0AB5AE97Ah ;cvttps2pi
+        DD             0DAD034A4h ;cvttsd2si
+        DD             07BE07880h ;cvttss2si
+Keyword9d:
+Keyword9e:
+Keyword9f:
+Keyword9g:
+Keyword9h:
+Keyword9i:
+        DD             0FD0BCDEDh ;includerc
+Keyword9j:
+Keyword9k:
+Keyword9l:
+Keyword9m:
+Keyword9n:
+Keyword9o:
+Keyword9p:
+        DD             0C7C00615h ;prefetchw
+        DD             027C48FC4h ;punpckhbw
+        DD             01B77BB8Dh ;punpckhdq
+        DD             0A6F94A8Ch ;punpckhwd
+        DD             048197C72h ;punpcklbw
+        DD             0192E1FEDh ;punpckldq
+        DD             0442BD90Bh ;punpcklwd
+Keyword9q:
+Keyword9r:
+Keyword9s:
+Keyword9t:
+Keyword9u:
+Keyword9v:
+Keyword9w:
+Keyword9x:
+Keyword9y:
+Keyword9z:
+Keyword9desc:
+        dw             (cmpxchg8bInstr)
+        dw             (cvttpd2dqInstr)
+        dw             (cvttpd2piInstr)
+        dw             (cvttps2dqInstr)
+        dw             (cvttps2piInstr)
+        dw             (cvttsd2siInstr)
+        dw             (cvttss2siInstr)
+        dw             (IncludeRCDirective)
+        dw             (prefetchwInstr)
+        dw             (punpckhbwInstr)
+        dw             (punpckhdqInstr)
+        dw             (punpckhwdInstr)
+        dw             (punpcklbwInstr)
+        dw             (punpckldqInstr)
+        dw             (punpcklwdInstr)
+even 2
+        db  0
+Keyword10:
+Keyword10a:
+Keyword10b:
+Keyword10c:
+        DD             07005D71Bh ;cmpunordpd
+        DD             01AB5F7E9h ;cmpunordps
+        DD             0691EE65Ah ;cmpunordsd
+        DD             004C302B1h ;cmpunordss
+        DD             0D77F5494h ;cmpxchg16b
+Keyword10d:
+Keyword10e:
+Keyword10f:
+Keyword10g:
+Keyword10h:
+Keyword10i:
+        DD             0AE8FC030h ;includebin
+        DD             0D49CA198h ;includelib
+Keyword10j:
+Keyword10k:
+Keyword10l:
+Keyword10m:
+        DD             0B0643C68h ;maskmovdqu
+Keyword10n:
+Keyword10o:
+Keyword10p:
+        DD             0CCBCB0A3h ;prefetcht0
+        DD             052D82500h ;prefetcht1
+        DD             025DF1596h ;prefetcht2
+Keyword10q:
+Keyword10r:
+Keyword10s:
+Keyword10t:
+Keyword10u:
+Keyword10v:
+Keyword10w:
+Keyword10x:
+Keyword10y:
+Keyword10z:
+Keyword10desc:
+        dw             (cmpunordpdInstr)
+        dw             (cmpunordpsInstr)
+        dw             (cmpunordsdInstr)
+        dw             (cmpunordssInstr)
+        dw             (CmpXChg16BInstr)
+        dw             (IncludeBinDirective)
+        dw             (IncludeLibDirective)
+        dw             (maskmovdquInstr)
+        dw             (prefetcht0Instr)
+        dw             (prefetcht1Instr)
+        dw             (prefetcht2Instr)
+even 2
+        db  0
+Keyword11:
+Keyword11a:
+Keyword11b:
+Keyword11c:
+Keyword11d:
+Keyword11e:
+Keyword11f:
+Keyword11g:
+Keyword11h:
+Keyword11i:
+Keyword11j:
+Keyword11k:
+Keyword11l:
+Keyword11m:
+Keyword11n:
+Keyword11o:
+Keyword11p:
+        DD             03858ED6Bh ;prefetchntp
+Keyword11q:
+Keyword11r:
+Keyword11s:
+Keyword11t:
+Keyword11u:
+Keyword11v:
+Keyword11w:
+Keyword11x:
+Keyword11y:
+Keyword11z:
+Keyword11desc:
+        dw             (prefetchntaInstr)
+

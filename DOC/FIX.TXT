@@ -1,0 +1,25 @@
+VERSION 7.2
+===========
+22  Jan 2007    No longer hangs if non-alphanumeric characters are used in
+                the source file.
+24  Jan 2007    Added the comment directive.
+                The assembler no longer returns an error if a symbol is defined
+                twice and the addresses are the same.
+25  Jan 2007    Added the IncludeBin directive
+
+VERSION 7.3
+===========
+6   Mar 2007    Added SHxD instructions and a fully functional IMUL
+                Fixed some 64-Bit instructions
+7   Mar 2007    Added all the FPU instructions
+8   Mar 2007    Fixed OMF16 code generation.
+9   Mar 2007    Added the REPEAT Macro
+10  Mar 2007    Added the INVOKE Macro
+12  Mar 2007    PTR now used to force an address operand. e.g PTR 100 = [100]
+16  Mar 2007    Fixed RETW bug and added RETFW,D,Q.
+
+Version 14.1 (2014)
+===================
+
+Added PE64 support
+

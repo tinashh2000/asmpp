@@ -1,0 +1,23 @@
+-   A block is copied into the text segment as it is
+-   Macros can not be nested
+-   If nested repeats are nested, they are found when unrolling. When such
+    occurances are detected, the assembler must not copy the block into text
+    memory. Instead it checks to see the source of the block. If the source
+    is text memory, the block saves the current source and the new source
+    becomes the block. This goes on until the last repeat block.
+    It is executed and it returns control to the previous block until the
+    original source is given the chance to execute.
+
+-   Macros,EQU and FUNCTIONS are stored in the text segment. In the symbol
+    table, the MacroID is used for TYPE. The 32-Bit field holds the
+    far address of the macro data.
+
+-   When ever the assembler finds these entries, it has to go to the data
+    to know the type. After the type may follow a counter if the type is a
+    repeat macro.
+
+-   When a repeat is detected. The assembler uses the last 4096-8192KB to
+    expand the block as necessary. The assembler places termination bytes at
+    the end. When the assembler reaches the end, the file procedure first
+    checks too see if macros are in force. If so more input is not fetched
+    from disk but from the text buffer.

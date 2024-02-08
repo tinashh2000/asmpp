@@ -1,0 +1,65 @@
+ASM++ (African Assember). Version 13.01 (14-08-2015 23:22:22:39)
+(C)opyright 2006 Tinashe Mutandagayi (tinashh2000@yahoo.com)
+
+Input file:C:\A16\EX\MINGO\ass.asm
+*Error** C:\A16\EX\MINGO\ass.asm (170) Invalid number
+*Error** C:\A16\EX\MINGO\ass.asm (178) Invalid number
+*Error** C:\A16\EX\MINGO\ass.asm (181) Invalid number
+*Error** C:\A16\EX\MINGO\ass.asm (184) Invalid use of operator(s)
+*Error** jrasm.asm (31) Invalid keyword use:uses
+*Error** jrasm.asm (63) Invalid keyword use:uses
+*Error** jrasm.asm (100) Invalid keyword use:uses
+*Error** jrasm.asm (128) Invalid keyword use:uses
+*Error** jrasm.asm (152) Invalid keyword use:uses
+*Error** jrasm.asm (168) Invalid keyword use:uses
+*Error** jrasm.asm (176) Invalid keyword use:uses
+*Error** jrasm.asm (187) Invalid keyword use:uses
+*Error** jrasm.asm (196) Invalid keyword use:uses
+*Error** jrasm.asm (214) Invalid keyword use:uses
+*Error** jrasm.asm (242) Invalid keyword use:uses
+*Error** jrasm.asm (254) Invalid keyword use:uses
+*Error** jrasm.asm (274) Invalid keyword use:uses
+*Error** jrasm.asm (293) Invalid keyword use:uses
+*Error** jrasm.asm (311) Invalid keyword use:uses
+*Error** jrasm.asm (335) Invalid keyword use:uses
+*Error** jrasm.asm (342) Invalid keyword use:uses
+*Error** jrasm.asm (349) Invalid keyword use:uses
+*Error** jrasm.asm (354) Invalid keyword use:uses
+*Error** jrasm.asm (362) Invalid keyword use:uses
+*Error** jrasm.asm (428) Invalid keyword use:uses
+*Error** jrasm.asm (551) Invalid keyword use:uses
+*Error** jrasm.asm (604) Invalid keyword use:uses
+*Error** jrasm.asm (623) Invalid keyword use:uses
+*Error** jrasm.asm (653) Invalid keyword use:uses
+*Error** jrasm.asm (670) Invalid keyword use:uses
+*Error** jrasm.asm (699) Invalid keyword use:uses
+*Error** jrasm.asm (716) Invalid keyword use:uses
+*Error** jrasm.asm (734) Invalid keyword use:uses
+*Error** jrasm.asm (780) Invalid entry in Expression/Address
+*Error** jrasm.asm (862) Invalid keyword use:uses
+*Error** jrasm.asm (873) Invalid keyword use:uses
+*Error** jrasm.asm (938) Identifier required before keyword
+*Error** jrasm.asm (941) Identifier required before keyword
+*Error** jrasm.asm (943) Identifier required before keyword
+*Error** jrasm.asm (945) Identifier required before keyword
+*Error** jrasm.asm (947) Identifier required before keyword
+*Error** jrasm.asm (949) Identifier required before keyword
+*Error** jrasm.asm (951) Identifier required before keyword
+*Error** jrasm.asm (953) Identifier required before keyword
+*Error** jrasm.asm (955) Identifier required before keyword
+*Error** jrasm.asm (957) Identifier required before keyword
+*Error** jrasm.asm (959) Identifier required before keyword
+*Error** jrasm.asm (961) Identifier required before keyword
+*Error** jrasm.asm (963) Identifier required before keyword
+*Error** jrasm.asm (965) Identifier required before keyword
+*Error** jrasm.asm (971) Identifier required before keyword
+*Error** jrasm.asm (976) Invalid keyword use:db
+*Error** jrasm.asm (978) Identifier required before keyword
+*Error** jrasm.asm (1017) Invalid keyword use:equ
+*Error** jrasm.asm (1025) Invalid number
+*Error** jrasm.asm (1026) Invalid number
+*Error** jrasm.asm (1027) Invalid number
+*Error** jrasm.asm (1029) Invalid keyword use:Seg
+*Error** jrasm.asm (1035) Identifier required before keyword
+
+#Errors: 59, Passes: 1, Symbols used: 277, Lines Processed: 1037

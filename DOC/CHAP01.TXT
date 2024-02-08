@@ -1,0 +1,290 @@
+CHAPTER 1
+
+This chapter introduces ASM++ to you.
+Please note that I am not English so you may find many errors in this
+document. For any such cases I would be more than happy to hear from you.
+
+1.1 INTRODUCTION
+
+ASM++ is a tool used to develop software (programs) that can be executed on
+the Intel x86_64 compatible microprocessors. The assembler itself is designed
+to run on an 8086 CPU. Exceptions may arise because the assembler has never been
+tested on this CPU.
+The assembler is in its early stages with version 6.89 being the first
+release though other versions preceed it. Version 7.2 and 7.3 are the 2007
+versions of this assembler.
+
+The assembler has three methods of generating code which are:
+
+    1.  Maximum code size optimization. This method is good. It optimizes all
+        jumps and displacements to take the smallest code
+
+    2.  Two pass* code generation. In this method, the assembler does two or
+        more passes only when forward references are made. The assembler
+        may exceed two passes if the code sizes produced in the first and
+        second passes differ or when a label's address for pass one is
+        different from that of pass 2
+
+    3.  The assembler can enter all information about forward references.
+        It resolves everything according to the information it has so it goes
+        through the source code once.
+
+*Each round that the assembler goes through your source code is called a pass
+ in this manual and in the assembler.
+
+The assembler has been designed to:
+
+    1.  Produce code faster than most assemblers since most assemblers are slow.
+    2.  Use as little memory as possible (at least 196KB)
+    3.  Support the Intel 8086 compatible microprocessors
+
+Any of the above may fail and I would be happy to hear about such exceptions.
+
+1.2 HISTORY
+
+My first attempt to make an assembler was when I was 16 in the last year
+of my O'Level (GCE equivalent). I was using a 386 laptop at that time.
+The laptop had 4MB RAM which could be used as a disk. The hard drive of
+that laptop was damaged so I used about 2MB of the RAM as disk. I made it
+in QBASIC and it was the slowest assembly I ever made. It was designed
+on very strange implementations where the a variable defined as 'x DB vv'
+would be entered in the symbol table as 'x BYTE vv'. This was a very bad
+implementation (It was good at that time!). The project stopped when the
+RAM drive crashed. I made another attempt in the beggining of 2005 on a
+borrowed computer. The owner took his machine when the assembler could
+assemble instructions which take one or no operands. I dont know what
+happened to the assembler but the hard drive crashed later.
+I decided to make an C++ compiler in 2006 and because a compiler needs an
+internal assembler, I decided to make my own assembler. Before I could
+start I changed my plan so I could make an assembler that I could use to
+develop a protected mode operating system.
+I made ASM++ v6.5 in May 2006. I did not complete it because the
+implementation I chose was very bad and slow. The assembler also had many
+errors. I used to compare my assembler with A86 and it was very slow. Since
+I was developing on a 386 machine, I could easily see fast and slow assemblers
+I made ASM++ 6.67 in July 2006. When I finished the assembler, it could
+reassemble its self - with errors. The very first complete version had
+errors in the output. I frequently go back to ASM++ v6.67 to correct errors
+and to make improvements. I recently added the FUNCTION keyword and
+conditional assembly. The FUNCTION is my own invention to assemblers and
+I recommend that whoever is going to use the in their assemblers must
+respect that. ASM++ 6.67 can now reassemble itself slowly and accurately.
+I no longer assemble it with itself, I use version  6.89
+Since ASM++ 6.67 was slower than A86 I decided to make another 386 assembler
+which was faster. I also realized that ASM++ v6.67 could not produce correct
+protected mode output because I thought that 32-Bit operands always require
+an operand (66h) override and/or an address (67h) override regardless of
+the address mode specified. This means that MOV EAX,[10000000h]
+would be 67 66 A1 00 00 00 10 hex even when producing 32-Bit protected mode
+output. I came up with ASM++ 6.8 which was slightly faster than ASM++ v6.67.
+It could produce good protected mode output and MMX/SSE instructions.
+It was slower than A86 and I realized that AMD64 and EM64T came with a
+new 64-Bit addressing mode. I stopped working on ASM++ v6.8 to start on a
+64-Bit compliant assembler. Thus ASM++ v6.89 was born. After 6.89 I improved
+the assembler and came out with a 2007 February Version 7.2 and March Version
+7.3.
+
+
+1.3 LICENSE AGREEMENT
+
+I DO NOT TAKE RESPONSIBILITY FOR ANY DAMAGES, DATA LOSS OR DEATHS WHICH
+MAY RESULT FROM THE USE OF THIS SOFTWARE. WHILE POSSIBILITIES OF THE ABOVE
+EXCEPTIONS ARE BELOW 0.000000000001 I RECOMMEND THAT YOU REPORT ALL THE
+ERRORS YOU FIND IN THIS SOFTWARE TO THE ADDRESSES GIVEN BELOW.
+
+Distribution of this software is allowed to any individuals who are willing
+to use it as long as it is not: disassembled, modified, sold, used for
+commercial purposes or used in organizations. If any exceptions are to be
+made to the above restrictions, I recommend that you contact me on the
+addresses given below IN ADVANCE.
+If programs made with this software are to be sold, no payment is done to me
+but I would be more than happy to hear about it.
+
+While this tool is free, any breech of any of the terms above will result
+in apropriate legal action against you. For any legal actions, you will
+have to pay for the costs of legal steps taken, on top of a fine for abuse
+of this software.
+
+
+1.4 ABOUT THE DEVELOPER
+
+My name is Tinashe Mutandagayi. A young man who specializes in low-level
+systems computer programming. I am turning 19 years in May (2007). I started
+programming when I was about 12. I didn't realize at this time that using
+MS-Visual Basic (which comes with MS-Office applications) was infact
+programming. I could make funny MsgBox oriented games. I also did HTML programming with the help
+of MS-Word. I remember giving some notes about creating HTML pages to my mother's friend
+who had been one of the best computer students in their school days. My mother
+could not believe it!
+I started QBASIC programming when I was 13 on a very bad day. In three days
+I could help people who did QBASIC at school. I used to study anything I
+came across in computers. My interest for PASCAL and C arose when I
+was about 14. I had been reading a computer science text book when I saw a C++
+source program. When I was at school I could not get access to a computer, so
+I would write source programs on paper. I would think hard and write
+something and try to execute it on paper. I designed a language for GUI
+programming. I have lost much of the stuff but I might work on it in the
+future. I could only code in PASCAL at the time. As time went on I matured until I graduated to
+assembly. I started it at 16 and within weeks I attempted developing an
+assember which I made in QBASIC.
+I lost my assembler and I did not attempt to do it again. I concentrated on some other
+assembly stuff but I was limited by the resources I had. In 2006 I was studying C++ when I desired to make my own C++
+compiler. I knew that a compiler needs to have an internal assembler so I
+decided to make ASM++ v6.5 in May. At first I did not have a computer so I
+designed it on paper, doing some optimizations and thinking of how I would
+go through the hard parts. I managed to dust of one of my 386 machines and
+a monochrome monitor which was bought with the first computer my mother owned.
+The assembler made me happy in that it was my first but It was slow and had many errors. Besides I used to compare its
+speed with A86 and It was very slow. I decided to make ASM++ v6.67 which was
+slow too. It was my first assembler to reassemble itself.
+See the HISTORY Section for more about the other assemblers before v6.89.
+I wanted to make a C++ compiler but before I started the project, I decided
+to make a customizable assembler that I could use to make a protected mode
+operating system.
+
+I attempted to make MTDOS using ASM++ 6.89 which I didnt complete because of
+a sick error.
+My second attempt was successful because MT-DOS is running and I am adding
+flesh to it.
+I have started making a 386+ 32-Bit OS (24 November 2006) which I think will
+be out in the some time of next year. It runs in 32-Bit protected mode for now and
+some of the code included in the examples is extracted from the OS's modules.
+I have begun making a debugger which works with my assembler.
+
+
+1.5 CONTACT DETAILS
+
+You can contact me on tinashh2000@yahoo.com,
+
+Tinashe Mutandagayi
+3653/31 Mzari Extension
+Chinhoyi
+Zimbabwe
+Africa
+Earth
+Universe
++263 736931931
++263 773469509
+
+1.6 REQUIREMENTS
+
+Following is a list of the minimum requirements of ASM++ v.89
+
+1.  An Intel 8086 compatible computer
+2.  MS-DOS 4.0+ or MTDOS 7.2+
+3.  196KB memory
+
+I am not quite sure of whether an 8086 computer will cause problems or not but
+the assembler has been designed using strictly 8086 instruction. I have only
+tested it on a 386,Pentium 3 and 4 computers running DOS and
+MS-Windows 98,2000 and XP.
+
+1.7 MANUAL GUIDELINES
+
+1.7.1   Syntax Format
+
+When is giving you syntax about a directive, you may find square brackets '[]'
+enclosing an item or '<>' brackets. They mean two things. The square brackets
+mean that whatever is enclosed in them is optional. The
+'<>' brackets show that the item enclosed is COMPULSORY so it has to be there.
+You may also find a '|' seperating two items. This seperator means OR but not
+both. Anything that lies outsize the brackets must appear in the source file
+as it is.
+
+If for example the syntax is:  <Symbol Name> PROC [NEAR|FAR]
+this means that the Symbol Name MUST always be present. The PROC must be
+appear just as it is. After the PROC, NEAR or FAR can be used but not both of
+them.
+
+1.7.2   Number Bases
+
+This manual expresses numbers in random number bases especially in examples.
+These can be binary,decimal and hexadecimal. Every number with a leading
+'0x' is hexadecimal. A number with a trailing 'b' or 'h' or 'd' is
+binary (base 2), hexadecimal (base 16) and decimal (base 10) respectively.
+A number can be seperated with underscores ('_') to make them more readable.
+Treat such numbers as if they had no underscores. Any other number without
+the above is decimal. Below are examples of each number base:
+
+    0x1020  -   Valid hexadecimal number
+    1020h   -   Valid hexadecimal number
+    1020    -   Valid decimal number
+    1020d   -   Valid decimal number
+    1010b   -   Valid binary number
+    10_10b  -   Valid binary number
+
+1.7.3   Data Sizes
+
+In this manual, different data sizes are specified using their formal names
+and below is a list of sizes to expect. In case you dont know, BIT is the
+short for BInary digiT. The smallest data item is a BIT but the
+computer's smallest addressable is a byte. A byte is group of 8-bits.
+A byte can be called a character.
+
+             NUMBER   NUMBER
+DATA TYPE    OF BITS  OF BYTES   RANGE
+
+BYTE          8             1     0-255
+WORD          16            2     0-65,535
+DWORD         32            4     0-4,294,967,295
+FWORD/PWORD   48            6     0-281,474,976,710,655
+QWORD         64            8     0-18,446,744,073,709,551,615
+TWORD/TBYTE   80            10    0-1,208,925,819,614,629,174,706,175
+DQWORD/OWORD  128           16    0-340,282,366,920,938,463,463,374,607,431,768,211,455
+PARA(GRAPH)   128           16    0-340,282,366,920,938,463,463,374,607,431,768,211,455
+PAGE          2048          256   Range too large.
+
+1.7.4   Word Meanings
+
+Below is a brief explanation of some words in this manual you may not be
+familiar with. I expect a true assembly programmer to understand them
+If any words are misused in this manual/assembler, please let me know.
+
+8086
+The first microprocessor of the x86 architecture family made by a company
+called Intel.
+
+VARIABLE
+A container which carries data which can be changed
+
+CONSTANT
+A container that carries data which can not be changed
+
+MOD
+Short for MODULUS. It is an operator which performs division and returns the
+remainder rather than the quotient.
+
+SOURCE FILE
+The file(s) that you give to the assembler to work on
+
+OUTPUT FILE
+The file(s) that the assembler produces from your source code
+
+KEYWORD
+A word that is has special meaning to the assembler.
+
+INSTRUCTION
+A word that has meaning to the computer (CPU). It is identified by the
+assembler and processed into a form that is understood by the computer.
+Instructions tell the computer what to do.
+
+INSTRUCTION POINTER
+A memory address where the current instruction is intended to be executed
+from. It may be different from the address at which the instruction will
+be resident.
+
+DIRECTIVE
+A keyword that tells the assembler what to do and such keywords do not
+produce any code though they help to produce code.
+
+PASS
+The assembler goes through your source code and sometimes more than once.
+A pass is each round that the assembler goes through your source
+code. If it reads it for the first time, it is in the first pass, if it goes
+through your source code again, its the second pass and so on.
+
+STRING
+A string is a sequence of one or more characters usually enclosed in quotes
+
+OPTIMIZE
+Improve or make better.

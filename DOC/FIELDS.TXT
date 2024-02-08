@@ -1,0 +1,304 @@
+SYM_PUBLIC		=	0x10
+SYM_EXTERNAL	=	0x20
+SYM_EXTENDED	=	0x40
+SYM_UNDEFINED	=	0x80
+
+Flags
+Bit
+7   -   Undefined
+6   -   Extended
+5   -   External
+4   -   Public
+3:0 -   Type
+
+SYM_FWDREFMADE	=	0x01
+SYM_FWDREF		=	0x02
+SYM_UNKNOWNTYPE	=	0x04
+SYM_RELOCNUM	=	0x08
+
+ASM_LMREG		=	0x10
+ASM_MEMOP		=	0x20
+ASM_OPSIZE		=	0x40
+ASM_SEGREG		=	0x80
+
+ASM_RAWQUOTES			=	0x01
+ASM_DONTFORCEADDRESS	=	0x02
+ASM_DONTDEFINESYMBOLS	=	0x04
+ASM_DISABLESTRINGS		=	0x08
+ASM_RELOCMADE			=	0x10
+ASM_LOCALSYMBOL			=	0x20
+ASM_DISABLERELOC		=	0x40
+
+Settings
+Bit    0   Symbol reference is made (whether forward or not)
+       1   Symbol is forward referenced
+       2   The first operand is an unknown symbol. Change the type
+       3   Relocation is part of number
+       4   Long mode Register has been used
+       5   Set if a memory operand is present
+       6   An op size is just before an operand. Cleared on next GetOperand
+       7   A segment address was given just before an operand. Cleared on next
+       8   Pass quotes as they are
+       9   Dont force an address if an number is after an operand size spec
+       10  Don't define symbols if they are not found
+       11  Disable use of strings
+       12  Relocation was made in this call
+       13  Local symbol spec
+       14  Disable any relocation
+
+
+RF_FILEFIRSTREF		=	0x0001
+RF_MODEFIRSTREF		=	0x0002
+RF_FILEREF			=	0x0004
+RF_FIXINGREF		=	0x0008
+RF_NEEDSANOTHERPASS	=	0x0010
+RF_OUTFILEWRITTEN	=	0x0020
+RF_NOLINENUMBERS	=	0x0040
+RF_UNINITDATAPRESENT	=	0x0080
+
+RF_FILEPTRDWORD		=	0x01
+RF_LINENUMDWORD		=	0x02
+RF_OUTFILEPOSDWORD	=	0x04
+RF_INITORGFOUND		=	0x08
+RF_CMDOUTFILE		=	0x10
+RF_OUTFILEPRESENT	=	0x20
+
+RefFlags
+Bit    0   First reference in this file
+       1   First reference since addr mode changed
+       2   Some references are on file
+       3   References are being resolved
+       4   Needs second pass or needs resolving
+       5   OutFile has been written onto
+       6   Dont enter line numbers
+       7   Uninitialized data is present
+	   
+       8   File position pointer is dword
+       9   Line number value is dword
+       10  Out file position pointer is dword
+       11  An initial ORG has been encountered
+       12  An output file was specified in cmdline
+       13  Dont create an output file. Its already there
+
+PF_ADDSP		=	0x01		;SP is added after function call
+PF_PUSHREVERSE	=	0x02		;args in reverse order
+PF_16BIT		=	0x04		;16-bit mode
+PF_ARGSPRESENT	=	0x08		;Arguments are present
+PF_LOCALPRESENT	=	0x10		;Local vars are present
+PF_FARPROC		=	0x20	;Far procedure
+PF_64BIT		=	0x40	;64-bit mode
+PF_CANDOLOCAL	=	0x80
+
+PF_XADDSP		=	0x01
+PF_XPUSHREVERSE	=	0x02
+PF_TEMPADDSP	=	0x04
+PF_TEMPPUSHREVERSE	=	0x08
+
+ProcFlags
+0   -   Proc's add SP
+1   -   Proc's push reverse
+2   -   Mode was 16-Bit
+3   -   Arguments are present
+4   -   Locals are present
+5   -   This is a far procedure
+6   -   Mode was 64-Bit
+7   -   Can do locals
+8   -   Add SP
+9   -   Push reverse
+10  -   Temp Add SP ;Is copied from original by CALL and INVOKE
+11  -   Temp Push reverse
+12  -
+13  -
+14  -
+15  -
+
+OF_DATAWRITTEN	=	0x01
+OF_ENDADDRESS	=	0x02
+
+OF_SUPPORTSIMPORT	=	0x01
+OF_SUPPORTSEXPORT	=	0x02
+
+OutFlags
+0   -   Data was written to buffer/disk
+1   -   End address has been specified
+2   -
+3
+4
+5
+6
+7
+8   -   Supports import (PE,COFF)
+9   -   Supports export (PE,COFF)
+
+REL_PRESENT		=	0x01
+REL_OFADDRESS	=	0x02
+REL_32BIT		=	0x08
+REL_ISPTR		=	0x10
+REL_ISEXTRN		=	0x20
+REL_ISRELATIVE	=	0x40
+REL_ISSEG		=	0x80
+
+REL_8BIT		=	0x01
+
+RelocFlags
+0   -   Relocation is present
+1   -   Relocation is part of an address
+2   -
+3   -   Relocation is 32-Bit
+4   -   Relocation is pointer
+5   -   Relocation is external
+6   -   Relocation is relative
+7   -   Relocation is segment
+8   -   Relocation is 8-Bit
+
+AsmFlags
+
+PEF_CODEBASE	=	0x01
+PEF_DATABASE	=	0x02
+PEF_IMPORT		=	0x04
+PEF_EXPORT		=	0x08
+PEF_THISISIMPORT	=	0x10
+PEF_THISISEXPORT	=	0x20
+PEF_THISDATA	=	0x40
+PEF_THISCODE	=	0x80
+
+PEF_RELOC			=	0x01
+PEF_RELOCSECTION	=	0x02
+
+PEF_RESOURCE		=	0x10
+PEF_THISISRESOURCE	=	0x20
+
+peFlags
+
+0   -   Code base exists
+1   -   Data base exists
+2   -   Import exists
+3   -   Export exists
+4   -   This is import
+5   -   This is export
+6   -   This is data
+7   -   This is code
+8   -   There are relocations
+9   -   Relocation section was already added to the numsections
+10
+11
+12  -   Resource Exists
+13  -   This is Resource
+14
+15
+
+Library importing:
+
+IMPORT  "LIBRARY"
+    AliasModuleName,"RealModuleName" or Ordinal
+    .
+    .
+    .
+ IMPORT "LIBRARY
+    .
+    .
+    .
+END
+
+SEGMENT Attributes:
+
+code
+data
+iopl
+movable
+preload
+readable
+writeable
+shareable
+conforming
+executable
+discardable
+notpageable
+
+tin SEGMENT ".code" "code executable readable"
+tin SEGMENT ".code" "code e r w d n s
+
+IMPORT  "LIBRARY"
+    Name,"RealName"
+    Name,"RealName"
+    .
+    .
+    .
+ IMPORT "LIBRARY"
+    Name,"RealName"
+    .
+    .
+    .
+ .
+ .
+ .
+END
+
+EXPORT "LIBRARY"
+    Name,"RealName"
+    Name,"RealName"
+END
+    
+LibLen,LibName
+
+    DD Crc
+    DB SymLen,
+    DB 0, DW Ordinal
+    DB ModuleLen,DUP Module
+
+    DW  SymPos,SymSeg
+    DB  0
+    DB  0,DW Ordinal
+    DB  ModuleLen,DUP Module
+
+LibNamesOffset=(5*4)
+FirstRVAsOffset=0
+OrgRVAsOffset=0
+ModuleNamesLen=0
+do
+    Lib=GetLib
+
+    LibraryNamesLen=+Lib.Length+1   // Allow for the null terminator
+    FirstRVAsLen=+4                 // Allow for the last null RVA entry
+    OrgRVAsLen=+4
+    DescLen=+(5*4)
+    DirectoryLen=+(5*4)+8+Lib.Length+1
+    do while !(instruction)
+        temp=GetID
+    if !temp.DEF            // If defined    
+        DD  temp.Crc
+        DB  temp.SymLen
+    else
+        DW  temp.SymPos
+        DW  temp.SymSeg
+        DB  0               // SymLen=0 to indicate no Crc
+    endif
+    
+    Module=GetModule
+    
+    if Module=Ordinal
+        DB  0                // ModLen=0 to indicate an ordinal
+        DW  Ordinal
+    else
+        DB  Module.Length
+        DB  DUP Module
+    endif
+    ModuleNamesLen=+Module.Length+1
+    DirectoryLen=+Module.Length+1
+    loop
+while instruction=IMPORT
+
+Relocating:
+
+repeat
+    name=GetLib
+
+if SymLen==0
+    *ptr=(SymSeg,SymPos)
+    ptr.seIDType=DWORD
+    ptr.seIData=CurRVA
+    CurRVA=CurRVA+4
+
+
+Modules
+FromEnd - Module NameRVA,ModuleRVA

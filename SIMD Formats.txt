@@ -1,0 +1,106 @@
+<instr> w,x,y,z
+
+Px_TABLE_TYPE_GENERAL	=	 0
+Px_TABLE_TYPE_MMXSSE	=	 1
+Px_TABLE_TYPE_AVX		=	 2
+Px_TABLE_TYPE_AVX512	=	 3
+
+DB	ttln_nnnn	{type of table}{last entry}{number}
+DB	wwww_xxxx
+DB	yyyy_zzzz
+DB	evmm_izkb	{Evex encoding}{vex encoding}{memorysizes}{imm8}{zmask}{kmask}{broadcast}
+
+VERSION GENERAL and MMXSSE
+==========================
+
+DB	ttlo_onnn
+DB	xxxx_wwww
+DB	0000_yyyy
+
+VERSION AVX
+===========
+
+DB	ttlo_onnn	
+DB	xxxx_wwww
+DB	0000_yyyy
+DB	0vmm_i000	
+
+VERSION AVX512
+==============
+
+DB	ttlr_nnnn	{type of table}{}{last entry}{number}
+DB	xxxx_wwww
+DB	zzzz_yyyy
+DB	evmm_izkb	{Evex encoding}{vex encoding}{memorysizes}{imm8}{zmask}{kmask}{broadcast}
+
+
+{memorysizes} Allowed memory sizes
+0 - Default, 1 = 32-bit, 2 = 64-bit, 3=128-bits
+
+{imm8} Mandatory 8-bit immediate value is the last parameter
+
+{zmask} Zero mask is allowed on first parameter using {z}
+{kmask} k-mask is allowed on first parameter using {k1}
+{broadcast} is allowed on memory parameter - which is usually the last
+
+AVX_ATTR_BROADCAST = 1
+AVX_ATTR_KMASK = 2
+AVX_ATTR_ZMASK = 4
+
+P_REG8	=	0x00
+P_REG16	=	0x01
+P_REG32	=	0x02
+P_REG64	=	0x03
+P_M16	=	0x04	;Mem16 only
+P_M32	=	0x05
+P_M64	=	0x06
+P_SREG	=	0x06
+P_CREG	=	0x06	;Control register
+
+Px_REG32	=	0x00	;eax, ebx
+Px_REG64	=	0x01	;rax, rcx
+Px_M32		=	0x02	;Mem32
+Px_M64		=	0x03	;Mem64
+Px_M128		= 0x04
+Px_M256		= 0x05
+Px_M512		= 0x06
+Px_MMREG	= 0x07	;MMX Reg
+Px_SIMDREG	= 0x07	;In AVX : XMM, YMM, AVX512 : XMM, YMM, ZMM
+Px_XMMREG	= 0x08	;SSE Reg
+Px_YMMREG	= 0x09	;AVX Reg
+Px_ZMMREG	= 0x0A	;AVX512 REG
+Px_MM_M		= 0x0B
+Px_SIMDREG_M= 0x0B	;In AVX : XMM_M, YMM_M, AVX512 : XMM_M, YMM_M, ZMM_M
+Px_XMM_M	= 0x0C	;Reg or memory. Memory with default size. For other sizes use mm field
+Px_YMM_M	= 0x0D
+Px_ZMM_M	= 0x0E
+Px_IMM8		= 0x0F	;Immediate value
+
+
+MMX_MM__MM_M ;(mm0, rm64)
+	
+	DB	(Px_MMREG) OR (Px_MM_M SHL 4)
+	
+SSE_XMM__XMM_M	(xmm0, rm128)
+
+	DB (Px_XMMREG) OR (Px_XMM_M SHL 4)
+	
+
+VEX_XMM__XMM__XMM_M	(xmm0, xmm1, rm128)
+
+	DB Px_XMMREG OR (Px_XMM SHL 4)
+	DB Px_XMM_M OR (Px_NONE SHL 4)
+
+VEX_YMM__YMM__YMM_M	(ymm0, ymm1, rm256)
+
+EVEX_XMM_K_Z__XMM__XMM_M (xmm0, k1, z, xmm1, rm128)
+EVEX_YMM_K_Z__YMM__YMM_M (ymm0, k1, z, ymm1, rm256)
+EVEX_ZMM_K_Z__ZMM__ZMM_M (zmm0, k1, z, zmm1, rm512)
+
+EVEX_XMM_K_Z__XMM__XMM_M_M32 (xmm0, k1, z, xmm1, rm128/m32)
+EVEX_YMM_K_Z__YMM__YMM_M_M32M256 (xmm0, k1, z, xmm1, rm128/m32)
+EVEX_ZMM_K_Z__ZMM__ZMM_M_M32 (xmm0, k1, z, xmm1, rm128/m32)
+
+EVEX_XMM_K_Z__XMM__XMM_M_M64 (xmm0, k1, z, xmm1, rm128/m64)
+EVEX_YMM_K_Z__YMM__XMM_M_M64 (xmm0, k1, z, xmm1, rm256/m64)
+EVEX_ZMM_K_Z__ZMM__XMM_M_M64 (xmm0, k1, z, xmm1, rm512/m64)

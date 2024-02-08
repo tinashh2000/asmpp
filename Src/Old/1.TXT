@@ -1,0 +1,960 @@
+
+00000000 B8004C           mov  ax,4C00h
+00000003 CD21             int  21h
+00000005 37               aaa  
+00000006 D50A             aad  0Ah
+00000008 D520             aad  20h
+0000000A D40A             aam  0Ah
+0000000C D420             aam  20h
+0000000E 12CA             adc  cl,dl
+00000010 13D4             adc  dx,sp
+00000012 6613D4           adc  edx,esp
+00000015 80D30A           adc  bl,byte 0Ah
+00000018 81D12010         adc  cx,word 1020h
+0000001C 6681D240302010   adc  edx,dword 10203040h
+00000023 120E0001         adc  cl,[0100h]
+00000027 13160001         adc  dx,[0100h]
+0000002B 6613060001       adc  eax,[0100h]
+00000030 100E0001         adc  [0100h],cl
+00000034 11160001         adc  [0100h],dx
+00000038 6611060001       adc  [0100h],eax
+0000003D 801600010A       adc  byte [0100h],0Ah
+00000042 811600012010     adc  word [0100h],1020h
+00000048 6681160001403020 adc  dword [0100h],10203040h
+         10
+00000051 02CA             add  cl,dl
+00000053 03D4             add  dx,sp
+00000055 6603D4           add  edx,esp
+00000058 80C30A           add  bl,byte 0Ah
+0000005B 81C12010         add  cx,word 1020h
+0000005F 6681C240302010   add  edx,dword 10203040h
+00000066 020E0001         add  cl,[0100h]
+0000006A 03160001         add  dx,[0100h]
+0000006E 6603060001       add  eax,[0100h]
+00000073 000E0001         add  [0100h],cl
+00000077 01160001         add  [0100h],dx
+0000007B 6601060001       add  [0100h],eax
+00000080 800600010A       add  byte [0100h],0Ah
+00000085 810600012010     add  word [0100h],1020h
+0000008B 6681060001403020 add  dword [0100h],10203040h
+         10
+00000094 22CA             and  cl,dl
+00000096 23D4             and  dx,sp
+00000098 6623D4           and  edx,esp
+0000009B 80E30A           and  bl,byte 0Ah
+0000009E 81E12010         and  cx,word 1020h
+000000A2 6681E240302010   and  edx,dword 10203040h
+000000A9 220E0001         and  cl,[0100h]
+000000AD 23160001         and  dx,[0100h]
+000000B1 6623060001       and  eax,[0100h]
+000000B6 200E0001         and  [0100h],cl
+000000BA 21160001         and  [0100h],dx
+000000BE 6621060001       and  [0100h],eax
+000000C3 802600010A       and  byte [0100h],0Ah
+000000C8 812600012010     and  word [0100h],1020h
+000000CE 6681260001403020 and  dword [0100h],10203040h
+         10
+000000D7 63D0             arpl ax,dx
+000000D9 630E0001         arpl [0100h],cx
+000000DD 676202           bound ax,[edx]
+000000E0 67666206         bound eax,[esi]
+000000E4 0FBCCA           bsf  dx,cx
+000000E7 0FBC1E0001       bsf  [0100h],bx
+000000EC 0FBDFC           bsr  sp,di
+000000EF 0FBD2E0001       bsr  [0100h],bp
+000000F4 660FCA           bswap edx
+000000F7 0FA3D0           bt   ax,dx
+000000FA 670FA36764       bt   [edi+64h],sp
+000000FF 660FA3D0         bt   eax,edx
+00000103 67660FA36764     bt   [edi+64h],esp
+00000109 0FBAE00D         bt   ax,byte 0Dh
+0000010D 670FBA67640C     bt   word [edi+64h],0Ch
+00000113 660FBAE00D       bt   eax,byte 0Dh
+00000118 67660FBA67640C   bt   dword [edi+64h],0Ch
+0000011F 0FBAF80D         btc  ax,byte 0Dh
+00000123 670FBA7F640C     btc  word [edi+64h],0Ch
+00000129 660FBAF80D       btc  eax,byte 0Dh
+0000012E 67660FBA7F640C   btc  dword [edi+64h],0Ch
+00000135 0FBAF00D         btr  ax,byte 0Dh
+00000139 670FBA77640C     btr  word [edi+64h],0Ch
+0000013F 660FBAF00D       btr  eax,byte 0Dh
+00000144 67660FBA77640C   btr  dword [edi+64h],0Ch
+0000014B 0FBAE80D         bts  ax,byte 0Dh
+0000014F 670FBA6F640C     bts  word [edi+64h],0Ch
+00000155 660FBAE80D       bts  eax,byte 0Dh
+0000015A 67660FBA6F640C   bts  dword [edi+64h],0Ch
+00000161 FFD0             call word [bx+si]
+00000163 66FFD0           call dword [bx+si]
+00000166 FF17             call word [bx]
+00000168 FF1F             call word far [bx]
+0000016A FF17             call word [bx]
+0000016C 67FF1B           call word far [ebx]
+0000016F E88EFE           call 000000000h
+00000172 9A00010002       call 00200h:00100h
+00000177 98               cbw  
+00000178 6698             cbw  
+0000017A 6699             cwd  
+0000017C F8               clc  
+0000017D FC               cld  
+0000017E 0F               db   0Fh
+0000017F AE               scasb 
+00000180 3E0001           add  ds:[bx+di],al
+00000183 FA               cli  
+00000184 0F06             clts 
+00000186 F5               cmc  
+00000187 0F47C3           cmovnbe ax,bx
+0000018A 670F479A00010000 cmovnbe bx,[edx+00000100h]
+00000192 660F47C3         cmovnbe eax,ebx
+00000196 67660F479A000100 cmovnbe ebx,[edx+00000100h]
+         00
+0000019F 0F43C3           cmovnb ax,bx
+000001A2 670F439A00010000 cmovnb bx,[edx+00000100h]
+000001AA 660F43C3         cmovnb eax,ebx
+000001AE 67660F439A000100 cmovnb ebx,[edx+00000100h]
+         00
+000001B7 0F42C3           cmovb ax,bx
+000001BA 670F429A00010000 cmovb bx,[edx+00000100h]
+000001C2 660F42C3         cmovb eax,ebx
+000001C6 67660F429A000100 cmovb ebx,[edx+00000100h]
+         00
+000001CF 0F46C3           cmovbe ax,bx
+000001D2 670F469A00010000 cmovbe bx,[edx+00000100h]
+000001DA 660F46C3         cmovbe eax,ebx
+000001DE 67660F469A000100 cmovbe ebx,[edx+00000100h]
+         00
+000001E7 0F42C3           cmovb ax,bx
+000001EA 670F429A00010000 cmovb bx,[edx+00000100h]
+000001F2 660F42C3         cmovb eax,ebx
+000001F6 67660F429A000100 cmovb ebx,[edx+00000100h]
+         00
+000001FF 0F44C3           cmovz ax,bx
+00000202 670F449A00010000 cmovz bx,[edx+00000100h]
+0000020A 660F44C3         cmovz eax,ebx
+0000020E 67660F449A000100 cmovz ebx,[edx+00000100h]
+         00
+00000217 0F4FC3           cmovnle ax,bx
+0000021A 670F4F9A00010000 cmovnle bx,[edx+00000100h]
+00000222 660F4FC3         cmovnle eax,ebx
+00000226 67660F4F9A000100 cmovnle ebx,[edx+00000100h]
+         00
+0000022F 0F4DC3           cmovnl ax,bx
+00000232 670F4D9A00010000 cmovnl bx,[edx+00000100h]
+0000023A 660F4DC3         cmovnl eax,ebx
+0000023E 67660F4D9A000100 cmovnl ebx,[edx+00000100h]
+         00
+00000247 0F4CC3           cmovl ax,bx
+0000024A 670F4C9A00010000 cmovl bx,[edx+00000100h]
+00000252 660F4CC3         cmovl eax,ebx
+00000256 67660F4C9A000100 cmovl ebx,[edx+00000100h]
+         00
+0000025F 0F4EC3           cmovle ax,bx
+00000262 670F4E9A00010000 cmovle bx,[edx+00000100h]
+0000026A 660F4EC3         cmovle eax,ebx
+0000026E 67660F4E9A000100 cmovle ebx,[edx+00000100h]
+         00
+00000277 0F46C3           cmovbe ax,bx
+0000027A 670F469A00010000 cmovbe bx,[edx+00000100h]
+00000282 660F46C3         cmovbe eax,ebx
+00000286 67660F469A000100 cmovbe ebx,[edx+00000100h]
+         00
+0000028F 0F42C3           cmovb ax,bx
+00000292 670F429A00010000 cmovb bx,[edx+00000100h]
+0000029A 660F42C3         cmovb eax,ebx
+0000029E 67660F429A000100 cmovb ebx,[edx+00000100h]
+         00
+000002A7 0F43C3           cmovnb ax,bx
+000002AA 670F439A00010000 cmovnb bx,[edx+00000100h]
+000002B2 660F43C3         cmovnb eax,ebx
+000002B6 67660F439A000100 cmovnb ebx,[edx+00000100h]
+         00
+000002BF 0F47C3           cmovnbe ax,bx
+000002C2 670F479A00010000 cmovnbe bx,[edx+00000100h]
+000002CA 660F47C3         cmovnbe eax,ebx
+000002CE 67660F479A000100 cmovnbe ebx,[edx+00000100h]
+         00
+000002D7 0F43C3           cmovnb ax,bx
+000002DA 670F439A00010000 cmovnb bx,[edx+00000100h]
+000002E2 660F43C3         cmovnb eax,ebx
+000002E6 67660F439A000100 cmovnb ebx,[edx+00000100h]
+         00
+000002EF 0F45C3           cmovnz ax,bx
+000002F2 670F459A00010000 cmovnz bx,[edx+00000100h]
+000002FA 660F45C3         cmovnz eax,ebx
+000002FE 67660F459A000100 cmovnz ebx,[edx+00000100h]
+         00
+00000307 0F4EC3           cmovle ax,bx
+0000030A 670F4E9A00010000 cmovle bx,[edx+00000100h]
+00000312 660F4EC3         cmovle eax,ebx
+00000316 67660F4E9A000100 cmovle ebx,[edx+00000100h]
+         00
+0000031F 0F4CC3           cmovl ax,bx
+00000322 670F4C9A00010000 cmovl bx,[edx+00000100h]
+0000032A 660F4CC3         cmovl eax,ebx
+0000032E 67660F4C9A000100 cmovl ebx,[edx+00000100h]
+         00
+00000337 0F4DC3           cmovnl ax,bx
+0000033A 670F4D9A00010000 cmovnl bx,[edx+00000100h]
+00000342 660F4DC3         cmovnl eax,ebx
+00000346 67660F4D9A000100 cmovnl ebx,[edx+00000100h]
+         00
+0000034F 0F4FC3           cmovnle ax,bx
+00000352 670F4F9A00010000 cmovnle bx,[edx+00000100h]
+0000035A 660F4FC3         cmovnle eax,ebx
+0000035E 67660F4F9A000100 cmovnle ebx,[edx+00000100h]
+         00
+00000367 0F41C3           cmovno ax,bx
+0000036A 670F419A00010000 cmovno bx,[edx+00000100h]
+00000372 660F41C3         cmovno eax,ebx
+00000376 67660F419A000100 cmovno ebx,[edx+00000100h]
+         00
+0000037F 0F4BC3           cmovnp ax,bx
+00000382 670F4B9A00010000 cmovnp bx,[edx+00000100h]
+0000038A 660F4BC3         cmovnp eax,ebx
+0000038E 67660F4B9A000100 cmovnp ebx,[edx+00000100h]
+         00
+00000397 0F49C3           cmovns ax,bx
+0000039A 670F499A00010000 cmovns bx,[edx+00000100h]
+000003A2 660F49C3         cmovns eax,ebx
+000003A6 67660F499A000100 cmovns ebx,[edx+00000100h]
+         00
+000003AF 0F45C3           cmovnz ax,bx
+000003B2 670F459A00010000 cmovnz bx,[edx+00000100h]
+000003BA 660F45C3         cmovnz eax,ebx
+000003BE 67660F459A000100 cmovnz ebx,[edx+00000100h]
+         00
+000003C7 0F40C3           cmovo ax,bx
+000003CA 670F409A00010000 cmovo bx,[edx+00000100h]
+000003D2 660F40C3         cmovo eax,ebx
+000003D6 67660F409A000100 cmovo ebx,[edx+00000100h]
+         00
+000003DF 0F4AC3           cmovp ax,bx
+000003E2 670F4A9A00010000 cmovp bx,[edx+00000100h]
+000003EA 660F4AC3         cmovp eax,ebx
+000003EE 67660F4A9A000100 cmovp ebx,[edx+00000100h]
+         00
+000003F7 0F4AC3           cmovp ax,bx
+000003FA 670F4A9A00010000 cmovp bx,[edx+00000100h]
+00000402 660F4AC3         cmovp eax,ebx
+00000406 67660F4A9A000100 cmovp ebx,[edx+00000100h]
+         00
+0000040F 0F4BC3           cmovnp ax,bx
+00000412 670F4B9A00010000 cmovnp bx,[edx+00000100h]
+0000041A 660F4BC3         cmovnp eax,ebx
+0000041E 67660F4B9A000100 cmovnp ebx,[edx+00000100h]
+         00
+00000427 0F48C3           cmovs ax,bx
+0000042A 670F489A00010000 cmovs bx,[edx+00000100h]
+00000432 660F48C3         cmovs eax,ebx
+00000436 67660F489A000100 cmovs ebx,[edx+00000100h]
+         00
+0000043F 0F44C3           cmovz ax,bx
+00000442 670F449A00010000 cmovz bx,[edx+00000100h]
+0000044A 660F44C3         cmovz eax,ebx
+0000044E 67660F449A000100 cmovz ebx,[edx+00000100h]
+         00
+00000457 3ACA             cmp  cl,dl
+00000459 3BD4             cmp  dx,sp
+0000045B 663BD4           cmp  edx,esp
+0000045E 80FB0A           cmp  bl,byte 0Ah
+00000461 81F92010         cmp  cx,word 1020h
+00000465 6681FA40302010   cmp  edx,dword 10203040h
+0000046C 3A0E0001         cmp  cl,[0100h]
+00000470 3B160001         cmp  dx,[0100h]
+00000474 663B060001       cmp  eax,[0100h]
+00000479 380E0001         cmp  [0100h],cl
+0000047D 39160001         cmp  [0100h],dx
+00000481 6639060001       cmp  [0100h],eax
+00000486 803E00010A       cmp  byte [0100h],0Ah
+0000048B 813E00012010     cmp  word [0100h],1020h
+00000491 66813E0001403020 cmp  dword [0100h],10203040h
+         10
+0000049A A6               cmpsb 
+0000049B A7               cmpsw 
+0000049C 66A7             cmpsd 
+0000049E A6               cmpsb 
+0000049F A7               cmpsw 
+000004A0 66A7             cmpsd 
+000004A2 67A6             .adsize cmpsb 
+000004A4 67A7             .adsize cmpsw 
+000004A6 6766A7           .adsize cmpsd 
+000004A9 0FB0C3           cmpxchg bl,al
+000004AC 0FB0160001       cmpxchg [0100h],dl
+000004B1 0FB1C3           cmpxchg bx,ax
+000004B4 0FB1160001       cmpxchg [0100h],dx
+000004B9 660FB1C3         cmpxchg ebx,eax
+000004BD 660FB1160001     cmpxchg [0100h],edx
+000004C3 670FC708         cmpxchg8b qword [eax]
+000004C7 0FA2             cpuid 
+000004C9 99               cwd  
+000004CA 6699             cwd  
+000004CC 27               daa  
+000004CD 2F               das  
+000004CE FECD             dec  ch
+000004D0 67FE08           dec  byte [eax]
+000004D3 4A               dec  dx
+000004D4 67FF0E           dec  word [esi]
+000004D7 664C             dec  esp
+000004D9 6766FF4D00       dec  dword [ebp+00h]
+000004DE F6F5             div  ch
+000004E0 67F630           div  byte [eax]
+000004E3 F7F4             div  sp
+000004E5 67F730           div  word [eax]
+000004E8 66F7F1           div  ecx
+000004EB 6766F730         div  dword [eax]
+000004EF 0F77             emms 
+000004F1 C80A0001         enter 000Ah,01h
+000004F5 C8280005         enter 0028h,05h
+000004F9 F4               hlt  
+000004FA F6FD             idiv ch
+000004FC 67F638           idiv byte [eax]
+000004FF F7FC             idiv sp
+00000501 67F738           idiv word [eax]
+00000504 66F7F9           idiv ecx
+00000507 6766F738         idiv dword [eax]
+0000050B F6ED             imul ch
+0000050D 67F628           imul byte [eax]
+00000510 F7EC             imul sp
+00000512 67F728           imul word [eax]
+00000515 66F7E9           imul ecx
+00000518 6766F728         imul dword [eax]
+0000051C E40A             in   al,0Ah
+0000051E EC               in   al,dx
+0000051F E50A             in   ax,0Ah
+00000521 ED               in   ax,dx
+00000522 66E50A           .opsize in   eax,0Ah
+00000525 66ED             .opsize in   eax,dx
+00000527 FEC5             inc  ch
+00000529 67FE00           inc  byte [eax]
+0000052C 42               inc  dx
+0000052D 67FF06           inc  word [esi]
+00000530 6644             inc  esp
+00000532 6766FF4500       inc  dword [ebp+00h]
+00000537 6C               insb 
+00000538 6D               ins w 
+00000539 666D             ins d 
+0000053B 6C               insb 
+0000053C 6D               ins w 
+0000053D 666D             ins d 
+0000053F 676C             .adsize insb 
+00000541 676D             .adsize ins w 
+00000543 67666D           .adsize ins d 
+00000546 CD01             int  01h
+00000548 CC               int  
+00000549 CE               into 
+0000054A 0F08             invd 
+0000054C 670F0138         invlpg [eax]
+00000550 CF               iretw 
+00000551 CF               iretw 
+00000552 66CF             .opsize iretd 
+00000554 77FE             jnbe 000000554h
+00000556 0F87A6FA         jnbe 000000000h
+0000055A 73FE             jnb  00000055Ah
+0000055C 0F83A0FA         jnb  000000000h
+00000560 72FE             jb   000000560h
+00000562 0F829AFA         jb   000000000h
+00000566 72FE             jb   000000566h
+00000568 0F8294FA         jb   000000000h
+0000056C E3FE             jcxz 00000056Ch
+0000056E 67E3FE           .adsize jcxz 00000056Fh
+00000571 74FE             jz   000000571h
+00000573 0F8489FA         jz   000000000h
+00000577 7FFE             jnle 000000577h
+00000579 0F8F83FA         jnle 000000000h
+0000057D 7DFE             jnl  00000057Dh
+0000057F 0F8D7DFA         jnl  000000000h
+00000583 7CFE             jl   000000583h
+00000585 0F8C77FA         jl   000000000h
+00000589 7EFE             jle  000000589h
+0000058B 0F8E71FA         jle  000000000h
+0000058F 76FE             jbe  00000058Fh
+00000591 0F866BFA         jbe  000000000h
+00000595 72FE             jb   000000595h
+00000597 0F8265FA         jb   000000000h
+0000059B 73FE             jnb  00000059Bh
+0000059D 0F835FFA         jnb  000000000h
+000005A1 77FE             jnbe 0000005A1h
+000005A3 0F8759FA         jnbe 000000000h
+000005A7 73FE             jnb  0000005A7h
+000005A9 0F8353FA         jnb  000000000h
+000005AD 75FE             jnz  0000005ADh
+000005AF 0F854DFA         jnz  000000000h
+000005B3 7EFE             jle  0000005B3h
+000005B5 0F8E47FA         jle  000000000h
+000005B9 7CFE             jl   0000005B9h
+000005BB 0F8C41FA         jl   000000000h
+000005BF 7DFE             jnl  0000005BFh
+000005C1 0F8D3BFA         jnl  000000000h
+000005C5 7FFE             jnle 0000005C5h
+000005C7 0F8F35FA         jnle 000000000h
+000005CB 71FE             jno  0000005CBh
+000005CD 0F812FFA         jno  000000000h
+000005D1 7BFE             jnp  0000005D1h
+000005D3 0F8B29FA         jnp  000000000h
+000005D7 79FE             jns  0000005D7h
+000005D9 0F8923FA         jns  000000000h
+000005DD 75FE             jnz  0000005DDh
+000005DF 0F851DFA         jnz  000000000h
+000005E3 70FE             jo   0000005E3h
+000005E5 0F8017FA         jo   000000000h
+000005E9 7AFE             jp   0000005E9h
+000005EB 0F8A11FA         jp   000000000h
+000005EF 7AFE             jp   0000005EFh
+000005F1 0F8A0BFA         jp   000000000h
+000005F5 7BFE             jnp  0000005F5h
+000005F7 0F8B05FA         jnp  000000000h
+000005FB 0F8401FA         jz   000000000h
+000005FF FFE3             jmp  bx
+00000601 66FFE3           jmp  ebx
+00000604 FF24             jmp  word [si]
+00000606 FF2C             jmp  word far [si]
+00000608 66FF2C           jmp  dword far [si]
+0000060B FF260001         jmp  word [0100h]
+0000060F FF2E0001         jmp  word far [0100h]
+00000613 E9EAF9           jmp  000000000h
+00000616 EBFE             jmp  000000616h
+00000618 EA00020001       jmp  00100h:00200h
+0000061D 9F               lahf 
+0000061E 0F02CF           lar  cx,di
+00000621 670F0213         .adsize lar  dx,[ebx]
+00000625 660F02CC         lar  ecx,sp
+00000629 67660F023C24     .adsize lar  edi,[esp+esp]
+0000062F 0FAE160001       ldmxcsr [0100h]
+00000634 C5160001         lds  dx,[0100h]
+00000638 66C5160002       lds  edx,[0200h]
+0000063D 0FB2160001       lss  dx,[0100h]
+00000642 660FB2160002     lss  edx,[0200h]
+00000648 C4160001         les  dx,[0100h]
+0000064C 66C4160002       les  edx,[0200h]
+00000651 0FB4160001       lfs  dx,[0100h]
+00000656 660FB4160002     lfs  edx,[0200h]
+0000065C 0FB5160001       lgs  dx,[0100h]
+00000661 660FB5160002     lgs  edx,[0200h]
+00000667 8D5764           lea  dx,[bx+64h]
+0000066A 67668D540064     lea  edx,[eax+eax+64h]
+00000670 C9               leave 
+00000671 0F               db   0Fh
+00000672 AE               scasb 
+00000673 E8670F           call 0000015DDh
+00000676 0116670F         add  [0F67h],dx
+0000067A 011E0F00         add  [000Fh],bx
+0000067E D30F             rol  word [bx],cl
+00000680 01360001         add  [0100h],si
+00000684 F0AC             lock lodsb 
+00000686 AD               lodsw 
+00000687 66AD             lodsd 
+00000689 AC               lodsb 
+0000068A AD               lodsw 
+0000068B 66AD             lodsd 
+0000068D 67AC             .adsize lodsb 
+0000068F 67AD             .adsize lodsw 
+00000691 6766AD           .adsize lodsd 
+00000694 E2FE             loop 000000694h
+00000696 E1FE             loope 000000696h
+00000698 E0FE             loopn 000000698h
+0000069A E1FE             loope 00000069Ah
+0000069C E0FE             loopn 00000069Ch
+0000069E 67E0FE           .adsize loopn 00000069Fh
+000006A1 67E0FE           .adsize loopn 0000006A2h
+000006A4 67E0FE           .adsize loopn 0000006A5h
+000006A7 67E0FE           .adsize loopn 0000006A8h
+000006AA 67E0FE           .adsize loopn 0000006ABh
+000006AD 0F03D6           lsl  dx,si
+000006B0 0F03160001       lsl  dx,[0100h]
+000006B5 660F03D6         lsl  edx,si
+000006B9 660F03160001     lsl  edx,[0100h]
+000006BF 0F00D8           ltr  [bx+si]
+000006C2 0F001E6400       ltr  [0064h]
+000006C7 0F               db   0Fh
+000006C8 AE               scasb 
+000006C9 F00F01C8         lock sidt [bx+si]
+000006CD 8AC1             mov  al,cl
+000006CF 8BCA             mov  cx,dx
+000006D1 668BD0           mov  edx,eax
+000006D4 8A360001         mov  dh,[0100h]
+000006D8 8B160001         mov  dx,[0100h]
+000006DC 668B160001       mov  edx,[0100h]
+000006E1 88360001         mov  [0100h],dh
+000006E5 89160001         mov  [0100h],dx
+000006E9 6689160001       .opsize mov  [0100h],edx
+000006EE C60600010A       mov  byte [0100h],0Ah
+000006F3 C70600012010     mov  word [0100h],1020h
+000006F9 66C7060001403020 mov  dword [0100h],10203040h
+         10
+00000702 8CC8             mov  ax,cs
+00000704 668CD0           mov  eax,ss
+00000707 8EDB             mov  ds,bx
+00000709 8EC4             mov  es,sp
+0000070B 8E2E0001         mov  gs,[0100h]
+0000070F 8E260001         mov  fs,[0100h]
+00000713 8C2E0001         mov  [0100h],gs
+00000717 8C260001         mov  [0100h],fs
+0000071B 0F20C0           mov  eax,cr0
+0000071E 0F21DA           mov  edx,dr3
+00000721 0F               db   0Fh
+00000722 24E4             and  al,0E4h
+00000724 0F22D7           mov  cr2,edi
+00000727 0F23CD           mov  dr1,ebp
+0000072A 0F               db   0Fh
+0000072B 26FB             sti  
+0000072D A4               movsb 
+0000072E A5               movsw 
+0000072F 66A5             movsd 
+00000731 A4               movsb 
+00000732 A5               movsw 
+00000733 66A5             movsd 
+00000735 67A4             .adsize movsb 
+00000737 67A5             .adsize movsw 
+00000739 6766A5           .adsize movsd 
+0000073C 670FBE00         movsx ax,[eax]
+00000740 67660FBE10       movsx edx,[eax]
+00000745 67660FBF08       movsx ecx,[eax]
+0000074A 670FB600         movzx ax,[eax]
+0000074E 67660FB608       movzx ecx,[eax]
+00000753 67660FB720       movzx esp,[eax]
+00000758 F6E5             mul  ch
+0000075A 67F620           mul  byte [eax]
+0000075D F7E4             mul  sp
+0000075F 67F720           mul  word [eax]
+00000762 66F7E1           mul  ecx
+00000765 6766F720         mul  dword [eax]
+00000769 0F01C9           sidt [bx+si]
+0000076C 0F01C9           sidt [bx+si]
+0000076F F6DD             neg  ch
+00000771 67F618           neg  byte [eax]
+00000774 F7DC             neg  sp
+00000776 67F718           neg  word [eax]
+00000779 66F7D9           neg  ecx
+0000077C 6766F718         neg  dword [eax]
+00000780 90               xchg ax,ax
+00000781 F6D5             not  ch
+00000783 67F610           not  byte [eax]
+00000786 F7D4             not  sp
+00000788 67F710           not  word [eax]
+0000078B 66F7D1           not  ecx
+0000078E 6766F710         not  dword [eax]
+00000792 0ACA             or   cl,dl
+00000794 0BD4             or   dx,sp
+00000796 660BD4           or   edx,esp
+00000799 80CB0A           or   bl,byte 0Ah
+0000079C 81C92010         or   cx,word 1020h
+000007A0 6681CA40302010   or   edx,dword 10203040h
+000007A7 0A0E0001         or   cl,[0100h]
+000007AB 0B160001         or   dx,[0100h]
+000007AF 660B060001       or   eax,[0100h]
+000007B4 080E0001         or   [0100h],cl
+000007B8 09160001         or   [0100h],dx
+000007BC 6609060001       or   [0100h],eax
+000007C1 800E00010A       or   byte [0100h],0Ah
+000007C6 810E00012010     or   word [0100h],1020h
+000007CC 66810E0001403020 or   dword [0100h],10203040h
+         10
+000007D5 E660             out  60h,al
+000007D7 E730             out  30h,ax
+000007D9 66E710           .opsize out  10h,eax
+000007DC EE               out  dx,al
+000007DD EF               out  dx,ax
+000007DE 66EF             .opsize out  dx,eax
+000007E0 6E               outsb 
+000007E1 6F               outsw 
+000007E2 666F             outsd 
+000007E4 6E               outsb 
+000007E5 6F               outsw 
+000007E6 666F             outsd 
+000007E8 676E             .adsize outsb 
+000007EA 676F             .adsize outsw 
+000007EC 67666F           .adsize outsd 
+000007EF F390             rep  xchg ax,ax
+000007F1 58               pop  ax
+000007F2 665E             pop  esi
+000007F4 1F               pop  ds
+000007F5 8F060001         pop  word [0100h]
+000007F9 67668F01         pop  dword [ecx]
+000007FD 61               popa 
+000007FE 6661             .opsize popa 
+00000800 9D               popf 
+00000801 669D             popf 
+00000803 0F18             grp  
+00000805 0E               push cs
+00000806 0001             add  [bx+di],al
+00000808 0F18             grp  
+0000080A 16               push ss
+0000080B 0001             add  [bx+di],al
+0000080D 0F18             grp  
+0000080F 1E               push ds
+00000810 0001             add  [bx+di],al
+00000812 0F18             grp  
+00000814 06               push es
+00000815 0001             add  [bx+di],al
+00000817 50               push ax
+00000818 6653             push ebx
+0000081A 0E               push cs
+0000081B 680001           push 0100h
+0000081E 6A10             push 10h
+00000820 666800010000     push 00000100h
+00000826 67FF30           push word [eax]
+00000829 6766FF36         push dword [esi]
+0000082D 60               pusha 
+0000082E 6660             .opsize pusha 
+00000830 9C               pushf 
+00000831 669C             pushf 
+00000833 D0D3             rcl  bl,01h
+00000835 C0D30A           rcl  bl,byte 0Ah
+00000838 D2D3             rcl  bl,cl
+0000083A D1D3             rcl  bx,01h
+0000083C C1D30A           rcl  bx,byte 0Ah
+0000083F D3D3             rcl  bx,cl
+00000841 66D1D3           rcl  ebx,01h
+00000844 66C1D30A         rcl  ebx,byte 0Ah
+00000848 66D3D3           rcl  ebx,cl
+0000084B D0160001         rcl  byte [0100h],01h
+0000084F C01600010A       rcl  byte [0100h],0Ah
+00000854 D2160001         rcl  byte [0100h],cl
+00000858 D1160001         rcl  word [0100h],01h
+0000085C C11600010A       rcl  word [0100h],0Ah
+00000861 D3160001         rcl  word [0100h],cl
+00000865 66D1160001       rcl  dword [0100h],01h
+0000086A 66C11600010A     rcl  dword [0100h],0Ah
+00000870 66D3160001       rcl  dword [0100h],cl
+00000875 D0DB             rcr  bl,01h
+00000877 C0DB0A           rcr  bl,byte 0Ah
+0000087A D2DB             rcr  bl,cl
+0000087C D1DB             rcr  bx,01h
+0000087E C1DB0A           rcr  bx,byte 0Ah
+00000881 D3DB             rcr  bx,cl
+00000883 66D1DB           rcr  ebx,01h
+00000886 66C1DB0A         rcr  ebx,byte 0Ah
+0000088A 66D3DB           rcr  ebx,cl
+0000088D D01E0001         rcr  byte [0100h],01h
+00000891 C01E00010A       rcr  byte [0100h],0Ah
+00000896 D21E0001         rcr  byte [0100h],cl
+0000089A D11E0001         rcr  word [0100h],01h
+0000089E C11E00010A       rcr  word [0100h],0Ah
+000008A3 D31E0001         rcr  word [0100h],cl
+000008A7 66D11E0001       rcr  dword [0100h],01h
+000008AC 66C11E00010A     rcr  dword [0100h],0Ah
+000008B2 66D31E0001       rcr  dword [0100h],cl
+000008B7 D0C3             ror  bl,01h
+000008B9 C0C30A           ror  bl,byte 0Ah
+000008BC D2C3             ror  bl,cl
+000008BE D1C3             ror  bx,01h
+000008C0 C1C30A           ror  bx,byte 0Ah
+000008C3 D3C3             ror  bx,cl
+000008C5 66D1C3           ror  ebx,01h
+000008C8 66C1C30A         ror  ebx,byte 0Ah
+000008CC 66D3C3           ror  ebx,cl
+000008CF D0060001         ror  byte [0100h],01h
+000008D3 C00600010A       ror  byte [0100h],0Ah
+000008D8 D2060001         ror  byte [0100h],cl
+000008DC D1060001         ror  word [0100h],01h
+000008E0 C10600010A       ror  word [0100h],0Ah
+000008E5 D3060001         ror  word [0100h],cl
+000008E9 66D1060001       ror  dword [0100h],01h
+000008EE 66C10600010A     ror  dword [0100h],0Ah
+000008F4 66D3060001       ror  dword [0100h],cl
+000008F9 D0CB             rol  bl,01h
+000008FB C0CB0A           rol  bl,byte 0Ah
+000008FE D2CB             rol  bl,cl
+00000900 D1CB             rol  bx,01h
+00000902 C1CB0A           rol  bx,byte 0Ah
+00000905 D3CB             rol  bx,cl
+00000907 66D1CB           rol  ebx,01h
+0000090A 66C1CB0A         rol  ebx,byte 0Ah
+0000090E 66D3CB           rol  ebx,cl
+00000911 D00E0001         rol  byte [0100h],01h
+00000915 C00E00010A       rol  byte [0100h],0Ah
+0000091A D20E0001         rol  byte [0100h],cl
+0000091E D10E0001         rol  word [0100h],01h
+00000922 C10E00010A       rol  word [0100h],0Ah
+00000927 D30E0001         rol  word [0100h],cl
+0000092B 66D10E0001       rol  dword [0100h],01h
+00000930 66C10E00010A     rol  dword [0100h],0Ah
+00000936 66D30E0001       rol  dword [0100h],cl
+0000093B 0F32             rdmsr 
+0000093D 0F33             rdpmc 
+0000093F 0F31             rdtsc 
+00000941 F3F3F3F2F2F3A5   rep  repne movsw 
+00000948 F3AF             rep  scasw 
+0000094A F366A7           rep  cmpsd 
+0000094D F2AE             repne scasb 
+0000094F F2A6             repne cmpsb 
+00000951 C3               ret  
+00000952 C21000           ret  0010h
+00000955 CB               retf 
+00000956 CA2000           retf 0020h
+00000959 0FAA             rsm  
+0000095B 9E               sahf 
+0000095C D0E3             shl  bl,01h
+0000095E C0E30A           shl  bl,byte 0Ah
+00000961 D2E3             shl  bl,cl
+00000963 D1E3             shl  bx,01h
+00000965 C1E30A           shl  bx,byte 0Ah
+00000968 D3E3             shl  bx,cl
+0000096A 66D1E3           shl  ebx,01h
+0000096D 66C1E30A         shl  ebx,byte 0Ah
+00000971 66D3E3           shl  ebx,cl
+00000974 D0260001         shl  byte [0100h],01h
+00000978 C02600010A       shl  byte [0100h],0Ah
+0000097D D2260001         shl  byte [0100h],cl
+00000981 D1260001         shl  word [0100h],01h
+00000985 C12600010A       shl  word [0100h],0Ah
+0000098A D3260001         shl  word [0100h],cl
+0000098E 66D1260001       shl  dword [0100h],01h
+00000993 66C12600010A     shl  dword [0100h],0Ah
+00000999 66D3260001       shl  dword [0100h],cl
+0000099E D0FB             sar  bl,01h
+000009A0 C0FB0A           sar  bl,byte 0Ah
+000009A3 D2FB             sar  bl,cl
+000009A5 D1FB             sar  bx,01h
+000009A7 C1FB0A           sar  bx,byte 0Ah
+000009AA D3FB             sar  bx,cl
+000009AC 66D1FB           sar  ebx,01h
+000009AF 66C1FB0A         sar  ebx,byte 0Ah
+000009B3 66D3FB           sar  ebx,cl
+000009B6 D03E0001         sar  byte [0100h],01h
+000009BA C03E00010A       sar  byte [0100h],0Ah
+000009BF D23E0001         sar  byte [0100h],cl
+000009C3 D13E0001         sar  word [0100h],01h
+000009C7 C13E00010A       sar  word [0100h],0Ah
+000009CC D33E0001         sar  word [0100h],cl
+000009D0 66D13E0001       sar  dword [0100h],01h
+000009D5 66C13E00010A     sar  dword [0100h],0Ah
+000009DB 66D33E0001       sar  dword [0100h],cl
+000009E0 D0E3             shl  bl,01h
+000009E2 C0E30A           shl  bl,byte 0Ah
+000009E5 D2E3             shl  bl,cl
+000009E7 D1E3             shl  bx,01h
+000009E9 C1E30A           shl  bx,byte 0Ah
+000009EC D3E3             shl  bx,cl
+000009EE 66D1E3           shl  ebx,01h
+000009F1 66C1E30A         shl  ebx,byte 0Ah
+000009F5 66D3E3           shl  ebx,cl
+000009F8 D0260001         shl  byte [0100h],01h
+000009FC C02600010A       shl  byte [0100h],0Ah
+00000A01 D2260001         shl  byte [0100h],cl
+00000A05 D1260001         shl  word [0100h],01h
+00000A09 C12600010A       shl  word [0100h],0Ah
+00000A0E D3260001         shl  word [0100h],cl
+00000A12 66D1260001       shl  dword [0100h],01h
+00000A17 66C12600010A     shl  dword [0100h],0Ah
+00000A1D 66D3260001       shl  dword [0100h],cl
+00000A22 D0EB             shr  bl,01h
+00000A24 C0EB0A           shr  bl,byte 0Ah
+00000A27 D2EB             shr  bl,cl
+00000A29 D1EB             shr  bx,01h
+00000A2B C1EB0A           shr  bx,byte 0Ah
+00000A2E D3EB             shr  bx,cl
+00000A30 66D1EB           shr  ebx,01h
+00000A33 66C1EB0A         shr  ebx,byte 0Ah
+00000A37 66D3EB           shr  ebx,cl
+00000A3A D02E0001         shr  byte [0100h],01h
+00000A3E C02E00010A       shr  byte [0100h],0Ah
+00000A43 D22E0001         shr  byte [0100h],cl
+00000A47 D12E0001         shr  word [0100h],01h
+00000A4B C12E00010A       shr  word [0100h],0Ah
+00000A50 D32E0001         shr  word [0100h],cl
+00000A54 66D12E0001       shr  dword [0100h],01h
+00000A59 66C12E00010A     shr  dword [0100h],0Ah
+00000A5F 66D32E0001       shr  dword [0100h],cl
+00000A64 1ACA             sbb  cl,dl
+00000A66 1BD4             sbb  dx,sp
+00000A68 661BD4           sbb  edx,esp
+00000A6B 80DB0A           sbb  bl,byte 0Ah
+00000A6E 81D92010         sbb  cx,word 1020h
+00000A72 6681DA40302010   sbb  edx,dword 10203040h
+00000A79 1A0E0001         sbb  cl,[0100h]
+00000A7D 1B160001         sbb  dx,[0100h]
+00000A81 661B060001       sbb  eax,[0100h]
+00000A86 180E0001         sbb  [0100h],cl
+00000A8A 19160001         sbb  [0100h],dx
+00000A8E 6619060001       sbb  [0100h],eax
+00000A93 801E00010A       sbb  byte [0100h],0Ah
+00000A98 811E00012010     sbb  word [0100h],1020h
+00000A9E 66811E0001403020 sbb  dword [0100h],10203040h
+         10
+00000AA7 AE               scasb 
+00000AA8 AF               scasw 
+00000AA9 66AF             scasd 
+00000AAB AE               scasb 
+00000AAC AF               scasw 
+00000AAD 66AF             scasd 
+00000AAF 67AE             .adsize scasb 
+00000AB1 67AF             .adsize scasw 
+00000AB3 6766AF           .adsize scasd 
+00000AB6 0F97C3           setnbe bl
+00000AB9 0F97060001       setnbe byte [0100h]
+00000ABE 0F93C3           setnb bl
+00000AC1 0F93060001       setnb byte [0100h]
+00000AC6 0F92C3           setb bl
+00000AC9 0F92060001       setb byte [0100h]
+00000ACE 0F96C3           setbe bl
+00000AD1 0F96060001       setbe byte [0100h]
+00000AD6 0F92C3           setb bl
+00000AD9 0F92060001       setb byte [0100h]
+00000ADE 0F94C3           setz bl
+00000AE1 0F94060001       setz byte [0100h]
+00000AE6 0F9FC3           setnle bl
+00000AE9 0F9F060001       setnle byte [0100h]
+00000AEE 0F9DC3           setnl bl
+00000AF1 0F9D060001       setnl byte [0100h]
+00000AF6 0F9CC3           setl bl
+00000AF9 0F9C060001       setl byte [0100h]
+00000AFE 0F9EC3           setle bl
+00000B01 0F9E060001       setle byte [0100h]
+00000B06 0F96C3           setbe bl
+00000B09 0F96060001       setbe byte [0100h]
+00000B0E 0F92C3           setb bl
+00000B11 0F92060001       setb byte [0100h]
+00000B16 0F93C3           setnb bl
+00000B19 0F93060001       setnb byte [0100h]
+00000B1E 0F97C3           setnbe bl
+00000B21 0F97060001       setnbe byte [0100h]
+00000B26 0F93C3           setnb bl
+00000B29 0F93060001       setnb byte [0100h]
+00000B2E 0F95C3           setnz bl
+00000B31 0F95060001       setnz byte [0100h]
+00000B36 0F9EC3           setle bl
+00000B39 0F9E060001       setle byte [0100h]
+00000B3E 0F9CC3           setl bl
+00000B41 0F9C060001       setl byte [0100h]
+00000B46 0F9DC3           setnl bl
+00000B49 0F9D060001       setnl byte [0100h]
+00000B4E 0F9FC3           setnle bl
+00000B51 0F9F060001       setnle byte [0100h]
+00000B56 0F91C3           setno bl
+00000B59 0F91060001       setno byte [0100h]
+00000B5E 0F9BC3           setnp bl
+00000B61 0F9B060001       setnp byte [0100h]
+00000B66 0F99C3           setns bl
+00000B69 0F99060001       setns byte [0100h]
+00000B6E 0F95C3           setnz bl
+00000B71 0F95060001       setnz byte [0100h]
+00000B76 0F90C3           seto bl
+00000B79 0F90060001       seto byte [0100h]
+00000B7E 0F9AC3           setp bl
+00000B81 0F9A060001       setp byte [0100h]
+00000B86 0F9AC3           setp bl
+00000B89 0F9A060001       setp byte [0100h]
+00000B8E 0F9BC3           setnp bl
+00000B91 0F9B060001       setnp byte [0100h]
+00000B96 0F98C3           sets bl
+00000B99 0F98060001       sets byte [0100h]
+00000B9E 0F94C3           setz bl
+00000BA1 0F94060001       setz byte [0100h]
+00000BA6 0F               db   0Fh
+00000BA7 AE               scasb 
+00000BA8 F8               clc  
+00000BA9 0F01060001       sgdt [0100h]
+00000BAE 0F010E0001       sidt [0100h]
+00000BB3 0FA4F801         shld ax,di,01h
+00000BB7 660FA4E101       shld ecx,esp,01h
+00000BBC 670FA42001       shld [eax],sp,01h
+00000BC1 67660FA40701     shld [edi],eax,01h
+00000BC7 0FA5F8           shld ax,di
+00000BCA 660FA5E1         shld ecx,esp
+00000BCE 670FA520         shld [eax],sp
+00000BD2 67660FA507       shld [edi],eax
+00000BD7 0FACF801         shrd ax,di,01h
+00000BDB 660FACE101       shrd ecx,esp,01h
+00000BE0 670FAC2001       shrd [eax],sp,01h
+00000BE5 67660FAC0701     shrd [edi],eax,01h
+00000BEB 0FADF8           shrd ax,di
+00000BEE 660FADE1         shrd ecx,esp
+00000BF2 670FAD20         shrd [eax],sp
+00000BF6 67660FAD07       shrd [edi],eax
+00000BFB 0F00060001       sldt [0100h]
+00000C00 0F01E3           smsw [bx+si]
+00000C03 0F01260001       smsw [0100h]
+00000C08 F9               stc  
+00000C09 FD               std  
+00000C0A FB               sti  
+00000C0B 0FAE1E0001       stmxcsr [0100h]
+00000C10 AA               stosb 
+00000C11 AB               stosw 
+00000C12 66AB             .opsize stosd 
+00000C14 AA               stosb 
+00000C15 AB               stosw 
+00000C16 66AB             .opsize stosd 
+00000C18 67AA             .adsize stosb 
+00000C1A 67AB             .adsize stosw 
+00000C1C 6766AB           .opsize .adsize stosd 
+00000C1F 0F00C8           str  [bx+si]
+00000C22 670F0008         str  [eax]
+00000C26 2ACA             sub  cl,dl
+00000C28 2BD4             sub  dx,sp
+00000C2A 662BD4           sub  edx,esp
+00000C2D 2ACA             sub  cl,dl
+00000C2F 2BD4             sub  dx,sp
+00000C31 662BD4           sub  edx,esp
+00000C34 80EB0A           sub  bl,byte 0Ah
+00000C37 81E92010         sub  cx,word 1020h
+00000C3B 6681EA40302010   sub  edx,dword 10203040h
+00000C42 2A0E0001         sub  cl,[0100h]
+00000C46 2B160001         sub  dx,[0100h]
+00000C4A 662B060001       sub  eax,[0100h]
+00000C4F 280E0001         sub  [0100h],cl
+00000C53 29160001         sub  [0100h],dx
+00000C57 6629060001       sub  [0100h],eax
+00000C5C 802E00010A       sub  byte [0100h],0Ah
+00000C61 812E00012010     sub  word [0100h],1020h
+00000C67 66812E0001403020 sub  dword [0100h],10203040h
+         10
+00000C70 0F05             syscall 
+00000C72 0F34             sysenter 
+00000C74 0F35             sysexit 
+00000C76 0F07             sysret 
+00000C78 84D1             test cl,dl
+00000C7A 85E2             test dx,sp
+00000C7C 6685E2           test edx,esp
+00000C7F F6C30A           test bl,byte 0Ah
+00000C82 F7C12010         test cx,word 1020h
+00000C86 66F7C240302010   test edx,dword 10203040h
+00000C8D 840E0001         test [0100h],cl
+00000C91 85160001         test [0100h],dx
+00000C95 6685060001       test [0100h],eax
+00000C9A 840E0001         test [0100h],cl
+00000C9E 85160001         test [0100h],dx
+00000CA2 6685060001       test [0100h],eax
+00000CA7 F60600010A       test byte [0100h],0Ah
+00000CAC F70600012010     test word [0100h],1020h
+00000CB2 66F7060001403020 test dword [0100h],10203040h
+         10
+00000CBB 0F0B             ud2  
+00000CBD 0F00E2           verr [bx+si]
+00000CC0 670F0022         verr [edx]
+00000CC4 9B               wait 
+00000CC5 9B               wait 
+00000CC6 0F09             wbinvd 
+00000CC8 0F30             wrmsr 
+00000CCA 0FC0F0           xadd al,dh
+00000CCD 0FC1D1           xadd cx,dx
+00000CD0 660FC1FC         xadd sp,di
+00000CD4 0FC0160001       xadd [0100h],dl
+00000CD9 0FC1260001       xadd [0100h],sp
+00000CDE 660FC12E0001     xadd [0100h],bp
+00000CE4 86EE             xchg dh,ch
+00000CE6 87D4             xchg sp,dx
+00000CE8 6687D4           .opsize xchg esp,edx
+00000CEB 860E0001         xchg [0100h],cl
+00000CEF 87160001         xchg [0100h],dx
+00000CF3 6687060001       .opsize xchg [0100h],eax
+00000CF8 860E0001         xchg [0100h],cl
+00000CFC 87160001         xchg [0100h],dx
+00000D00 6687060001       .opsize xchg [0100h],eax
+00000D05 D7               xlat 
+00000D06 D7               xlat 
+00000D07 32CA             xor  cl,dl
+00000D09 33D4             xor  dx,sp
+00000D0B 6633D4           xor  edx,esp
+00000D0E 80F30A           xor  bl,byte 0Ah
+00000D11 81F12010         xor  cx,word 1020h
+00000D15 6681F240302010   xor  edx,dword 10203040h
+00000D1C 320E0001         xor  cl,[0100h]
+00000D20 33160001         xor  dx,[0100h]
+00000D24 6633060001       xor  eax,[0100h]
+00000D29 300E0001         xor  [0100h],cl
+00000D2D 31160001         xor  [0100h],dx
+00000D31 6631060001       xor  [0100h],eax
+00000D36 803600010A       xor  byte [0100h],0Ah
+00000D3B 813600012010     xor  word [0100h],1020h
+00000D41 6681360001403020 xor  dword [0100h],10203040h
+         10

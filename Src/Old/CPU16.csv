@@ -1,0 +1,990 @@
+ah, KEYWORD, Reg8,4, ah
+al, KEYWORD, Reg8,0, al
+ax, KEYWORD, Reg16,0, ax
+bh, KEYWORD, Reg8,7, bh
+bl, KEYWORD, Reg8,3, bl
+bp, KEYWORD, Reg16,5, bp
+bt, FUNCTION, (btInstr), Function description, 
+bx, KEYWORD, Reg16,3, bx
+ch, KEYWORD, Reg8,5, ch
+cl, KEYWORD, Reg8,1, cl
+cs, KEYWORD, segReg,1, cs
+cx, KEYWORD, Reg16,1, cx
+db, FUNCTION, (DBDirective), Function description, 
+dd, FUNCTION, (DDDirective), Function description, 
+df, FUNCTION, (DFDirective), Function description, 
+dh, KEYWORD, Reg8,6, dh
+di, KEYWORD, Reg16,7, di
+dl, KEYWORD, Reg8,2, dl
+do, FUNCTION, (DODirective), Function description, do
+dp, FUNCTION, (DFDirective), Function description, 
+dq, FUNCTION, (DQDirective), Function description, 
+ds, KEYWORD, segReg,3, ds
+dt, FUNCTION, (DTDirective), Function description, 
+du, FUNCTION, (DUDirective), Function description, 
+dw, FUNCTION, (DWDirective), Function description, 
+dx, KEYWORD, Reg16,2, dx
+eq, KEYWORD, operator, booleqop, eq =
+es, KEYWORD, segReg,0, es
+fs, KEYWORD, segReg386,0, fs
+ge, KEYWORD, operator, geop, ge >=
+gs, KEYWORD, segReg386,1, gs
+gt, KEYWORD, operator, gtop, gt >
+if, FUNCTION, (IfDirective), Function description, 
+in, FUNCTION, (inInstr), Function description, 
+ja, FUNCTION, (jaInstr), Function description, 
+jb, FUNCTION, (jbInstr), Function description, 
+jc, FUNCTION, (jbInstr), Function description, 
+je, FUNCTION, (jzInstr), Function description, 
+jg, FUNCTION, (jgInstr), Function description, 
+jl, FUNCTION, (jlInstr), Function description, 
+jo, FUNCTION, (joInstr), Function description, 
+jp, FUNCTION, (jpInstr), Function description, 
+js, FUNCTION, (jsInstr), Function description, 
+jz, FUNCTION, (jzInstr), Function description, 
+le, KEYWORD, operator, leop, le <=
+lt, KEYWORD, operator, ltop, lt <
+ne, KEYWORD, operator, neop, ne !=
+or, FUNCTION, (orInstr), Function description, 
+r8, KEYWORD, LMReg64,0, r8
+r9, KEYWORD, LMReg64,1, r9
+si, KEYWORD, Reg16,6, si
+sp, KEYWORD, Reg16,4, sp
+ss, KEYWORD, segReg,2, ss
+st, KEYWORD, FPUReg,0, st
+ud, FUNCTION, (udInstr), Function description, 
+aaa, FUNCTION, (aaaInstr), Function description, 
+aad, FUNCTION, (aadInstr), Function description, 
+aam, FUNCTION, (aamInstr), Function description, 
+aas, FUNCTION, (aasInstr), Function description, 
+adc, FUNCTION, (adcInstr), Function description, 
+add, FUNCTION, (addInstr), Function description, 
+and, FUNCTION, (andInstr), Function description, 
+bpl, KEYWORD, lmlowReg,5, bpl
+bsf, FUNCTION, (bsfInstr), Function description, 
+bsr, FUNCTION, (bsrInstr), Function description, 
+btc, FUNCTION, (btcInstr), Function description, 
+btr, FUNCTION, (btrInstr), Function description, 
+bts, FUNCTION, (btsInstr), Function description, 
+cbw, FUNCTION, (cbwInstr), Function description, 
+cdq, FUNCTION, (cdqInstr), Function description, 
+clc, FUNCTION, (clcInstr), Function description, 
+cld, FUNCTION, (cldInstr), Function description, 
+cli, FUNCTION, (cliInstr), Function description, 
+cmc, FUNCTION, (cmcInstr), Function description, 
+cmp, FUNCTION, (cmpInstr), Function description, 
+cqo, FUNCTION, (cqoInstr), Function description, 
+cr0, KEYWORD, CtrlReg,0, cr0
+cr1, KEYWORD, CtrlReg,1, cr1
+cr2, KEYWORD, CtrlReg,2, cr2
+cr3, KEYWORD, CtrlReg,3, cr3
+cr4, KEYWORD, CtrlReg,4, cr4
+cr5, KEYWORD, CtrlReg,5, cr5
+cr6, KEYWORD, CtrlReg,6, cr6
+cr7, KEYWORD, CtrlReg,7, cr7
+cr8, KEYWORD, CtrlReg64,0, cr8
+cr9, KEYWORD, CtrlReg64,1, cr9
+cwd, FUNCTION, (cwdInstr), Function description, 
+daa, FUNCTION, (daaInstr), Function description, 
+das, FUNCTION, (dasInstr), Function description, 
+dec, FUNCTION, (decInstr), Function description, 
+def, KEYWORD, operator,1, def
+dil, KEYWORD, lmlowReg,7, dil
+div, FUNCTION, (divInstr), Function description, 
+dqw, FUNCTION, (DODirective), Function description, 
+dr0, KEYWORD, DbgReg,0, dr0
+dr1, KEYWORD, DbgReg,1, dr1
+dr2, KEYWORD, DbgReg,2, dr2
+dr3, KEYWORD, DbgReg,3, dr3
+dr4, KEYWORD, DbgReg,4, dr4
+dr5, KEYWORD, DbgReg,5, dr5
+dr6, KEYWORD, DbgReg,6, dr6
+dr7, KEYWORD, DbgReg,7, dr7
+dr8, KEYWORD, DbgReg64,0, dr8
+dr9, KEYWORD, DbgReg64,1, dr9
+dup, FUNCTION, (DUPDirective), Function description, 
+eax, KEYWORD, Reg32,0, eax
+ebp, KEYWORD, Reg32,5, ebp
+ebx, KEYWORD, Reg32,3, ebx
+ecx, KEYWORD, Reg32,1, ecx
+edi, KEYWORD, Reg32,7, edi
+edx, KEYWORD, Reg32,2, edx
+end, FUNCTION, (ENDDirective), Function description, 
+equ, FUNCTION, (EQUDirective), Function description, 
+esc, FUNCTION, (EscInstr), Function description, 
+esi, KEYWORD, Reg32,6, esi
+esp, KEYWORD, Reg32,4, esp
+far, KEYWORD, distspec,3, far
+fld, FUNCTION, (fldInstr), Function description, 
+for, FUNCTION, (ForDirective), Function description, 
+fst, FUNCTION, (fstInstr), Function description, 
+hlt, FUNCTION, (hltInstr), Function description, 
+inc, FUNCTION, (incInstr), Function description, 
+ins, FUNCTION, (insInstr), Function description, 
+int, FUNCTION, (intInstr), Function description, 
+irp, FUNCTION, (IRPDirective), Function description, 
+jae, FUNCTION, (jaeInstr), Function description, 
+jbe, FUNCTION, (jbeInstr), Function description, 
+jge, FUNCTION, (jgeInstr), Function description, 
+jle, FUNCTION, (jleInstr), Function description, 
+jmp, FUNCTION, (jmpInstr), Function description, 
+jna, FUNCTION, (jbeInstr), Function description, 
+jnb, FUNCTION, (jaeInstr), Function description, 
+jnc, FUNCTION, (jncInstr), Function description, 
+jne, FUNCTION, (jnzInstr), Function description, 
+jng, FUNCTION, (jleInstr), Function description, 
+jnl, FUNCTION, (jgeInstr), Function description, 
+jno, FUNCTION, (jnoInstr), Function description, 
+jnp, FUNCTION, (jpoInstr), Function description, 
+jns, FUNCTION, (jnsInstr), Function description, 
+jnz, FUNCTION, (jnzInstr), Function description, 
+jpe, FUNCTION, (jpInstr), Function description, 
+jpo, FUNCTION, (jpoInstr), Function description, 
+lar, FUNCTION, (larInstr), Function description, 
+lds, FUNCTION, (ldsInstr), Function description, 
+lea, FUNCTION, (leaInstr), Function description, 
+les, FUNCTION, (lesInstr), Function description, 
+lfs, FUNCTION, (lfsInstr), Function description, 
+lgs, FUNCTION, (lgsInstr), Function description, 
+low, KEYWORD, operator,2, low
+lsl, FUNCTION, (lslInstr), Function description, 
+lss, FUNCTION, (lssInstr), Function description, 
+ltr, FUNCTION, (ltrInstr), Function description, 
+mm0, KEYWORD, mmxReg,0, mm0
+mm1, KEYWORD, mmxReg,1, mm1
+mm2, KEYWORD, mmxReg,2, mm2
+mm3, KEYWORD, mmxReg,3, mm3
+mm4, KEYWORD, mmxReg,4, mm4
+mm5, KEYWORD, mmxReg,5, mm5
+mm6, KEYWORD, mmxReg,6, mm6
+mm7, KEYWORD, mmxReg,7, mm7
+mod, KEYWORD, operator, modop, mod
+mov, FUNCTION, (movInstr), Function description, 
+mul, FUNCTION, (mulInstr), Function description, 
+neg, FUNCTION, (negInstr), Function description, 
+nop, FUNCTION, (nopInstr), Function description, 
+not, FUNCTION, (notInstr), Function description, 
+org, FUNCTION, (OrgDirective), Function description, 
+out, FUNCTION, (outInstr), Function description, 
+pop, FUNCTION, (popInstr), Function description, 
+por, FUNCTION, (porInstr), Function description, 
+ptr, KEYWORD, operator, SubOp, ptr
+r10, KEYWORD, LMReg64,2, r10
+r11, KEYWORD, LMReg64,3, r11
+r12, KEYWORD, LMReg64,4, r12
+r13, KEYWORD, LMReg64,5, r13
+r14, KEYWORD, LMReg64,6, r14
+r15, KEYWORD, LMReg64,7, r15
+r8b, KEYWORD, LMReg8,0, r8b
+r8d, KEYWORD, LMReg32,0, r8d
+r8w, KEYWORD, LMReg16,0, r8w
+r9b, KEYWORD, LMReg8,1, r9b
+r9d, KEYWORD, LMReg32,1, r9d
+r9w, KEYWORD, LMReg16,1, r9w
+rax, KEYWORD, Reg64,0, rax
+rbp, KEYWORD, Reg64,5, rbp
+rbx, KEYWORD, Reg64,3, rbx
+rcl, FUNCTION, (rclInstr), Function description, 
+rcr, FUNCTION, (rcrInstr), Function description, 
+rcx, KEYWORD, Reg64,1, rcx
+rdi, KEYWORD, Reg64,7, rdi
+rdx, KEYWORD, Reg64,2, rdx
+rep, FUNCTION, (repInstr), Function description, 
+ret, FUNCTION, (retInstr), Function description, 
+rol, FUNCTION, (rolInstr), Function description, 
+ror, FUNCTION, (rorInstr), Function description, 
+rsi, KEYWORD, Reg64,6, rsi
+rsm, FUNCTION, (rsmInstr), Function description, 
+rsp, KEYWORD, Reg64,4, rsp
+rva, KEYWORD, Operator,3, rva
+sal, FUNCTION, (salInstr), Function description, 
+sar, FUNCTION, (sarInstr), Function description, 
+sbb, FUNCTION, (sbbInstr), Function description, 
+seg, KEYWORD, operator,4, seg
+shl, FUNCTION, (shlInstr), Function description, 
+shr, FUNCTION, (shrInstr), Function description, 
+sil, KEYWORD, lmlowReg,6, sil
+smi, FUNCTION, (smiInstr), Function description, 
+spl, KEYWORD, lmlowReg,4, spl
+st0, KEYWORD, FPUReg,0, st0
+st1, KEYWORD, FPUReg,1, st1
+st2, KEYWORD, FPUReg,2, st2
+st3, KEYWORD, FPUReg,3, st3
+st4, KEYWORD, FPUReg,4, st4
+st5, KEYWORD, FPUReg,5, st5
+st6, KEYWORD, FPUReg,6, st6
+st7, KEYWORD, FPUReg,7, st7
+stc, FUNCTION, (stcInstr), Function description, 
+std, FUNCTION, (stdInstr), Function description, 
+sti, FUNCTION, (stiInstr), Function description, 
+str, FUNCTION, (strInstr), Function description, 
+sub, FUNCTION, (subInstr), Function description, 
+tr0, KEYWORD, TestReg,0, tr0
+tr1, KEYWORD, TestReg,1, tr1
+tr2, KEYWORD, TestReg,2, tr2
+tr3, KEYWORD, TestReg,3, tr3
+tr4, KEYWORD, TestReg,4, tr4
+tr5, KEYWORD, TestReg,5, tr5
+tr6, KEYWORD, TestReg,6, tr6
+tr7, KEYWORD, TestReg,7, tr7
+ud2, FUNCTION, (ud2Instr), Function description, 
+xor, FUNCTION, (xorInstr), Function description, 
+arpl, FUNCTION, (arplInstr), Function description, 
+byte, KEYWORD, datatype,1, byte
+call, FUNCTION, (callInstr), Function description, 
+cdqe, FUNCTION, (cdqeInstr), Function description, 
+clts, FUNCTION, (cltsInstr), Function description, 
+cmps, FUNCTION, (cmpsInstr), Function description, 
+cr10, KEYWORD, CtrlReg64,2, 
+cr11, KEYWORD, CtrlReg64,3, 
+cr12, KEYWORD, CtrlReg64,4, 
+cr13, KEYWORD, CtrlReg64,5, 
+cr14, KEYWORD, CtrlReg64,6, 
+cr15, KEYWORD, CtrlReg64,7, 
+cwde, FUNCTION, (cwdeInstr), Function description, 
+dr10, KEYWORD, DbgReg64,2, 
+dr11, KEYWORD, DbgReg64,3, 
+dr12, KEYWORD, DbgReg64,4, 
+dr13, KEYWORD, DbgReg64,5, 
+dr14, KEYWORD, DbgReg64,6, 
+dr15, KEYWORD, DbgReg64,7, 
+echo, FUNCTION, (EchoMacro), Function description, 
+else, FUNCTION, (ElseDirective), Function description, 
+emms, FUNCTION, (emmsInstr), Function description, 
+endm, FUNCTION, (EndMDirective), Function description, 
+endp, FUNCTION, (EndPDirective), Function description, 
+ends, FUNCTION, (EndSDirective), Function description, 
+even, FUNCTION, (AlignDirective), Function description, 
+fabs, FUNCTION, (fabsInstr), Function description, 
+fadd, FUNCTION, (faddInstr), Function description, 
+fbld, FUNCTION, (fbldInstr), Function description, 
+fchs, FUNCTION, (fchsInstr), Function description, 
+fcom, FUNCTION, (fcomInstr), Function description, 
+fcos, FUNCTION, (fcosInstr), Function description, 
+fdiv, FUNCTION, (fdivInstr), Function description, 
+feni, FUNCTION, (feniInstr), Function description, 
+fild, FUNCTION, (fildInstr), Function description, 
+fist, FUNCTION, (fistInstr), Function description, 
+fld1, FUNCTION, (fld1Instr), Function description, 
+fldz, FUNCTION, (fldzInstr), Function description, 
+fmul, FUNCTION, (fmulInstr), Function description, 
+fnop, FUNCTION, (fnopInstr), Function description, 
+fsin, FUNCTION, (fsinInstr), Function description, 
+fstp, FUNCTION, (fstpInstr), Function description, 
+fsub, FUNCTION, (fsubInstr), Function description, 
+ftst, FUNCTION, (ftstInstr), Function description, 
+fxam, FUNCTION, (fxamInstr), Function description, 
+fxch, FUNCTION, (fxchInstr), Function description, 
+halt, FUNCTION, (HaltMacro), Function description, 
+high, KEYWORD, operator,5, high
+ibts, FUNCTION, (ibtsInstr), Function description, 
+idiv, FUNCTION, (idivInstr), Function description, 
+imul, FUNCTION, (imulInstr), Function description, 
+insb, FUNCTION, (insbInstr), Function description, 
+insd, FUNCTION, (insdInstr), Function description, 
+insw, FUNCTION, (inswInstr), Function description, 
+into, FUNCTION, (intoInstr), Function description, 
+invd, FUNCTION, (invdInstr), Function description, 
+iret, FUNCTION, (iretInstr), Function description, 
+irps, FUNCTION, (IRPSMacro), Function description, 
+jcxz, FUNCTION, (jcxzInstr), Function description, 
+jnae, FUNCTION, (jbInstr), Function description, 
+jnbe, FUNCTION, (jaInstr), Function description, 
+jnge, FUNCTION, (jlInstr), Function description, 
+jnle, FUNCTION, (jgInstr), Function description, 
+lahf, FUNCTION, (lahfInstr), Function description, 
+lgdt, FUNCTION, (lgdtInstr), Function description, 
+lidt, FUNCTION, (lidtInstr), Function description, 
+lldt, FUNCTION, (lldtInstr), Function description, 
+lmsw, FUNCTION, (lmswInstr), Function description, 
+lock, FUNCTION, (lockInstr), Function description, 
+lods, FUNCTION, (lodsInstr), Function description, 
+loop, FUNCTION, (loopInstr), Function description, 
+movd, FUNCTION, (movdInstr), Function description, 
+movq, FUNCTION, (movqInstr), Function description, 
+movs, FUNCTION, (movsInstr), Function description, 
+near, KEYWORD, distspec,2, near
+none, KEYWORD, options,0, none
+orpd, FUNCTION, (orpdInstr), Function description, 
+orps, FUNCTION, (orpsInstr), Function description, 
+outs, FUNCTION, (outsInstr), Function description, 
+pand, FUNCTION, (pandInstr), Function description, 
+popa, FUNCTION, (popaInstr), Function description, 
+popf, FUNCTION, (popfInstr), Function description, 
+proc, FUNCTION, (ProcDirective), Function description, 
+push, FUNCTION, (pushInstr), Function description, 
+pxor, FUNCTION, (pxorInstr), Function description, 
+r10b, KEYWORD, LMReg8,2, r10b
+r10d, KEYWORD, LMReg32,2, r10d
+r10w, KEYWORD, LMReg16,2, r10w
+r11b, KEYWORD, LMReg8,3, r11b
+r11d, KEYWORD, LMReg32,3, r11d
+r11w, KEYWORD, LMReg16,3, r11w
+r12b, KEYWORD, LMReg8,4, r12b
+r12d, KEYWORD, LMReg32,4, r12d
+r12w, KEYWORD, LMReg16,4, r12w
+r13b, KEYWORD, LMReg8,5, r13b
+r13d, KEYWORD, LMReg32,5, r13d
+r13w, KEYWORD, LMReg16,5, r13w
+r14b, KEYWORD, LMReg8,6, r14b
+r14d, KEYWORD, LMReg32,6, r14d
+r14w, KEYWORD, LMReg16,6, r14w
+r15b, KEYWORD, LMReg8,7, r15b
+r15d, KEYWORD, LMReg32,7, r15d
+r15w, KEYWORD, LMReg16,7, r15w
+repe, FUNCTION, (repeInstr), Function description, 
+repz, FUNCTION, (repzInstr), Function description, 
+retd, FUNCTION, (retdInstr), Function description, 
+retf, FUNCTION, (retfInstr), Function description, 
+retn, FUNCTION, (retnInstr), Function description, 
+retq, FUNCTION, (retqInstr), Function description, 
+retw, FUNCTION, (retwInstr), Function description, 
+sahf, FUNCTION, (sahfInstr), Function description, 
+scas, FUNCTION, (scasInstr), Function description, 
+seta, FUNCTION, (setaInstr), Function description, 
+setb, FUNCTION, (setbInstr), Function description, 
+setc, FUNCTION, (setcInstr), Function description, 
+sete, FUNCTION, (seteInstr), Function description, 
+setg, FUNCTION, (setgInstr), Function description, 
+setl, FUNCTION, (setlInstr), Function description, 
+seto, FUNCTION, (setoInstr), Function description, 
+setp, FUNCTION, (setpInstr), Function description, 
+sets, FUNCTION, (setsInstr), Function description, 
+setz, FUNCTION, (setzInstr), Function description, 
+sgdt, FUNCTION, (sgdtInstr), Function description, 
+shld, FUNCTION, (shldInstr), Function description, 
+shrd, FUNCTION, (shrdInstr), Function description, 
+sidt, FUNCTION, (sidtInstr), Function description, 
+size, KEYWORD, Operator,6, size
+sldt, FUNCTION, (sldtInstr), Function description, 
+smsw, FUNCTION, (smswInstr), Function description, 
+stos, FUNCTION, (stosInstr), Function description, 
+test, FUNCTION, (testInstr), Function description, 
+type, KEYWORD, Operator,7, type
+umov, FUNCTION, (umovInstr), Function description, 
+uses, KEYWORD, options,12, uses
+verr, FUNCTION, (verrInstr), Function description, 
+verw, FUNCTION, (verwInstr), Function description, 
+wait, FUNCTION, (waitInstr), Function description, 
+word, KEYWORD, datatype,2, word
+xadd, FUNCTION, (xaddInstr), Function description, 
+xbts, FUNCTION, (xbtsInstr), Function description, 
+xchg, FUNCTION, (xchgInstr), Function description, 
+xlat, FUNCTION, (xlatInstr), Function description, 
+xmm0, KEYWORD, sseReg,0, xmm0
+xmm1, KEYWORD, sseReg,1, xmm1
+xmm2, KEYWORD, sseReg,2, xmm2
+xmm3, KEYWORD, sseReg,3, xmm3
+xmm4, KEYWORD, sseReg,4, xmm4
+xmm5, KEYWORD, sseReg,5, xmm5
+xmm6, KEYWORD, sseReg,6, xmm6
+xmm7, KEYWORD, sseReg,7, xmm7
+xmm8, KEYWORD, sse2Reg,0, xmm8
+xmm9, KEYWORD, sse2Reg,1, xmm9
+ymm0, KEYWORD, avxReg,0, ymm0
+ymm1, KEYWORD, avxReg,1, ymm1
+ymm2, KEYWORD, avxReg,2, ymm2
+ymm3, KEYWORD, avxReg,3, ymm3
+ymm4, KEYWORD, avxReg,4, ymm4
+ymm5, KEYWORD, avxReg,5, ymm5
+ymm6, KEYWORD, avxReg,6, ymm6
+ymm7, KEYWORD, avxReg,7, ymm7
+ymm8, KEYWORD, avxReg,8, ymm8
+ymm9, KEYWORD, avxReg,9, ymm9
+ymm10, KEYWORD, avxReg,10, ymm10
+ymm11, KEYWORD, avxReg,11, ymm11
+ymm12, KEYWORD, avxReg,12, ymm12
+ymm13, KEYWORD, avxReg,13, ymm13
+ymm14, KEYWORD, avxReg,14, ymm14
+ymm15, KEYWORD, avxReg,15, ymm15
+ymm16, KEYWORD, avxReg,16,ymm16
+ymm17, KEYWORD, avxReg,17,ymm17
+ymm18, KEYWORD, avxReg,18,ymm18
+ymm19, KEYWORD, avxReg,19,ymm19
+ymm20, KEYWORD, avxReg,20,ymm20
+ymm21, KEYWORD, avxReg,21,ymm21
+ymm22, KEYWORD, avxReg,22,ymm22
+ymm23, KEYWORD, avxReg,23,ymm23
+ymm24, KEYWORD, avxReg,24,ymm24
+ymm25, KEYWORD, avxReg,25,ymm25
+ymm26, KEYWORD, avxReg,26,ymm26
+ymm27, KEYWORD, avxReg,27,ymm27
+ymm28, KEYWORD, avxReg,28,ymm28
+ymm29, KEYWORD, avxReg,29,ymm29
+ymm30, KEYWORD, avxReg,30,ymm30
+ymm31, KEYWORD, avxReg,31,ymm31
+zmm0, KEYWORD, avx512Reg,0,zmm0
+zmm1, KEYWORD, avx512Reg,1,zmm1
+zmm2, KEYWORD, avx512Reg,2,zmm2
+zmm3, KEYWORD, avx512Reg,3,zmm3
+zmm4, KEYWORD, avx512Reg,4,zmm4
+zmm5, KEYWORD, avx512Reg,5,zmm5
+zmm6, KEYWORD, avx512Reg,6,zmm6
+zmm7, KEYWORD, avx512Reg,7,zmm7
+zmm8, KEYWORD, avx512Reg,8,zmm8
+zmm9, KEYWORD, avx512Reg,9,zmm9
+zmm10, KEYWORD, avx512Reg,10,zmm10
+zmm11, KEYWORD, avx512Reg,11,zmm11
+zmm12, KEYWORD, avx512Reg,12,zmm12
+zmm13, KEYWORD, avx512Reg,13,zmm13
+zmm14, KEYWORD, avx512Reg,14,zmm14
+zmm15, KEYWORD, avx512Reg,15,zmm15
+zmm16, KEYWORD, avx512Reg,16,zmm16
+zmm17, KEYWORD, avx512Reg,17,zmm17
+zmm18, KEYWORD, avx512Reg,18,zmm18
+zmm19, KEYWORD, avx512Reg,19,zmm19
+zmm20, KEYWORD, avx512Reg,20,zmm20
+zmm21, KEYWORD, avx512Reg,21,zmm21
+zmm22, KEYWORD, avx512Reg,22,zmm22
+zmm23, KEYWORD, avx512Reg,23,zmm23
+zmm24, KEYWORD, avx512Reg,24,zmm24
+zmm25, KEYWORD, avx512Reg,25,zmm25
+zmm26, KEYWORD, avx512Reg,26,zmm26
+zmm27, KEYWORD, avx512Reg,27,zmm27
+zmm28, KEYWORD, avx512Reg,28,zmm28
+zmm29, KEYWORD, avx512Reg,29,zmm29
+zmm30, KEYWORD, avx512Reg,30,zmm30
+zmm31, KEYWORD, avx512Reg,31,zmm31
+addpd, FUNCTION, (addpdInstr), Function description, 
+addps, FUNCTION, (addpsInstr), Function description, 
+addsd, FUNCTION, (addsdInstr), Function description, 
+addss, FUNCTION, (addssInstr), Function description, 
+align, FUNCTION, (AlignDirective), Function description, 
+andpd, FUNCTION, (andpdInstr), Function description, 
+andps, FUNCTION, (andpsInstr), Function description, 
+basic, KEYWORD, Lang,1, Basic
+bound, FUNCTION, (boundInstr), Function description, 
+bswap, FUNCTION, (bswapInstr), Function description, 
+callf, FUNCTION, (callInstr), Function description, 
+cmova, FUNCTION, (cmovaInstr), Function description, 
+cmovb, FUNCTION, (cmovbInstr), Function description, 
+cmovc, FUNCTION, (cmovbInstr), Function description, 
+cmove, FUNCTION, (cmovzInstr), Function description, 
+cmovg, FUNCTION, (cmovgInstr), Function description, 
+cmovl, FUNCTION, (cmovlInstr), Function description, 
+cmovo, FUNCTION, (cmovoInstr), Function description, 
+cmovp, FUNCTION, (cmovpInstr), Function description, 
+cmovs, FUNCTION, (cmovsInstr), Function description, 
+cmovz, FUNCTION, (cmovzInstr), Function description, 
+cmppd, FUNCTION, (cmppdInstr), Function description, 
+cmpps, FUNCTION, (cmppsInstr), Function description, 
+cmpsb, FUNCTION, (cmpsbInstr), Function description, 
+cmpsd, FUNCTION, (cmpsdInstr), Function description, 
+cmpsq, FUNCTION, (cmpsqInstr), Function description, 
+cmpss, FUNCTION, (cmpssInstr), Function description, 
+cmpsw, FUNCTION, (cmpswInstr), Function description, 
+cpuid, FUNCTION, (cpuidInstr), Function description, 
+divpd, FUNCTION, (divpdInstr), Function description, 
+divps, FUNCTION, (divpsInstr), Function description, 
+divsd, FUNCTION, (divsdInstr), Function description, 
+divss, FUNCTION, (divssInstr), Function description, 
+dword, KEYWORD, datatype,3, dword
+endif, FUNCTION, (EndIfDirective), Function description, 
+enter, FUNCTION, (enterInstr), Function description, 
+exitm, FUNCTION, (ExitMDirective), Function description, 
+extrn, FUNCTION, (ExternDirective), Function description, 
+f2xm1, FUNCTION, (f2xm1Instr), Function description, 
+faddp, FUNCTION, (faddpInstr), Function description, 
+fbstp, FUNCTION, (fbstpInstr), Function description, 
+fclex, FUNCTION, (fclexInstr), Function description, 
+fcomi, FUNCTION, (fcomiInstr), Function description, 
+fcomp, FUNCTION, (fcompInstr), Function description, 
+fdisi, FUNCTION, (fdisiInstr), Function description, 
+fdivp, FUNCTION, (fdivpInstr), Function description, 
+fdivr, FUNCTION, (fdivrInstr), Function description, 
+femms, FUNCTION, (femmsInstr), Function description, 
+ffree, FUNCTION, (ffreeInstr), Function description, 
+fiadd, FUNCTION, (fiaddInstr), Function description, 
+ficom, FUNCTION, (ficomInstr), Function description, 
+fidiv, FUNCTION, (fidivInstr), Function description, 
+fimul, FUNCTION, (fimulInstr), Function description, 
+finit, FUNCTION, (finitInstr), Function description, 
+fistp, FUNCTION, (fistpInstr), Function description, 
+fisub, FUNCTION, (fisubInstr), Function description, 
+fldcw, FUNCTION, (fldcwInstr), Function description, 
+fldpi, FUNCTION, (fldpiInstr), Function description, 
+fmulp, FUNCTION, (fmulpInstr), Function description, 
+fneni, FUNCTION, (fneniInstr), Function description, 
+fprem, FUNCTION, (fpremInstr), Function description, 
+fptan, FUNCTION, (fptanInstr), Function description, 
+fsave, FUNCTION, (fsaveInstr), Function description, 
+fsqrt, FUNCTION, (fsqrtInstr), Function description, 
+fstcw, FUNCTION, (fstcwInstr), Function description, 
+fstsw, FUNCTION, (fstswInstr), Function description, 
+fsubp, FUNCTION, (fsubpInstr), Function description, 
+fsubr, FUNCTION, (fsubrInstr), Function description, 
+fucom, FUNCTION, (fucomInstr), Function description, 
+fwait, FUNCTION, (waitInstr), Function description, 
+fword, KEYWORD, datatype,4, fword
+fyl2x, FUNCTION, (fyl2xInstr), Function description, 
+group, FUNCTION, (GroupDirective), Function description, 
+ifdef, FUNCTION, (IfDefDirective), Function description, 
+iretd, FUNCTION, (iretdInstr), Function description, 
+iretq, FUNCTION, (iretqInstr), Function description, 
+iretw, FUNCTION, (iretwInstr), Function description, 
+jecxz, FUNCTION, (jecxzInstr), Function description, 
+label, FUNCTION, (LabelDirective), Function description, 
+lddqu, FUNCTION, (lddquInstr), Function description, 
+leave, FUNCTION, (leaveInstr), Function description, 
+local, FUNCTION, (LocalDirective), Function description, 
+lodsb, FUNCTION, (lodsbInstr), Function description, 
+lodsd, FUNCTION, (lodsdInstr), Function description, 
+lodsq, FUNCTION, (lodsqInstr), Function description, 
+lodsw, FUNCTION, (lodswInstr), Function description, 
+loopd, FUNCTION, (loopdInstr), Function description, 
+loope, FUNCTION, (loopzInstr), Function description, 
+loopz, FUNCTION, (loopzInstr), Function description, 
+macro, FUNCTION, (MacroDirective), Function description, 
+maxpd, FUNCTION, (maxpdInstr), Function description, 
+maxps, FUNCTION, (maxpsInstr), Function description, 
+maxsd, FUNCTION, (maxsdInstr), Function description, 
+maxss, FUNCTION, (maxssInstr), Function description, 
+minpd, FUNCTION, (minpdInstr), Function description, 
+minps, FUNCTION, (minpsInstr), Function description, 
+minsd, FUNCTION, (minsdInstr), Function description, 
+minss, FUNCTION, (minssInstr), Function description, 
+movsb, FUNCTION, (movsbInstr), Function description, 
+movsd, FUNCTION, (movsdInstr), Function description, 
+movsq, FUNCTION, (movsqInstr), Function description, 
+movss, FUNCTION, (movssInstr), Function description, 
+movsw, FUNCTION, (movswInstr), Function description, 
+movsx, FUNCTION, (movsxInstr), Function description, 
+movzx, FUNCTION, (movzxInstr), Function description, 
+mulpd, FUNCTION, (mulpdInstr), Function description, 
+mulps, FUNCTION, (mulpsInstr), Function description, 
+mulsd, FUNCTION, (mulsdInstr), Function description, 
+mulss, FUNCTION, (mulssInstr), Function description, 
+mwait, FUNCTION, (mwaitInstr), Function description, 
+outsb, FUNCTION, (outsbInstr), Function description, 
+outsd, FUNCTION, (outsdInstr), Function description, 
+outsw, FUNCTION, (outswInstr), Function description, 
+oword, KEYWORD, datatype,7, oword
+paddb, FUNCTION, (paddbInstr), Function description, 
+paddd, FUNCTION, (padddInstr), Function description, 
+paddq, FUNCTION, (paddqInstr), Function description, 
+paddw, FUNCTION, (paddwInstr), Function description, 
+pandn, FUNCTION, (pandnInstr), Function description, 
+pause, FUNCTION, (pauseInstr), Function description, 
+paveb, FUNCTION, (pavebInstr), Function description, 
+pavgb, FUNCTION, (pavgbInstr), Function description, 
+pavgw, FUNCTION, (pavgwInstr), Function description, 
+pf2id, FUNCTION, (pf2idInstr), Function description, 
+pf2iw, FUNCTION, (pf2iwInstr), Function description, 
+pfacc, FUNCTION, (pfaccInstr), Function description, 
+pfadd, FUNCTION, (pfaddInstr), Function description, 
+pfmax, FUNCTION, (pfmaxInstr), Function description, 
+pfmin, FUNCTION, (pfminInstr), Function description, 
+pfmul, FUNCTION, (pfmulInstr), Function description, 
+pfrcp, FUNCTION, (pfrcpInstr), Function description, 
+pfsub, FUNCTION, (pfsubInstr), Function description, 
+pi2fd, FUNCTION, (pi2fdInstr), Function description, 
+pi2fw, FUNCTION, (pi2fwInstr), Function description, 
+pmagw, FUNCTION, (pmagwInstr), Function description, 
+pmvzb, FUNCTION, (pmvzbInstr), Function description, 
+popad, FUNCTION, (popadInstr), Function description, 
+popfd, FUNCTION, (popfdInstr), Function description, 
+popfq, FUNCTION, (PopFQInstr), Function description, 
+popfw, FUNCTION, (PopFWInstr), Function description, 
+pslld, FUNCTION, (pslldInstr), Function description, 
+psllq, FUNCTION, (psllqInstr), Function description, 
+psllw, FUNCTION, (psllwInstr), Function description, 
+psrad, FUNCTION, (psradInstr), Function description, 
+psraw, FUNCTION, (psrawInstr), Function description, 
+psrld, FUNCTION, (psrldInstr), Function description, 
+psrlq, FUNCTION, (psrlqInstr), Function description, 
+psrlw, FUNCTION, (psrlwInstr), Function description, 
+psubb, FUNCTION, (psubbInstr), Function description, 
+psubd, FUNCTION, (psubdInstr), Function description, 
+psubq, FUNCTION, (psubqInstr), Function description, 
+psubw, FUNCTION, (psubwInstr), Function description, 
+pusha, FUNCTION, (pushaInstr), Function description, 
+pushd, FUNCTION, (pushdInstr), Function description, 
+pushf, FUNCTION, (pushfInstr), Function description, 
+pword, KEYWORD, datatype,4, pword
+qword, KEYWORD, datatype,5, qword
+radix, FUNCTION, (RadixDirective), Function description, 
+rcpps, FUNCTION, (rcppsInstr), Function description, 
+rcpss, FUNCTION, (rcpssInstr), Function description, 
+rdmsr, FUNCTION, (rdmsrInstr), Function description, 
+rdpmc, FUNCTION, (rdpmcInstr), Function description, 
+rdtsc, FUNCTION, (rdtscInstr), Function description, 
+repne, FUNCTION, (repneInstr), Function description, 
+repnz, FUNCTION, (repnzInstr), Function description, 
+retfw, FUNCTION, (retfwInstr), Function description, 
+retfd, FUNCTION, (retfdInstr), Function description, 
+retfq, FUNCTION, (retfqInstr), Function description, 
+scasb, FUNCTION, (scasbInstr), Function description, 
+scasd, FUNCTION, (scasdInstr), Function description, 
+scasq, FUNCTION, (scasqInstr), Function description, 
+scasw, FUNCTION, (scaswInstr), Function description, 
+segcs, FUNCTION, (segcsInstr), Function description, 
+segds, FUNCTION, (segdsInstr), Function description, 
+seges, FUNCTION, (segesInstr), Function description, 
+segfs, FUNCTION, (segfsInstr), Function description, 
+seggs, FUNCTION, (seggsInstr), Function description, 
+segss, FUNCTION, (segssInstr), Function description, 
+setae, FUNCTION, (setaeInstr), Function description, 
+setbe, FUNCTION, (setbeInstr), Function description, 
+setge, FUNCTION, (setgeInstr), Function description, 
+setle, FUNCTION, (setleInstr), Function description, 
+setna, FUNCTION, (setnaInstr), Function description, 
+setnb, FUNCTION, (setnbInstr), Function description, 
+setnc, FUNCTION, (setncInstr), Function description, 
+setne, FUNCTION, (setneInstr), Function description, 
+setng, FUNCTION, (setngInstr), Function description, 
+setnl, FUNCTION, (setnlInstr), Function description, 
+setno, FUNCTION, (setnoInstr), Function description, 
+setnp, FUNCTION, (setnpInstr), Function description, 
+setns, FUNCTION, (setnsInstr), Function description, 
+setnz, FUNCTION, (setnzInstr), Function description, 
+setpe, FUNCTION, (setpeInstr), Function description, 
+setpo, FUNCTION, (setpoInstr), Function description, 
+short, KEYWORD, distspec,1, short
+stack, FUNCTION, (StackDirective), Function description, 
+stosb, FUNCTION, (stosbInstr), Function description, 
+stosd, FUNCTION, (stosdInstr), Function description, 
+stosq, FUNCTION, (stosqInstr), Function description, 
+stosw, FUNCTION, (stoswInstr), Function description, 
+struc, FUNCTION, (StrucDirective), Function description, 
+subpd, FUNCTION, (subpdInstr), Function description, 
+subps, FUNCTION, (subpsInstr), Function description, 
+subsd, FUNCTION, (subsdInstr), Function description, 
+subss, FUNCTION, (subssInstr), Function description, 
+tbyte, KEYWORD, datatype,6, tbyte
+tword, KEYWORD, datatype,6, tword
+use16, FUNCTION, (Use16Directive), Function description, 
+use32, FUNCTION, (Use32Directive), Function description, 
+use64, FUNCTION, (Use64Directive), Function description, 
+wrmsr, FUNCTION, (wrmsrInstr), Function description, 
+xlatb, FUNCTION, (xlatInstr), Function description, 
+xmm10, KEYWORD, SSE2Reg,2, xmm10
+xmm11, KEYWORD, SSE2Reg,3, xmm11
+xmm12, KEYWORD, SSE2Reg,4, xmm12
+xmm13, KEYWORD, SSE2Reg,5, xmm13
+xmm14, KEYWORD, SSE2Reg,6, xmm14
+xmm15, KEYWORD, SSE2Reg,7, xmm15
+xorpd, FUNCTION, (xorpdInstr), Function description, 
+xorps, FUNCTION, (xorpsInstr), Function description, 
+andnpd, FUNCTION, (andnpdInstr), Function description, 
+andnps, FUNCTION, (andnpsInstr), Function description, 
+cmovae, FUNCTION, (cmovaeInstr), Function description, 
+cmovbe, FUNCTION, (cmovbeInstr), Function description, 
+cmovge, FUNCTION, (cmovgeInstr), Function description, 
+cmovle, FUNCTION, (cmovleInstr), Function description, 
+cmovna, FUNCTION, (cmovbeInstr), Function description, 
+cmovnb, FUNCTION, (cmovaeInstr), Function description, 
+cmovnc, FUNCTION, (cmovaeInstr), Function description, 
+cmovne, FUNCTION, (cmovnzInstr), Function description, 
+cmovng, FUNCTION, (cmovleInstr), Function description, 
+cmovnl, FUNCTION, (cmovgeInstr), Function description, 
+cmovno, FUNCTION, (cmovnoInstr), Function description, 
+cmovnp, FUNCTION, (cmovpoInstr), Function description, 
+cmovns, FUNCTION, (cmovnsInstr), Function description, 
+cmovnz, FUNCTION, (cmovnzInstr), Function description, 
+cmovpe, FUNCTION, (cmovpInstr), Function description, 
+cmovpo, FUNCTION, (cmovpoInstr), Function description, 
+comisd, FUNCTION, (comisdInstr), Function description, 
+comiss, FUNCTION, (comissInstr), Function description, 
+dqword, KEYWORD, DataType,7, 
+elseif, FUNCTION, (ElseIfDirective), Function description, 
+enterd, FUNCTION, (enterdInstr), Function description, 
+extern, FUNCTION, (ExternDirective), Function description, 
+export, KEYWORD, Error2, Error2, DW             (ExportDirective)
+fcmovb, FUNCTION, (fcmovbInstr), Function description, 
+fcmove, FUNCTION, (fcmoveInstr), Function description, 
+fcmovu, FUNCTION, (fcmovuInstr), Function description, 
+fcomip, FUNCTION, (fcomipInstr), Function description, 
+fcompp, FUNCTION, (fcomppInstr), Function description, 
+fdivrp, FUNCTION, (fdivrpInstr), Function description, 
+ffreep, FUNCTION, (ffreepInstr), Function description, 
+ficomp, FUNCTION, (ficompInstr), Function description, 
+fidivr, FUNCTION, (fidivrInstr), Function description, 
+fisttp, FUNCTION, (fisttpInstr), Function description, 
+fisubr, FUNCTION, (fisubrInstr), Function description, 
+fldenv, FUNCTION, (fldenvInstr), Function description, 
+fldl2e, FUNCTION, (fldl2eInstr), Function description, 
+fldl2t, FUNCTION, (fldl2tInstr), Function description, 
+fldlg2, FUNCTION, (fldlg2Instr), Function description, 
+fldln2, FUNCTION, (fldln2Instr), Function description, 
+fnclex, FUNCTION, (fnclexInstr), Function description, 
+fndisi, FUNCTION, (fndisiInstr), Function description, 
+fninit, FUNCTION, (fninitInstr), Function description, 
+fnsave, FUNCTION, (fnsaveInstr), Function description, 
+fnstcw, FUNCTION, (fnstcwInstr), Function description, 
+fnstsw, FUNCTION, (fnstswInstr), Function description, 
+format, FUNCTION, (FormatDirective), Function description, 
+fpatan, FUNCTION, (fpatanInstr), Function description, 
+fprem1, FUNCTION, (fprem1Instr), Function description, 
+frstor, FUNCTION, (frstorInstr), Function description, 
+fsaved, FUNCTION, (fsavedInstr), Function description, 
+fsavew, FUNCTION, (fsavewInstr), Function description, 
+fscale, FUNCTION, (fscaleInstr), Function description, 
+fsetpm, FUNCTION, (fsetpmInstr), Function description, 
+fstenv, FUNCTION, (fstenvInstr), Function description, 
+fsubrp, FUNCTION, (fsubrpInstr), Function description, 
+fucomi, FUNCTION, (fucomiInstr), Function description, 
+fucomp, FUNCTION, (fucompInstr), Function description, 
+fxsave, FUNCTION, (fxsaveInstr), Function description, 
+global, FUNCTION, (GlobalDirective), Function description, 
+haddpd, FUNCTION, (haddpdInstr), Function description, 
+haddps, FUNCTION, (haddpsInstr), Function description, 
+hsubpd, FUNCTION, (hsubpdInstr), Function description, 
+hsubps, FUNCTION, (hsubpsInstr), Function description, 
+ifndef, FUNCTION, (IfNDefDirective), Function description, 
+invlpg, FUNCTION, (invlpgInstr), Function description, 
+invoke, FUNCTION, (InvokeDirective), Function description, 
+import, KEYWORD, Error2, Error2, DW             (ImportDirective)
+leaved, FUNCTION, (leavedInstr), Function description, 
+lfence, FUNCTION, (lfenceInstr), Function description, 
+loopde, FUNCTION, (loopdzInstr), Function description, 
+loopdz, FUNCTION, (loopdzInstr), Function description, 
+loopne, FUNCTION, (loopnzInstr), Function description, 
+loopnz, FUNCTION, (loopnzInstr), Function description, 
+mfence, FUNCTION, (mfenceInstr), Function description, 
+movapd, FUNCTION, (movapdInstr), Function description, 
+movaps, FUNCTION, (movapsInstr), Function description, 
+movdqa, FUNCTION, (movdqaInstr), Function description, 
+movdqu, FUNCTION, (movdquInstr), Function description, 
+movhpd, FUNCTION, (movhpdInstr), Function description, 
+movhps, FUNCTION, (movhpsInstr), Function description, 
+movlpd, FUNCTION, (movlpdInstr), Function description, 
+movlps, FUNCTION, (movlpsInstr), Function description, 
+movnti, FUNCTION, (movntiInstr), Function description, 
+movntq, FUNCTION, (movntqInstr), Function description, 
+movsxd, FUNCTION, (movsxdInstr), Function description, 
+movupd, FUNCTION, (movupdInstr), Function description, 
+movups, FUNCTION, (movupsInstr), Function description, 
+offset, KEYWORD, operator, AddOp, offset
+option, FUNCTION, (OptionDirective), Function description, 
+paddsb, FUNCTION, (paddsbInstr), Function description, 
+paddsw, FUNCTION, (paddswInstr), Function description, 
+pascal, KEYWORD, Lang,1, pascal
+pextrw, FUNCTION, (pextrwInstr), Function description, 
+pfnacc, FUNCTION, (pfnaccInstr), Function description, 
+pfsubr, FUNCTION, (pfsubrInstr), Function description, 
+pinsrw, FUNCTION, (pinsrwInstr), Function description, 
+pmaxsw, FUNCTION, (pmaxswInstr), Function description, 
+pmaxub, FUNCTION, (pmaxubInstr), Function description, 
+pminsw, FUNCTION, (pminswInstr), Function description, 
+pminub, FUNCTION, (pminubInstr), Function description, 
+pmulhw, FUNCTION, (pmulhwInstr), Function description, 
+pmullw, FUNCTION, (pmullwInstr), Function description, 
+pmvlzb, FUNCTION, (pmvlzbInstr), Function description, 
+pmvnzb, FUNCTION, (pmvnzbInstr), Function description, 
+prolog, KEYWORD, Lang,2, prolog
+psadbw, FUNCTION, (psadbwInstr), Function description, 
+pshufd, FUNCTION, (pshufdInstr), Function description, 
+pshufw, FUNCTION, (pshufwInstr), Function description, 
+pslldq, FUNCTION, (pslldqInstr), Function description, 
+psrldq, FUNCTION, (psrldqInstr), Function description, 
+psubsb, FUNCTION, (psubsbInstr), Function description, 
+psubsw, FUNCTION, (psubswInstr), Function description, 
+pswapd, FUNCTION, (pswapdInstr), Function description, 
+public, FUNCTION, (PublicDirective), Function description, 
+pushad, FUNCTION, (pushadInstr), Function description, 
+pushfd, FUNCTION, (pushfdInstr), Function description, 
+pushfq, FUNCTION, (pushfqInstr), Function description, 
+pushfw, FUNCTION, (pushfwInstr), Function description, 
+repeat, FUNCTION, (RepeatDirective), Function description, 
+setalc, FUNCTION, (setalcInstr), Function description, 
+setnae, FUNCTION, (setnaeInstr), Function description, 
+setnbe, FUNCTION, (setnbeInstr), Function description, 
+setnge, FUNCTION, (setngeInstr), Function description, 
+setnle, FUNCTION, (setnleInstr), Function description, 
+sfence, FUNCTION, (sfenceInstr), Function description, 
+shufpd, FUNCTION, (shufpdInstr), Function description, 
+shufps, FUNCTION, (shufpsInstr), Function description, 
+sqrtpd, FUNCTION, (sqrtpdInstr), Function description, 
+sqrtps, FUNCTION, (sqrtpsInstr), Function description, 
+sqrtsd, FUNCTION, (sqrtsdInstr), Function description, 
+sqrtss, FUNCTION, (sqrtssInstr), Function description, 
+strmid, KEYWORD, operator,12, strmid
+struct, FUNCTION, (StrucDirective), Function description, 
+swapgs, FUNCTION, (SwapGSInstr), Function description, 
+sysret, FUNCTION, (sysretInstr), Function description, 
+wbinvd, FUNCTION, (wbinvdInstr), Function description, 
+clflush, FUNCTION, (clflushInstr), Function description, 
+cmovnae, FUNCTION, (cmovbInstr), Function description, 
+cmovnbe, FUNCTION, (cmovaInstr), Function description, 
+cmovnge, FUNCTION, (cmovlInstr), Function description, 
+cmovnle, FUNCTION, (cmovgInstr), Function description, 
+cmpeqpd, FUNCTION, (cmpeqpdInstr), Function description, 
+cmpeqps, FUNCTION, (cmpeqpsInstr), Function description, 
+cmpeqsd, FUNCTION, (cmpeqsdInstr), Function description, 
+cmpeqss, FUNCTION, (cmpeqssInstr), Function description, 
+cmplepd, FUNCTION, (cmplepdInstr), Function description, 
+cmpleps, FUNCTION, (cmplepsInstr), Function description, 
+cmplesd, FUNCTION, (cmplesdInstr), Function description, 
+cmpless, FUNCTION, (cmplessInstr), Function description, 
+cmpltpd, FUNCTION, (cmpltpdInstr), Function description, 
+cmpltps, FUNCTION, (cmpltpsInstr), Function description, 
+cmpltsd, FUNCTION, (cmpltsdInstr), Function description, 
+cmpltss, FUNCTION, (cmpltssInstr), Function description, 
+cmpxchg, FUNCTION, (cmpxchgInstr), Function description, 
+comment, FUNCTION, (CommentDirective), Function description, 
+fcmovbe, FUNCTION, (fcmovbeInstr), Function description, 
+fcmovnb, FUNCTION, (fcmovnbInstr), Function description, 
+fcmovne, FUNCTION, (fcmovneInstr), Function description, 
+fcmovnu, FUNCTION, (fcmovnuInstr), Function description, 
+fdecstp, FUNCTION, (fdecstpInstr), Function description, 
+fincstp, FUNCTION, (fincstpInstr), Function description, 
+fldenvd, FUNCTION, (fldenvdInstr), Function description, 
+fldenvw, FUNCTION, (fldenvwInstr), Function description, 
+fnldenv, FUNCTION, (fnldenvInstr), Function description, 
+fnrstor, FUNCTION, (fnrstorInstr), Function description, 
+fnsaved, FUNCTION, (fnsavedInstr), Function description, 
+fnsavew, FUNCTION, (fnsavewInstr), Function description, 
+fnstenv, FUNCTION, (fnstenvInstr), Function description, 
+frndint, FUNCTION, (frndintInstr), Function description, 
+frstord, FUNCTION, (frstordInstr), Function description, 
+frstorw, FUNCTION, (frstorwInstr), Function description, 
+fsincos, FUNCTION, (fsincosInstr), Function description, 
+fstenvd, FUNCTION, (fstenvdInstr), Function description, 
+fstenvw, FUNCTION, (fstenvwInstr), Function description, 
+fucomip, FUNCTION, (fucomipInstr), Function description, 
+fucompp, FUNCTION, (fucomppInstr), Function description, 
+fxrstor, FUNCTION, (fxrstorInstr), Function description, 
+fxtract, FUNCTION, (fxtractInstr), Function description, 
+fyl2xp1, FUNCTION, (fyl2xp1Instr), Function description, 
+include, FUNCTION, (IncludeDirective), Function description, 
+ldmxcsr, FUNCTION, (ldmxcsrInstr), Function description, 
+loadall, FUNCTION, (loadallInstr), Function description, 
+loopdne, FUNCTION, (loopdnzInstr), Function description, 
+loopdnz, FUNCTION, (loopdnzInstr), Function description, 
+monitor, FUNCTION, (monitorInstr), Function description, 
+movddup, FUNCTION, (movddupInstr), Function description, 
+movdq2q, FUNCTION, (movdq2qInstr), Function description, 
+movhlps, FUNCTION, (movhlpsInstr), Function description, 
+movlhps, FUNCTION, (movlhpsInstr), Function description, 
+movntdq, FUNCTION, (movntdqInstr), Function description, 
+movntpd, FUNCTION, (movntpdInstr), Function description, 
+movntps, FUNCTION, (movntpsInstr), Function description, 
+movq2dq, FUNCTION, (movq2dqInstr), Function description, 
+paddsiw, FUNCTION, (paddsiwInstr), Function description, 
+paddusb, FUNCTION, (paddusbInstr), Function description, 
+paddusw, FUNCTION, (padduswInstr), Function description, 
+pavgusb, FUNCTION, (pavgusbInstr), Function description, 
+pcmpeqb, FUNCTION, (pcmpeqbInstr), Function description, 
+pcmpeqd, FUNCTION, (pcmpeqdInstr), Function description, 
+pcmpeqw, FUNCTION, (pcmpeqwInstr), Function description, 
+pcmpgtb, FUNCTION, (pcmpgtbInstr), Function description, 
+pcmpgtd, FUNCTION, (pcmpgtdInstr), Function description, 
+pcmpgtw, FUNCTION, (pcmpgtwInstr), Function description, 
+pdistib, FUNCTION, (pdistibInstr), Function description, 
+pfcmpeq, FUNCTION, (pfcmpeqInstr), Function description, 
+pfcmpge, FUNCTION, (pfcmpgeInstr), Function description, 
+pfcmpgt, FUNCTION, (pfcmpgtInstr), Function description, 
+pfpnacc, FUNCTION, (pfpnaccInstr), Function description, 
+pfrsqrt, FUNCTION, (pfrsqrtInstr), Function description, 
+pmaddwd, FUNCTION, (pmaddwdInstr), Function description, 
+pmulhrw, FUNCTION, (pmulhrwInstr), Function description, 
+pmulhuw, FUNCTION, (pmulhuwInstr), Function description, 
+pmuludq, FUNCTION, (pmuludqInstr), Function description, 
+pmvgezb, FUNCTION, (pmvgezbInstr), Function description, 
+private, KEYWORD, options,11, private
+pshufhw, FUNCTION, (pshufhwInstr), Function description, 
+pshuflw, FUNCTION, (pshuflwInstr), Function description, 
+psubsiw, FUNCTION, (psubsiwInstr), Function description, 
+psubusb, FUNCTION, (psubusbInstr), Function description, 
+psubusw, FUNCTION, (psubuswInstr), Function description, 
+rsqrtps, FUNCTION, (rsqrtpsInstr), Function description, 
+rsqrtss, FUNCTION, (rsqrtssInstr), Function description, 
+section, FUNCTION, (SegmentDirective), Function description, 
+segment, FUNCTION, (SegmentDirective), Function description, 
+stdcall, KEYWORD, Lang,3, StdCall
+stmxcsr, FUNCTION, (stmxcsrInstr), Function description, 
+strleft, KEYWORD, operator,13, strleft
+strscan, KEYWORD, operator,14, strscan
+syscall, FUNCTION, (syscallInstr), Function description, 
+sysexit, FUNCTION, (sysexitInstr), Function description, 
+typedef, FUNCTION, (typedefDirective), Function description, 
+ucomisd, FUNCTION, (ucomisdInstr), Function description, 
+ucomiss, FUNCTION, (ucomissInstr), Function description, 
+addsubpd, FUNCTION, (addsubpdInstr), Function description, 
+addsubps, FUNCTION, (addsubpsInstr), Function description, 
+cmpneqpd, FUNCTION, (cmpneqpdInstr), Function description, 
+cmpneqps, FUNCTION, (cmpneqpsInstr), Function description, 
+cmpneqsd, FUNCTION, (cmpneqsdInstr), Function description, 
+cmpneqss, FUNCTION, (cmpneqssInstr), Function description, 
+cmpnlepd, FUNCTION, (cmpnlepdInstr), Function description, 
+cmpnleps, FUNCTION, (cmpnlepsInstr), Function description, 
+cmpnlesd, FUNCTION, (cmpnlesdInstr), Function description, 
+cmpnless, FUNCTION, (cmpnlessInstr), Function description, 
+cmpnltpd, FUNCTION, (cmpnltpdInstr), Function description, 
+cmpnltps, FUNCTION, (cmpnltpsInstr), Function description, 
+cmpnltsd, FUNCTION, (cmpnltsdInstr), Function description, 
+cmpnltss, FUNCTION, (cmpnltssInstr), Function description, 
+cmpordpd, FUNCTION, (cmpordpdInstr), Function description, 
+cmpordps, FUNCTION, (cmpordpsInstr), Function description, 
+cmpordsd, FUNCTION, (cmpordsdInstr), Function description, 
+cmpordss, FUNCTION, (cmpordssInstr), Function description, 
+cvtdq2pd, FUNCTION, (cvtdq2pdInstr), Function description, 
+cvtdq2ps, FUNCTION, (cvtdq2psInstr), Function description, 
+cvtpd2dq, FUNCTION, (cvtpd2dqInstr), Function description, 
+cvtpd2pi, FUNCTION, (cvtpd2piInstr), Function description, 
+cvtpd2ps, FUNCTION, (cvtpd2psInstr), Function description, 
+cvtpi2pd, FUNCTION, (cvtpi2pdInstr), Function description, 
+cvtpi2ps, FUNCTION, (cvtpi2psInstr), Function description, 
+cvtps2dq, FUNCTION, (cvtps2dqInstr), Function description, 
+cvtps2pd, FUNCTION, (cvtps2pdInstr), Function description, 
+cvtps2pi, FUNCTION, (cvtps2piInstr), Function description, 
+cvtsd2si, FUNCTION, (cvtsd2siInstr), Function description, 
+cvtsd2ss, FUNCTION, (cvtsd2ssInstr), Function description, 
+cvtsi2sd, FUNCTION, (cvtsi2sdInstr), Function description, 
+cvtsi2ss, FUNCTION, (cvtsi2ssInstr), Function description, 
+cvtss2sd, FUNCTION, (cvtss2sdInstr), Function description, 
+cvtss2si, FUNCTION, (cvtss2siInstr), Function description, 
+fcmovnbe, FUNCTION, (fcmovnbeInstr), Function description, 
+fnstenvd, FUNCTION, (fnstenvdInstr), Function description, 
+fnstenvw, FUNCTION, (fnstenvwInstr), Function description, 
+function, FUNCTION, (FunctionDirective), Function description, 
+maskmovq, FUNCTION, (maskmovqInstr), Function description, 
+movmskpd, FUNCTION, (movmskpdInstr), Function description, 
+movmskps, FUNCTION, (movmskpsInstr), Function description, 
+movshdup, FUNCTION, (movshdupInstr), Function description, 
+movsldup, FUNCTION, (movsldupInstr), Function description, 
+packssdw, FUNCTION, (packssdwInstr), Function description, 
+packsswb, FUNCTION, (packsswbInstr), Function description, 
+packuswb, FUNCTION, (packuswbInstr), Function description, 
+pfrcpit1, FUNCTION, (pfrcpit1Instr), Function description, 
+pfrcpit2, FUNCTION, (pfrcpit2Instr), Function description, 
+pfrsqit1, FUNCTION, (pfrsqit1Instr), Function description, 
+pmachriw, FUNCTION, (pmachriwInstr), Function description, 
+pmovmskb, FUNCTION, (pmovmskbInstr), Function description, 
+pmulhriw, FUNCTION, (pmulhriwInstr), Function description, 
+prefetch, FUNCTION, (prefetchInstr), Function description, 
+strlcase, KEYWORD, operator,10, strlcase
+strright, KEYWORD, operator,15, strright
+strucase, KEYWORD, operator,11, strucase
+sysenter, FUNCTION, (sysenterInstr), Function description, 
+unpckhpd, FUNCTION, (unpckhpdInstr), Function description, 
+unpckhps, FUNCTION, (unpckhpsInstr), Function description, 
+unpcklpd, FUNCTION, (unpcklpdInstr), Function description, 
+unpcklps, FUNCTION, (unpcklpsInstr), Function description, 
+cmpxchg8b, FUNCTION, (cmpxchg8bInstr), Function description, 
+cvttpd2dq, FUNCTION, (cvttpd2dqInstr), Function description, 
+cvttpd2pi, FUNCTION, (cvttpd2piInstr), Function description, 
+cvttps2dq, FUNCTION, (cvttps2dqInstr), Function description, 
+cvttps2pi, FUNCTION, (cvttps2piInstr), Function description, 
+cvttsd2si, FUNCTION, (cvttsd2siInstr), Function description, 
+cvttss2si, FUNCTION, (cvttss2siInstr), Function description, 
+includerc, FUNCTION, (IncludeRCDirective), Function description, 
+prefetchw, FUNCTION, (prefetchwInstr), Function description, 
+punpckhbw, FUNCTION, (punpckhbwInstr), Function description, 
+punpckhdq, FUNCTION, (punpckhdqInstr), Function description, 
+punpckhwd, FUNCTION, (punpckhwdInstr), Function description, 
+punpcklbw, FUNCTION, (punpcklbwInstr), Function description, 
+punpckldq, FUNCTION, (punpckldqInstr), Function description, 
+punpcklwd, FUNCTION, (punpcklwdInstr), Function description, 
+cmpunordpd, FUNCTION, (cmpunordpdInstr), Function description, 
+cmpunordps, FUNCTION, (cmpunordpsInstr), Function description, 
+cmpunordsd, FUNCTION, (cmpunordsdInstr), Function description, 
+cmpunordss, FUNCTION, (cmpunordssInstr), Function description, 
+cmpxchg16b, FUNCTION, (CmpXChg16BInstr), Function description, 
+includebin, FUNCTION, (IncludeBinDirective), Function description, 
+includelib, FUNCTION, (IncludeLibDirective), Function description, 
+maskmovdqu, FUNCTION, (maskmovdquInstr), Function description, 
+prefetcht0, FUNCTION, (prefetcht0Instr), Function description, 
+prefetcht1, FUNCTION, (prefetcht1Instr), Function description, 
+prefetcht2, FUNCTION, (prefetcht2Instr), Function description, 
+prefetchnta, FUNCTION, (prefetchntaInstr), Function description, 

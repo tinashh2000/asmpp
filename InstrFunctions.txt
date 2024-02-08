@@ -1,0 +1,92 @@
+SSE_AVX_R_R_RM_Instr
+
+xmm1, xmm2, xmm3/m128
+ymm1, ymm2, ymm3/m256
+
+
+
+SSE_R_RM_Instr
+
+xmm1, xmm2/m128
+
+
+
+
+SSE_AVX5_R_R_RM_Instr
+
+xmm1, xmm2, xmm3/m128
+ymm1, ymm2, ymm3/m256
+
+xmm1 {k1}{z}, xmm2, xmm3/m128
+ymm1 {k1}{z}, ymm2, ymm3/m256
+zmm1 {k1}{z}, zmm2, zmm3/m256
+
+
+
+SSE_M_R_Instr_Double
+
+m128, xmm1
+
+
+
+
+SSE_AXV5_M_R_Instr_Double
+
+m128, xmm1 (VEX.128)
+m256, ymm1 (VEX.256)
+
+m128, xmm1 (EVEX.128)
+m256, ymm1 (EVEX.256)
+m512, zmm1 (EVEX.512)
+
+
+
+
+
+
+SSE_R_M_Instr_Double
+
+xmm1, m128
+
+
+
+
+
+
+SSE_AVX5_R_M_Instr_Double
+
+xmm1, m128 (VEX.128)
+ymm1, m256 (VEX.256)
+
+xmm1, m128 (EVEX.128)
+ymm1, m256 (EVEX.256)
+zmm1, m512 (EVEX.512)
+
+
+
+SSE_R_R128M64_Instr_Double
+
+xmm1, xmm2/m64
+
+
+
+
+SSE_R_R128M32_Instr_Double
+
+xmm1, xmm2/m32
+
+
+
+SSE_R_R128M16_Instr_Double
+
+xmm1, xmm2/m16
+
+
+
+
+xmm1, xmm2, xmm3/m128, imm8
+ymm1, ymm2, ymm3/m256, imm8
+
+k1{k2}, xmm2, xmm3/m128/m64, imm8
+k1{k2}, ymm2, ymm3/m256/m64, imm8
+k1{k2}, zmm2, zmm3/m512/m64, imm8

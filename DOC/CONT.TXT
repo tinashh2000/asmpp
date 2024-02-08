@@ -1,0 +1,98 @@
+CHAPTER 1
+
+    1.1 INTRODUCTION
+    1.2 HISTORY
+    1.3 LICENSE AGREEMENT
+    1.4 ABOUT THE DEVELOPER
+    1.5 CONTACT DETAILS
+    1.6 REQUIREMENTS
+    1.7 MANUAL GUIDELINES
+        1.7.1   Syntax Format
+        1.7.2   Number Bases
+        1.7.3   Data Sizes
+        1.7.4   Word Meanings
+
+CHAPTER 2
+    2.1 NUMBERS AND EXPRESSIONS
+    2.2 DEFAULT SETTINGS
+    2.3 OPERATORS AND CONSTANTS
+        2.3.1   OPERATORS
+        2.3.2   PREDEFINED CONSTANTS
+    2.4 ADDRESS MODES AND INSTRUCTION POINTER
+        2.4.1   ADDRESS MODES
+        2.4.2   INSTRUCTION POINTER
+    2.5
+    2.6 COMPATIBILITY
+        2.6.1   Overview
+        2.6.2   Procedure definitions (PROC)
+        2.6.3   Label definitions (LABEL)
+        2.6.4   OFFSET AND PTR
+    2.7 EXCLUSIVE STUFF
+        2.7.1   FUNCTION
+        2.7.2   OPTION
+        2.7.3   ECHO And HALT
+        2.7.4   Customized Expressions
+        2.7.5   String Manipulation
+    2.8 DETECTING ASM++
+    2.9 DISABILITIES
+
+CHAPTER 3
+    3.1 COMMAND LINE
+    3.2 OPERATING ENVIRONMENTS
+    3.3 OUTPUT FORMATS
+        3.3.1   MZ Executables
+        3.3.2   OMF Objects
+        3.3.3   COFF Objects
+        3.3.4   Win16,32 and 64 Executables
+        3.3.5   ELF Executables
+
+CHAPTER 4
+    4.1 DEFINING VARIABLE DATA
+        4.1.1   Dx DIRECTIVES
+        4.1.2   Uninitialized data
+        4.1.3   Using sized labels
+        4.1.4   Duplicating data (DUP)
+    4.2 DEFINING OTHER ELEMENTS OF A PROGRAM
+        4.2.1   Using LABEL
+        4.2.2   Defining data structures (STRUC)
+            4.2.2.1 Using the STRUC directive
+            4.2.2.2 Initializing structures
+        4.2.3   Customizing code generation (FUNCTION,MACRO)
+            4.2.3.1 FUNCTION
+            4.2.3.2 MACRO
+        4.2.4   Defining segments (SEGMENT)
+        4.2.5   Constant symbols (EQU,=)
+            4.2.5.1 Numeric constants (=)
+            4.2.5.2 Equate constants (EQU)
+    4.3 PROC AND CALLING CONVENTIONS
+        4.3.1   Using the PROC directive
+        4.3.2   High-level language support
+        4.3.3   Calling conventions
+
+CHAPTER 5
+    5.1 DETAILED MACROS
+    5.2 DETAILED CONTIONAL STATEMENTS
+    5.3 STRINGS AND MANIPULATION
+    5.4 PASS DEPENDENT CODE
+
+CHAPTER 6
+    6.1 OPTIONS
+        6.1.1   Clearing the screen (CLS)
+        6.1.2   Controlling output file naming (OUT)
+        6.1.3   Changing case sensitivity (CASE)
+        6.1.4   Marking source file start (BEGIN)
+        6.1.5   Resetting all assembler settings (RESET)
+        6.1.6   Extended options (INSANE)
+        6.1.7   Text memory resizing (TXTMEM)
+        6.1.8   Changing the operators' priority order (PRECED)
+    6.2 Changing the default number base (RADIX)
+    6.3 Aligning data (ALIGN/EVEN)
+
+CHAPTER 7
+    
+    7.1 Including other source files (INCLUDE)
+
+CHAPTER 8
+
+    8.1 Warning list
+    8.2 Error list

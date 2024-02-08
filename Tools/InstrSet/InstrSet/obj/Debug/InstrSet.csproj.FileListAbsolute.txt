@@ -1,0 +1,10 @@
+C:\a16\Tools\InstrSet\InstrSet\bin\Debug\InstrSet.exe.config
+C:\a16\Tools\InstrSet\InstrSet\bin\Debug\InstrSet.exe
+C:\a16\Tools\InstrSet\InstrSet\bin\Debug\InstrSet.pdb
+C:\a16\Tools\InstrSet\InstrSet\obj\Debug\InstrSet.csproj.AssemblyReference.cache
+C:\a16\Tools\InstrSet\InstrSet\obj\Debug\InstrSet.Properties.Resources.resources
+C:\a16\Tools\InstrSet\InstrSet\obj\Debug\InstrSet.csproj.GenerateResource.cache
+C:\a16\Tools\InstrSet\InstrSet\obj\Debug\InstrSet.csproj.CoreCompileInputs.cache
+C:\a16\Tools\InstrSet\InstrSet\obj\Debug\InstrSet.exe
+C:\a16\Tools\InstrSet\InstrSet\obj\Debug\InstrSet.pdb
+C:\a16\Tools\InstrSet\InstrSet\obj\Debug\InstrSet.Form1.resources

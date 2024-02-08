@@ -1,0 +1,2192 @@
+even 2
+        db  0
+Keyword2:
+Keyword2a:
+        db             "ah"
+        db             "al"
+        db             "ax"
+Keyword2b:
+        db             "bh"
+        db             "bl"
+        db             "bp"
+        db             "bt"
+        db             "bx"
+Keyword2c:
+        db             "ch"
+        db             "cl"
+        db             "cs"
+        db             "cx"
+Keyword2d:
+        db             "db"
+        db             "dd"
+        db             "df"
+        db             "dh"
+        db             "di"
+        db             "dl"
+        db             "do"
+        db             "dp"
+        db             "dq"
+        db             "ds"
+        db             "dt"
+        db             "du"
+        db             "dw"
+        db             "dx"
+Keyword2e:
+        db             "eq"
+        db             "es"
+Keyword2f:
+        db             "fs"
+Keyword2g:
+        db             "ge"
+        db             "gs"
+        db             "gt"
+Keyword2h:
+Keyword2i:
+        db             "if"
+        db             "in"
+Keyword2j:
+        db             "ja"
+        db             "jb"
+        db             "jc"
+        db             "je"
+        db             "jg"
+        db             "jl"
+        db             "jo"
+        db             "jp"
+        db             "js"
+        db             "jz"
+Keyword2k:
+Keyword2l:
+        db             "le"
+        db             "lt"
+Keyword2m:
+Keyword2n:
+        db             "ne"
+Keyword2o:
+        db             "or"
+Keyword2p:
+Keyword2q:
+Keyword2r:
+        db             "r8"
+        db             "r9"
+Keyword2s:
+        db             "si"
+        db             "sp"
+        db             "ss"
+        db             "st"
+Keyword2t:
+Keyword2u:
+        db             "ud"
+Keyword2v:
+Keyword2w:
+Keyword2x:
+Keyword2y:
+Keyword2z:
+Keyword2desc:
+        db             Reg8,4  ;ah
+        db             Reg8,0  ;al
+        db             Reg16,0  ;ax
+        db             Reg8,7  ;bh
+        db             Reg8,3  ;bl
+        db             Reg16,5  ;bp
+        dw             (btInstr)
+        db             Reg16,3  ;bx
+        db             Reg8,5  ;ch
+        db             Reg8,1  ;cl
+        db             segReg,1    ;cs
+        db             Reg16,1  ;cx
+        dw             (DBDirective)
+        dw             (DDDirective)
+        dw             (DFDirective)
+        db             Reg8,6  ;dh
+        db             Reg16,7  ;di
+        db             Reg8,2  ;dl
+        dw             (DODirective)   ;do
+        dw             (DFDirective)
+        dw             (DQDirective)
+        db             segReg,3    ;ds
+        dw             (DTDirective)
+        dw             (DUDirective)
+        dw             (DWDirective)
+        db             Reg16,2  ;dx
+        db             operator,booleqop  ;eq =
+        db             segReg,0    ;es
+        db             segReg386,0    ;fs
+        db             operator,geop  ;ge >=
+        db             segReg386,1    ;gs
+        db             operator,gtop  ;gt >
+        dw             (IfDirective)
+        dw             (inInstr)
+        dw             (jaInstr)
+        dw             (jbInstr)
+        dw             (jbInstr)
+        dw             (jzInstr)
+        dw             (jgInstr)
+        dw             (jlInstr)
+        dw             (joInstr)
+        dw             (jpInstr)
+        dw             (jsInstr)
+        dw             (jzInstr)
+        db             operator,leop  ;le <=
+        db             operator,ltop  ;lt <
+        db             operator,neop  ;ne !=
+        dw             (orInstr)
+        db             LMReg64,0        ;r8
+        db             LMReg64,1        ;r9
+        db             Reg16,6  ;si
+        db             Reg16,4  ;sp
+        db             segReg,2    ;ss
+        db             FPUReg,0 ;st
+        dw             (udInstr)
+even 2
+        db  0
+Keyword3:
+Keyword3a:
+        db             "aaa"
+        db             "aad"
+        db             "aam"
+        db             "aas"
+        db             "adc"
+        db             "add"
+        db             "and"
+Keyword3b:
+        db             "bpl"
+        db             "bsf"
+        db             "bsr"
+        db             "btc"
+        db             "btr"
+        db             "bts"
+Keyword3c:
+        db             "cbw"
+        db             "cdq"
+        db             "clc"
+        db             "cld"
+        db             "cli"
+        db             "cmc"
+        db             "cmp"
+        db             "cqo"
+        db             "cr0"
+        db             "cr1"
+        db             "cr2"
+        db             "cr3"
+        db             "cr4"
+        db             "cr5"
+        db             "cr6"
+        db             "cr7"
+        db             "cr8"
+        db             "cr9"
+        db             "cwd"
+Keyword3d:
+        db             "daa"
+        db             "das"
+        db             "dec"
+        db             "def"
+        db             "dil"
+        db             "div"
+        db             "dqw"
+        db             "dr0"
+        db             "dr1"
+        db             "dr2"
+        db             "dr3"
+        db             "dr4"
+        db             "dr5"
+        db             "dr6"
+        db             "dr7"
+        db             "dr8"
+        db             "dr9"
+        db             "dup"
+Keyword3e:
+        db             "eax"
+        db             "ebp"
+        db             "ebx"
+        db             "ecx"
+        db             "edi"
+        db             "edx"
+        db             "end"
+        db             "equ"
+        db             "esc"
+        db             "esi"
+        db             "esp"
+Keyword3f:
+        db             "far"
+        db             "fld"
+        db             "for"
+        db             "fst"
+Keyword3g:
+Keyword3h:
+        db             "hlt"
+Keyword3i:
+        db             "inc"
+        db             "ins"
+        db             "int"
+        db             "irp"
+Keyword3j:
+        db             "jae"
+        db             "jbe"
+        db             "jge"
+        db             "jle"
+        db             "jmp"
+        db             "jna"
+        db             "jnb"
+        db             "jnc"
+        db             "jne"
+        db             "jng"
+        db             "jnl"
+        db             "jno"
+        db             "jnp"
+        db             "jns"
+        db             "jnz"
+        db             "jpe"
+        db             "jpo"
+Keyword3k:
+Keyword3l:            
+        db             "lar"
+        db             "lds"
+        db             "lea"
+        db             "les"
+        db             "lfs"
+        db             "lgs"
+        db             "low"
+        db             "lsl"
+        db             "lss"
+        db             "ltr"
+Keyword3m:
+        db             "mm0"
+        db             "mm1"
+        db             "mm2"
+        db             "mm3"
+        db             "mm4"
+        db             "mm5"
+        db             "mm6"
+        db             "mm7"
+        db             "mod"
+        db             "mov"
+        db             "mul"
+Keyword3n:
+        db             "neg"
+        db             "nop"
+        db             "not"
+Keyword3o:
+        db             "org"
+        db             "out"
+Keyword3p:
+        db             "pop"
+        db             "por"
+        db             "ptr"
+Keyword3q:
+Keyword3r:
+        db             "r10"
+        db             "r11"
+        db             "r12"
+        db             "r13"
+        db             "r14"
+        db             "r15"
+        db             "r8b"
+        db             "r8d"
+        db             "r8w"
+        db             "r9b"
+        db             "r9d"
+        db             "r9w"
+        db             "rax"
+        db             "rbp"
+        db             "rbx"
+        db             "rcl"
+        db             "rcr"
+        db             "rcx"
+        db             "rdi"
+        db             "rdx"
+        db             "rep"
+        db             "ret"
+        db             "rol"
+        db             "ror"
+        db             "rsi"
+        db             "rsm"
+        db             "rsp"
+        db             "rva"
+
+Keyword3s:            
+        db             "sal"
+        db             "sar"
+        db             "sbb"
+        db             "seg"
+        db             "shl"
+        db             "shr"
+        db             "sil"
+        db             "smi"
+        db             "spl"
+        db             "st0"
+        db             "st1"
+        db             "st2"
+        db             "st3"
+        db             "st4"
+        db             "st5"
+        db             "st6"
+        db             "st7"
+        db             "stc"
+        db             "std"
+        db             "sti"
+        db             "str"
+        db             "sub"
+Keyword3t:            
+        db             "tr0"
+        db             "tr1"
+        db             "tr2"
+        db             "tr3"
+        db             "tr4"
+        db             "tr5"
+        db             "tr6"
+        db             "tr7"
+Keyword3u:            
+        db             "ud2"
+Keyword3v:
+Keyword3w:
+Keyword3x:
+        db             "xor"
+Keyword3y:
+Keyword3z:
+
+Keyword3desc:
+        dw             (aaaInstr)
+        dw             (aadInstr)
+        dw             (aamInstr)
+        dw             (aasInstr)
+        dw             (adcInstr)
+        dw             (addInstr)
+        dw             (andInstr)
+        db             lmlowReg,5      ;bpl
+        dw             (bsfInstr)
+        dw             (bsrInstr)
+        dw             (btcInstr)
+        dw             (btrInstr)
+        dw             (btsInstr)
+        dw             (cbwInstr)
+        dw             (cdqInstr)
+        dw             (clcInstr)
+        dw             (cldInstr)
+        dw             (cliInstr)
+        dw             (cmcInstr)
+        dw             (cmpInstr)
+        dw             (cqoInstr)
+        db             CtrlReg,0  ;cr0
+        db             CtrlReg,1  ;cr1
+        db             CtrlReg,2  ;cr2
+        db             CtrlReg,3  ;cr3
+        db             CtrlReg,4  ;cr4
+        db             CtrlReg,5  ;cr5
+        db             CtrlReg,6  ;cr6
+        db             CtrlReg,7  ;cr7
+        db             CtrlReg64,0  ;cr8
+        db             CtrlReg64,1  ;cr9
+        dw             (cwdInstr)
+        dw             (daaInstr)
+        dw             (dasInstr)
+        dw             (decInstr)
+        db             operator,1  ;def
+        db             lmlowReg,7      ;dil
+        dw             (divInstr)
+        dw             (DODirective)
+        db             DbgReg,0  ;dr0
+        db             DbgReg,1  ;dr1
+        db             DbgReg,2  ;dr2
+        db             DbgReg,3  ;dr3
+        db             DbgReg,4  ;dr4
+        db             DbgReg,5  ;dr5
+        db             DbgReg,6  ;dr6
+        db             DbgReg,7  ;dr7
+        db             DbgReg64,0  ;dr8
+        db             DbgReg64,1  ;dr9
+        dw             (DUPDirective)
+        db             Reg32,0  ;eax
+        db             Reg32,5  ;ebp
+        db             Reg32,3  ;ebx
+        db             Reg32,1  ;ecx
+        db             Reg32,7  ;edi
+        db             Reg32,2  ;edx
+        dw             (ENDDirective)
+        dw             (EQUDirective)
+        dw             (EscInstr)
+        db             Reg32,6  ;esi
+        db             Reg32,4  ;esp
+        db             distspec,3 ;far
+        dw             (fldInstr)
+        dw             (ForDirective)
+        dw             (fstInstr)
+        dw             (hltInstr)
+        dw             (incInstr)
+        dw             (insInstr)
+        dw             (intInstr)
+        dw             (IRPDirective)
+        dw             (jaeInstr)
+        dw             (jbeInstr)
+        dw             (jgeInstr)
+        dw             (jleInstr)
+        dw             (jmpInstr)
+        dw             (jbeInstr)
+        dw             (jaeInstr)
+        dw             (jncInstr)
+        dw             (jnzInstr)
+        dw             (jleInstr)
+        dw             (jgeInstr)
+        dw             (jnoInstr)
+        dw             (jpoInstr)
+        dw             (jnsInstr)
+        dw             (jnzInstr)
+        dw             (jpInstr)
+        dw             (jpoInstr)
+        dw             (larInstr)
+        dw             (ldsInstr)
+        dw             (leaInstr)
+        dw             (lesInstr)
+        dw             (lfsInstr)
+        dw             (lgsInstr)
+        db             operator,2  ;low
+        dw             (lslInstr)
+        dw             (lssInstr)
+        dw             (ltrInstr)
+        db             mmxReg,0  ;mm0
+        db             mmxReg,1  ;mm1
+        db             mmxReg,2  ;mm2
+        db             mmxReg,3  ;mm3
+        db             mmxReg,4  ;mm4
+        db             mmxReg,5  ;mm5
+        db             mmxReg,6  ;mm6
+        db             mmxReg,7  ;mm7
+        db             operator,modop  ;mod
+        dw             (movInstr)
+        dw             (mulInstr)
+        dw             (negInstr)
+        dw             (nopInstr)
+        dw             (notInstr)
+        dw             (OrgDirective)
+        dw             (outInstr)
+        dw             (popInstr)
+        dw             (porInstr)
+        db             operator,SubOp ;ptr
+        db             LMReg64,2      ;r10
+        db             LMReg64,3      ;r11
+        db             LMReg64,4      ;r12
+        db             LMReg64,5      ;r13
+        db             LMReg64,6      ;r14
+        db             LMReg64,7      ;r15
+        db             LMReg8,0      ;r8b
+        db             LMReg32,0      ;r8d
+        db             LMReg16,0      ;r8w
+        db             LMReg8,1      ;r9b
+        db             LMReg32,1      ;r9d
+        db             LMReg16,1      ;r9w
+        db             Reg64,0      ;rax
+        db             Reg64,5      ;rbp
+        db             Reg64,3      ;rbx
+        dw             (rclInstr)
+        dw             (rcrInstr)
+        db             Reg64,1      ;rcx
+        db             Reg64,7      ;rdi
+        db             Reg64,2      ;rdx
+        dw             (repInstr)
+        dw             (retInstr)
+        dw             (rolInstr)
+        dw             (rorInstr)
+        db             Reg64,6      ;rsi
+        dw             (rsmInstr)
+        db             Reg64,4      ;rsp
+        db             Operator,3   ;rva
+        dw             (salInstr)
+        dw             (sarInstr)
+        dw             (sbbInstr)
+        db             operator,4  ;seg
+        dw             (shlInstr)
+        dw             (shrInstr)
+        db             lmlowReg,6      ;sil
+        dw             (smiInstr)
+        db             lmlowReg,4      ;spl
+        db             FPUReg,0  ;st0
+        db             FPUReg,1  ;st1
+        db             FPUReg,2  ;st2
+        db             FPUReg,3  ;st3
+        db             FPUReg,4  ;st4
+        db             FPUReg,5  ;st5
+        db             FPUReg,6  ;st6
+        db             FPUReg,7  ;st7
+        dw             (stcInstr)
+        dw             (stdInstr)
+        dw             (stiInstr)
+        dw             (strInstr)
+        dw             (subInstr)
+        db             TestReg,0  ;tr0
+        db             TestReg,1  ;tr1
+        db             TestReg,2  ;tr2
+        db             TestReg,3  ;tr3
+        db             TestReg,4  ;tr4
+        db             TestReg,5  ;tr5
+        db             TestReg,6  ;tr6
+        db             TestReg,7  ;tr7
+        dw             (ud2Instr)
+        dw             (xorInstr)
+even 2
+        db  0
+Keyword4:
+Keyword4a:
+        db              "arpl"
+Keyword4b:             
+        db              "byte"
+Keyword4c:
+        db              "call"
+        db              "cdqe"
+        db              "clts"
+        db              "cmps"
+        db              "cr10"
+        db              "cr11"
+        db              "cr12"
+        db              "cr13"
+        db              "cr14"
+        db              "cr15"
+        db              "cwde"
+Keyword4d:             
+        db              "dr10"
+        db              "dr11"
+        db              "dr12"
+        db              "dr13"
+        db              "dr14"
+        db              "dr15"
+Keyword4e:             
+        db              "echo"
+        db              "else"
+        db              "emms"
+        db              "endm"
+        db              "endp"
+        db              "ends"
+        db              "even"
+Keyword4f:
+        db              "fabs"
+        db              "fadd"
+        db              "fbld"
+        db              "fchs"
+        db              "fcom"
+        db              "fcos"
+        db              "fdiv"
+        db              "feni"
+        db              "fild"
+        db              "fist"
+        db              "fld1"
+        db              "fldz"
+        db              "fmul"
+        db              "fnop"
+        db              "fsin"
+        db              "fstp"
+        db              "fsub"
+        db              "ftst"
+        db              "fxam"
+        db              "fxch"
+Keyword4g:
+Keyword4h:             
+        db              "halt"
+        db              "high"
+Keyword4i:
+        db              "ibts"
+        db              "idiv"
+        db              "imul"
+        db              "insb"
+        db              "insd"
+        db              "insw"
+        db              "into"
+        db              "invd"
+        db              "iret"
+        db              "irps"
+Keyword4j:
+        db              "jcxz"
+        db              "jnae"
+        db              "jnbe"
+        db              "jnge"
+        db              "jnle"
+Keyword4k:
+Keyword4l:             
+        db              "lahf"
+        db              "lgdt"
+        db              "lidt"
+        db              "lldt"
+        db              "lmsw"
+        db              "lock"
+        db              "lods"
+        db              "loop"
+Keyword4m:             
+        db              "movd"
+        db              "movq"
+        db              "movs"
+Keyword4n:             
+        db              "near"
+        db              "none"
+Keyword4o:
+        db              "orpd"
+        db              "orps"
+        db              "outs"
+Keyword4p:
+        db              "pand"
+        db              "popa"
+        db              "popf"
+        db              "proc"
+        db              "push"
+        db              "pxor"
+Keyword4q:
+Keyword4r:
+        db              "r10b"
+        db              "r10d"
+        db              "r10w"
+        db              "r11b"
+        db              "r11d"
+        db              "r11w"
+        db              "r12b"
+        db              "r12d"
+        db              "r12w"
+        db              "r13b"
+        db              "r13d"
+        db              "r13w"
+        db              "r14b"
+        db              "r14d"
+        db              "r14w"
+        db              "r15b"
+        db              "r15d"
+        db              "r15w"
+        db              "repe"
+        db              "repz"
+        db              "retd"
+        db              "retf"
+        db              "retn"
+        db              "retq"
+        db              "retw"
+Keyword4s:
+        db              "sahf"
+        db              "scas"
+        db              "seta"
+        db              "setb"
+        db              "setc"
+        db              "sete"
+        db              "setg"
+        db              "setl"
+        db              "seto"
+        db              "setp"
+        db              "sets"
+        db              "setz"
+        db              "sgdt"
+        db              "shld"
+        db              "shrd"
+        db              "sidt"
+        db              "size"
+        db              "sldt"
+        db              "smsw"
+        db              "stos"
+Keyword4t:             
+        db              "test"
+        db              "type"
+Keyword4u:
+        db              "umov"
+        db              "uses"
+Keyword4v:
+        db              "verr"
+        db              "verw"
+Keyword4w:
+        db              "wait"
+        db              "word"
+Keyword4x:
+        db              "xadd"
+        db              "xbts"
+        db              "xchg"
+        db              "xlat"
+        db              "xmm0"
+        db              "xmm1"
+        db              "xmm2"
+        db              "xmm3"
+        db              "xmm4"
+        db              "xmm5"
+        db              "xmm6"
+        db              "xmm7"
+        db              "xmm8"
+        db              "xmm9"
+Keyword4y:
+        db              "ymm0"
+        db              "ymm1"
+        db              "ymm2"
+        db              "ymm3"
+        db              "ymm4"
+        db              "ymm5"
+        db              "ymm6"
+        db              "ymm7"
+        db              "ymm8"
+        db              "ymm9"
+Keyword4z:
+Keyword4desc:          
+        dw              (arplInstr)
+        db              datatype,1 ;byte
+        dw              (callInstr)
+        dw              (cdqeInstr)
+        dw              (cltsInstr)
+        dw              (cmpsInstr)
+        db              CtrlReg64,2
+        db              CtrlReg64,3
+        db              CtrlReg64,4
+        db              CtrlReg64,5
+        db              CtrlReg64,6
+        db              CtrlReg64,7
+        dw              (cwdeInstr)
+        db              DbgReg64,2
+        db              DbgReg64,3
+        db              DbgReg64,4
+        db              DbgReg64,5
+        db              DbgReg64,6
+        db              DbgReg64,7        
+        dw              (EchoMacro)
+        dw              (ElseDirective)
+        dw              (emmsInstr)
+        dw              (EndMDirective)
+        dw              (EndPDirective)
+        dw              (EndSDirective)
+        dw              (AlignDirective)
+        dw              (fabsInstr)
+        dw              (faddInstr)
+        dw              (fbldInstr)
+        dw              (fchsInstr)
+        dw              (fcomInstr)
+        dw              (fcosInstr)
+        dw              (fdivInstr)
+        dw              (feniInstr)
+        dw              (fildInstr)
+        dw              (fistInstr)
+        dw              (fld1Instr)
+        dw              (fldzInstr)
+        dw              (fmulInstr)
+        dw              (fnopInstr)
+        dw              (fsinInstr)
+        dw              (fstpInstr)
+        dw              (fsubInstr)
+        dw              (ftstInstr)
+        dw              (fxamInstr)
+        dw              (fxchInstr)
+        dw              (HaltMacro)
+        db              operator,5  ;high
+        dw              (ibtsInstr)
+        dw              (idivInstr)
+        dw              (imulInstr)
+        dw              (insbInstr)
+        dw              (insdInstr)
+        dw              (inswInstr)
+        dw              (intoInstr)
+        dw              (invdInstr)
+        dw              (iretInstr)
+        dw              (IRPSMacro)
+        dw              (jcxzInstr)
+        dw              (jbInstr)
+        dw              (jaInstr)
+        dw              (jlInstr)
+        dw              (jgInstr)
+        dw              (lahfInstr)
+        dw              (lgdtInstr)
+        dw              (lidtInstr)
+        dw              (lldtInstr)
+        dw              (lmswInstr)
+        dw              (lockInstr)
+        dw              (lodsInstr)
+        dw              (loopInstr)
+        dw              (movdInstr)
+        dw              (movqInstr)
+        dw              (movsInstr)
+        db              distspec,2 ;near
+        db              options,0  ;none
+        dw              (orpdInstr)
+        dw              (orpsInstr)
+        dw              (outsInstr)
+        dw              (pandInstr)
+        dw              (popaInstr)
+        dw              (popfInstr)
+        dw              (ProcDirective)
+        dw              (pushInstr)
+        dw              (pxorInstr)
+        db              LMReg8,2      ;r10b
+        db              LMReg32,2      ;r10d
+        db              LMReg16,2      ;r10w
+        db              LMReg8,3      ;r11b
+        db              LMReg32,3      ;r11d
+        db              LMReg16,3      ;r11w
+        db              LMReg8,4      ;r12b
+        db              LMReg32,4      ;r12d
+        db              LMReg16,4      ;r12w
+        db              LMReg8,5      ;r13b
+        db              LMReg32,5      ;r13d
+        db              LMReg16,5      ;r13w
+        db              LMReg8,6      ;r14b
+        db              LMReg32,6      ;r14d
+        db              LMReg16,6      ;r14w
+        db              LMReg8,7      ;r15b
+        db              LMReg32,7      ;r15d
+        db              LMReg16,7      ;r15w
+        dw              (repeInstr)
+        dw              (repzInstr)
+        dw              (retdInstr)
+        dw              (retfInstr)
+        dw              (retnInstr)
+        dw              (retqInstr)
+        dw              (retwInstr)
+        dw              (sahfInstr)
+        dw              (scasInstr)
+        dw              (setaInstr)
+        dw              (setbInstr)
+        dw              (setcInstr)
+        dw              (seteInstr)
+        dw              (setgInstr)
+        dw              (setlInstr)
+        dw              (setoInstr)
+        dw              (setpInstr)
+        dw              (setsInstr)
+        dw              (setzInstr)
+        dw              (sgdtInstr)
+        dw              (shldInstr)
+        dw              (shrdInstr)
+        dw              (sidtInstr)
+        db              Operator,6  ;size
+        dw              (sldtInstr)
+        dw              (smswInstr)
+        dw              (stosInstr)
+        dw              (testInstr)
+        db              Operator,7  ;type
+        dw              (umovInstr)
+        db              options,12 ;uses
+        dw              (verrInstr)
+        dw              (verwInstr)
+        dw              (waitInstr)
+        db              datatype,2 ;word
+        dw              (xaddInstr)
+        dw              (xbtsInstr)
+        dw              (xchgInstr)
+        dw              (xlatInstr)
+        db              sseReg,0  ;xmm0
+        db              sseReg,1  ;xmm1
+        db              sseReg,2  ;xmm2
+        db              sseReg,3  ;xmm3
+        db              sseReg,4  ;xmm4
+        db              sseReg,5  ;xmm5
+        db              sseReg,6  ;xmm6
+        db              sseReg,7  ;xmm7
+        db              sse2Reg,0      ;xmm8
+        db              sse2Reg,1      ;xmm9
+        db              avxReg,0  ;ymm0
+        db              avxReg,1  ;ymm1
+        db              avxReg,2  ;ymm2
+        db              avxReg,3  ;ymm3
+        db              avxReg,4  ;ymm4
+        db              avxReg,5  ;ymm5
+        db              avxReg,6  ;ymm6
+        db              avxReg,7  ;ymm7
+        db              avxReg,8  ;ymm8
+        db              avxReg,9  ;ymm9
+even 2
+        db  0
+Keyword5:
+Keyword5a:
+        db              "addpd"
+        db              "addps"
+        db              "addsd"
+        db              "addss"
+        db              "align"
+        db              "andpd"
+        db              "andps"
+Keyword5b:
+        db              "basic"
+        db              "bound"
+        db              "bswap"
+Keyword5c:
+        db              "callf"
+        db              "cmova"
+        db              "cmovb"
+        db              "cmovc"
+        db              "cmove"
+        db              "cmovg"
+        db              "cmovl"
+        db              "cmovo"
+        db              "cmovp"
+        db              "cmovs"
+        db              "cmovz"
+        db              "cmppd"
+        db              "cmpps"
+        db              "cmpsb"
+        db              "cmpsd"
+
+        db              "cmpsq"
+
+        db              "cmpss"
+        db              "cmpsw"
+        db              "cpuid"
+Keyword5d:
+        db              "divpd"
+        db              "divps"
+        db              "divsd"
+        db              "divss"
+        db              "dword"
+Keyword5e:
+        db              "endif"
+        db              "enter"
+        db              "exitm"
+        db              "extrn"
+Keyword5f:
+        db              "f2xm1"
+        db              "faddp"
+        db              "fbstp"
+        db              "fclex"
+        db              "fcomi"
+        db              "fcomp"
+        db              "fdisi"
+        db              "fdivp"
+        db              "fdivr"
+        db              "femms"
+        db              "ffree"
+        db              "fiadd"
+        db              "ficom"
+        db              "fidiv"
+        db              "fimul"
+        db              "finit"
+        db              "fistp"
+        db              "fisub"
+        db              "fldcw"
+        db              "fldpi"
+        db              "fmulp"
+        db              "fneni"
+        db              "fprem"
+        db              "fptan"
+        db              "fsave"
+        db              "fsqrt"
+        db              "fstcw"
+        db              "fstsw"
+        db              "fsubp"
+        db              "fsubr"
+        db              "fucom"
+        db              "fwait"
+        db              "fword"
+        db              "fyl2x"
+Keyword5g:
+        db              "group"
+Keyword5h:
+Keyword5i:
+        db              "ifdef"
+        db              "iretd"
+        db              "iretq"
+        db              "iretw"
+Keyword5j:
+        db              "jecxz"
+Keyword5k:
+Keyword5l:
+        db              "label"
+        db              "lddqu"
+        db              "leave"
+        db              "local"
+        db              "lodsb"
+        db              "lodsd"
+        db              "lodsq"
+        db              "lodsw"
+        db              "loopd"
+        db              "loope"
+        db              "loopz"
+Keyword5m:
+        db              "macro"
+        db              "maxpd"
+        db              "maxps"
+        db              "maxsd"
+        db              "maxss"
+        db              "minpd"
+        db              "minps"
+        db              "minsd"
+        db              "minss"
+        db              "movsb"
+        db              "movsd"
+        db              "movsq"
+        db              "movss"
+        db              "movsw"
+        db              "movsx"
+        db              "movzx"
+        db              "mulpd"
+        db              "mulps"
+        db              "mulsd"
+        db              "mulss"
+        db              "mwait"
+Keyword5n:
+Keyword5o:
+        db              "outsb"
+        db              "outsd"
+        db              "outsw"
+        db              "oword"
+Keyword5p:
+        db              "paddb"
+        db              "paddd"
+        db              "paddq"
+        db              "paddw"
+        db              "pandn"
+        db              "pause"
+        db              "paveb"
+        db              "pavgb"
+        db              "pavgw"
+        db              "pf2id"
+        db              "pf2iw"
+        db              "pfacc"
+        db              "pfadd"
+        db              "pfmax"
+        db              "pfmin"
+        db              "pfmul"
+        db              "pfrcp"
+        db              "pfsub"
+        db              "pi2fd"
+        db              "pi2fw"
+        db              "pmagw"
+        db              "pmvzb"
+        db              "popad"
+        db              "popfd"
+        db              "popfq"
+        db              "popfw"
+        db              "pslld"
+        db              "psllq"
+        db              "psllw"
+        db              "psrad"
+        db              "psraw"
+        db              "psrld"
+        db              "psrlq"
+        db              "psrlw"
+        db              "psubb"
+        db              "psubd"
+        db              "psubq"
+        db              "psubw"
+        db              "pusha"
+        db              "pushd"
+        db              "pushf"
+        db              "pword"
+Keyword5q:
+        db              "qword"
+Keyword5r:
+        db              "radix"
+        db              "rcpps"
+        db              "rcpss"
+        db              "rdmsr"
+        db              "rdpmc"
+        db              "rdtsc"
+        db              "repne"
+        db              "repnz"
+        db              "retfw"
+        db              "retfd"
+        db              "retfq"
+Keyword5s:
+        db              "scasb"
+        db              "scasd"
+        db              "scasq"
+        db              "scasw"
+        db              "segcs"
+        db              "segds"
+        db              "seges"
+        db              "segfs"
+        db              "seggs"
+        db              "segss"
+        db              "setae"
+        db              "setbe"
+        db              "setge"
+        db              "setle"
+        db              "setna"
+        db              "setnb"
+        db              "setnc"
+        db              "setne"
+        db              "setng"
+        db              "setnl"
+        db              "setno"
+        db              "setnp"
+        db              "setns"
+        db              "setnz"
+        db              "setpe"
+        db              "setpo"
+        db              "short"
+        db              "stack"
+        db              "stosb"
+        db              "stosd"
+        db              "stosq"
+        db              "stosw"
+        db              "struc"
+        db              "subpd"
+        db              "subps"
+        db              "subsd"
+        db              "subss"
+Keyword5t:
+        db              "tbyte"
+        db              "tword"
+Keyword5u:
+        db              "use16"
+        db              "use32"
+        db              "use64"
+Keyword5v:
+Keyword5w:
+        db              "wrmsr"
+Keyword5x:
+        db              "xlatb"
+        db              "xmm10"
+        db              "xmm11"
+        db              "xmm12"
+        db              "xmm13"
+        db              "xmm14"
+        db              "xmm15"
+        db              "xorpd"
+        db              "xorps"
+Keyword5y:
+        db              "ymm10"
+        db              "ymm11"
+        db              "ymm12"
+        db              "ymm13"
+        db              "ymm14"
+        db              "ymm15"
+Keyword5z:
+Keyword5desc:
+        dw             (addpdInstr)
+        dw             (addpsInstr)
+        dw             (addsdInstr)
+        dw             (addssInstr)
+        dw             (AlignDirective)
+        dw             (andpdInstr)
+        dw             (andpsInstr)
+        db             Lang,1   ;Basic
+        dw             (boundInstr)
+        dw             (bswapInstr)
+        dw             (callInstr)
+        dw             (cmovaInstr)
+        dw             (cmovbInstr)
+        dw             (cmovbInstr)
+        dw             (cmovzInstr)
+        dw             (cmovgInstr)
+        dw             (cmovlInstr)
+        dw             (cmovoInstr)
+        dw             (cmovpInstr)
+        dw             (cmovsInstr)
+        dw             (cmovzInstr)
+        dw             (cmppdInstr)
+        dw             (cmppsInstr)
+        dw             (cmpsbInstr)
+        dw             (cmpsdInstr)
+        dw             (cmpsqInstr)
+        dw             (cmpssInstr)
+        dw             (cmpswInstr)
+        dw             (cpuidInstr)
+        dw             (divpdInstr)
+        dw             (divpsInstr)
+        dw             (divsdInstr)
+        dw             (divssInstr)
+        db             datatype,3 ;dword
+        dw             (EndIfDirective)
+        dw             (enterInstr)
+        dw             (ExitMDirective)
+        dw             (ExternDirective)
+        dw             (f2xm1Instr)
+        dw             (faddpInstr)
+        dw             (fbstpInstr)
+        dw             (fclexInstr)
+        dw             (fcomiInstr)
+        dw             (fcompInstr)
+        dw             (fdisiInstr)
+        dw             (fdivpInstr)
+        dw             (fdivrInstr)
+        dw             (femmsInstr)
+        dw             (ffreeInstr)
+        dw             (fiaddInstr)
+        dw             (ficomInstr)
+        dw             (fidivInstr)
+        dw             (fimulInstr)
+        dw             (finitInstr)
+        dw             (fistpInstr)
+        dw             (fisubInstr)
+        dw             (fldcwInstr)
+        dw             (fldpiInstr)
+        dw             (fmulpInstr)
+        dw             (fneniInstr)
+        dw             (fpremInstr)
+        dw             (fptanInstr)
+        dw             (fsaveInstr)
+        dw             (fsqrtInstr)
+        dw             (fstcwInstr)
+        dw             (fstswInstr)
+        dw             (fsubpInstr)
+        dw             (fsubrInstr)
+        dw             (fucomInstr)
+        dw             (waitInstr)
+        db             datatype,4 ;fword
+        dw             (fyl2xInstr)
+        dw             (GroupDirective)
+        dw             (IfDefDirective)
+        dw             (iretdInstr)
+        dw             (iretqInstr)
+        dw             (iretwInstr)
+        dw             (jecxzInstr)
+        dw             (LabelDirective)
+        dw             (lddquInstr)
+        dw             (leaveInstr)
+        dw             (LocalDirective)
+        dw             (lodsbInstr)
+        dw             (lodsdInstr)
+        dw             (lodsqInstr)
+        dw             (lodswInstr)
+        dw             (loopdInstr)
+        dw             (loopzInstr)
+        dw             (loopzInstr)
+        dw             (MacroDirective)
+        dw             (maxpdInstr)
+        dw             (maxpsInstr)
+        dw             (maxsdInstr)
+        dw             (maxssInstr)
+        dw             (minpdInstr)
+        dw             (minpsInstr)
+        dw             (minsdInstr)
+        dw             (minssInstr)
+        dw             (movsbInstr)
+        dw             (movsdInstr)
+        dw             (movsqInstr)
+        dw             (movssInstr)
+        dw             (movswInstr)
+        dw             (movsxInstr)
+        dw             (movzxInstr)
+        dw             (mulpdInstr)
+        dw             (mulpsInstr)
+        dw             (mulsdInstr)
+        dw             (mulssInstr)
+        dw             (mwaitInstr)
+        dw             (outsbInstr)
+        dw             (outsdInstr)
+        dw             (outswInstr)
+        db             datatype,7 ;oword
+        dw             (paddbInstr)
+        dw             (padddInstr)
+        dw             (paddqInstr)
+        dw             (paddwInstr)
+        dw             (pandnInstr)
+        dw             (pauseInstr)
+        dw             (pavebInstr)
+        dw             (pavgbInstr)
+        dw             (pavgwInstr)
+        dw             (pf2idInstr)
+        dw             (pf2iwInstr)
+        dw             (pfaccInstr)
+        dw             (pfaddInstr)
+        dw             (pfmaxInstr)
+        dw             (pfminInstr)
+        dw             (pfmulInstr)
+        dw             (pfrcpInstr)
+        dw             (pfsubInstr)
+        dw             (pi2fdInstr)
+        dw             (pi2fwInstr)
+        dw             (pmagwInstr)
+        dw             (pmvzbInstr)
+        dw             (popadInstr)
+        dw             (popfdInstr)
+        dw             (PopFQInstr)
+        dw             (PopFWInstr)
+        dw             (pslldInstr)
+        dw             (psllqInstr)
+        dw             (psllwInstr)
+        dw             (psradInstr)
+        dw             (psrawInstr)
+        dw             (psrldInstr)
+        dw             (psrlqInstr)
+        dw             (psrlwInstr)
+        dw             (psubbInstr)
+        dw             (psubdInstr)
+        dw             (psubqInstr)
+        dw             (psubwInstr)
+        dw             (pushaInstr)
+        dw             (pushdInstr)
+        dw             (pushfInstr)
+        db             datatype,4 ;pword
+        db             datatype,5 ;qword
+        dw             (RadixDirective)
+        dw             (rcppsInstr)
+        dw             (rcpssInstr)
+        dw             (rdmsrInstr)
+        dw             (rdpmcInstr)
+        dw             (rdtscInstr)
+        dw             (repneInstr)
+        dw             (repnzInstr)
+        dw             (retfwInstr)
+        dw             (retfdInstr)
+        dw             (retfqInstr)
+        dw             (scasbInstr)
+        dw             (scasdInstr)
+        dw             (scasqInstr)
+        dw             (scaswInstr)
+        dw             (segcsInstr)
+        dw             (segdsInstr)
+        dw             (segesInstr)
+        dw             (segfsInstr)
+        dw             (seggsInstr)
+        dw             (segssInstr)
+        dw             (setaeInstr)
+        dw             (setbeInstr)
+        dw             (setgeInstr)
+        dw             (setleInstr)
+        dw             (setnaInstr)
+        dw             (setnbInstr)
+        dw             (setncInstr)
+        dw             (setneInstr)
+        dw             (setngInstr)
+        dw             (setnlInstr)
+        dw             (setnoInstr)
+        dw             (setnpInstr)
+        dw             (setnsInstr)
+        dw             (setnzInstr)
+        dw             (setpeInstr)
+        dw             (setpoInstr)
+        db             distspec,1 ;short
+        dw             (StackDirective)
+        dw             (stosbInstr)
+        dw             (stosdInstr)
+        dw             (stosqInstr)
+        dw             (stoswInstr)
+        dw             (StrucDirective)
+        dw             (subpdInstr)
+        dw             (subpsInstr)
+        dw             (subsdInstr)
+        dw             (subssInstr)
+        db             datatype,6 ;tbyte
+        db             datatype,6 ;tword
+        dw             (Use16Directive)
+        dw             (Use32Directive)
+        dw             (Use64Directive)
+        dw             (wrmsrInstr)
+        dw             (xlatInstr)
+        db             SSE2Reg,2     ;xmm10
+        db             SSE2Reg,3     ;xmm11
+        db             SSE2Reg,4     ;xmm12
+        db             SSE2Reg,5     ;xmm13
+        db             SSE2Reg,6     ;xmm14
+        db             SSE2Reg,7     ;xmm15
+        dw             (xorpdInstr)
+        dw             (xorpsInstr)
+		
+        db             avxReg,10     ;xmm10
+        db             avxReg,11     ;xmm11
+        db             avxReg,12     ;xmm12
+        db             avxReg,13     ;xmm13
+        db             avxReg,14     ;xmm14
+        db             avxReg,15     ;xmm15
+even 2
+        db  0
+Keyword6:
+Keyword6a:
+        db              "andnpd"
+        db              "andnps"
+Keyword6b:
+Keyword6c:
+        db              "cmovae"
+        db              "cmovbe"
+        db              "cmovge"
+        db              "cmovle"
+        db              "cmovna"
+        db              "cmovnb"
+        db              "cmovnc"
+        db              "cmovne"
+        db              "cmovng"
+        db              "cmovnl"
+        db              "cmovno"
+        db              "cmovnp"
+        db              "cmovns"
+        db              "cmovnz"
+        db              "cmovpe"
+        db              "cmovpo"
+        db              "comisd"
+        db              "comiss"
+Keyword6d:
+        db              "dqword"
+Keyword6e:
+        db              "elseif"
+        db              "enterd"
+        db              "extern"
+        db              "export"
+Keyword6f:
+        db              "fcmovb"
+        db              "fcmove"
+        db              "fcmovu"
+        db              "fcomip"
+        db              "fcompp"
+        db              "fdivrp"
+        db              "ffreep"
+        db              "ficomp"
+        db              "fidivr"
+        db              "fisttp"
+        db              "fisubr"
+        db              "fldenv"
+        db              "fldl2e"
+        db              "fldl2t"
+        db              "fldlg2"
+        db              "fldln2"
+        db              "fnclex"
+        db              "fndisi"
+        db              "fninit"
+        db              "fnsave"
+        db              "fnstcw"
+        db              "fnstsw"
+        db              "format"
+        db              "fpatan"
+        db              "fprem1"
+        db              "frstor"
+        db              "fsaved"
+        db              "fsavew"
+        db              "fscale"
+        db              "fsetpm"
+        db              "fstenv"
+        db              "fsubrp"
+        db              "fucomi"
+        db              "fucomp"
+        db              "fxsave"
+Keyword6g:
+        db              "global"
+Keyword6h:
+        db              "haddpd"
+        db              "haddps"
+        db              "hsubpd"
+        db              "hsubps"
+Keyword6i:
+        db              "ifndef"
+        db              "invlpg"
+        db              "invoke"
+        db              "import"
+Keyword6j:
+Keyword6k:
+Keyword6l:
+        db              "leaved"
+        db              "lfence"
+        db              "loopde"
+        db              "loopdz"
+        db              "loopne"
+        db              "loopnz"
+Keyword6m:
+        db              "mfence"
+        db              "movapd"
+        db              "movaps"
+        db              "movdqa"
+        db              "movdqu"
+        db              "movhpd"
+        db              "movhps"
+        db              "movlpd"
+        db              "movlps"
+        db              "movnti"
+        db              "movntq"
+        db              "movsxd"
+        db              "movupd"
+        db              "movups"
+Keyword6n:
+Keyword6o:
+        db              "offset"
+        db              "option"
+Keyword6p:
+        db              "paddsb"
+        db              "paddsw"
+        db              "pascal"
+        db              "pextrw"
+        db              "pfnacc"
+        db              "pfsubr"
+        db              "pinsrw"
+        db              "pmaxsw"
+        db              "pmaxub"
+        db              "pminsw"
+        db              "pminub"
+        db              "pmulhw"
+        db              "pmullw"
+        db              "pmvlzb"
+        db              "pmvnzb"
+        db              "prolog"
+        db              "psadbw"
+        db              "pshufd"
+        db              "pshufw"
+        db              "pslldq"
+        db              "psrldq"
+        db              "psubsb"
+        db              "psubsw"
+        db              "pswapd"
+        db              "public"
+        db              "pushad"
+        db              "pushfd"
+        db              "pushfq"
+        db              "pushfw"
+Keyword6q:
+Keyword6r:
+        db              "repeat"
+Keyword6s:
+        db              "setalc"
+        db              "setnae"
+        db              "setnbe"
+        db              "setnge"
+        db              "setnle"
+        db              "sfence"
+        db              "shufpd"
+        db              "shufps"
+        db              "sqrtpd"
+        db              "sqrtps"
+        db              "sqrtsd"
+        db              "sqrtss"
+        db              "strmid"
+        db              "struct"
+        db              "swapgs"
+        db              "sysret"
+Keyword6t:
+Keyword6u:
+Keyword6v:
+Keyword6w:
+        db              "wbinvd"
+Keyword6x:
+Keyword6y:
+Keyword6z:
+
+Keyword6desc:
+        dw             (andnpdInstr)
+        dw             (andnpsInstr)
+        dw             (cmovaeInstr)
+        dw             (cmovbeInstr)
+        dw             (cmovgeInstr)
+        dw             (cmovleInstr)
+        dw             (cmovbeInstr)
+        dw             (cmovaeInstr)
+        dw             (cmovaeInstr)
+        dw             (cmovnzInstr)
+        dw             (cmovleInstr)
+        dw             (cmovgeInstr)
+        dw             (cmovnoInstr)
+        dw             (cmovpoInstr)
+        dw             (cmovnsInstr)
+        dw             (cmovnzInstr)
+        dw             (cmovpInstr)
+        dw             (cmovpoInstr)
+        dw             (comisdInstr)
+        dw             (comissInstr)
+        db             DataType,7
+        dw             (ElseIfDirective)
+        dw             (enterdInstr)
+        dw             (ExternDirective)
+        DW             (ExportDirective)
+        dw             (fcmovbInstr)
+        dw             (fcmoveInstr)
+        dw             (fcmovuInstr)
+        dw             (fcomipInstr)
+        dw             (fcomppInstr)
+        dw             (fdivrpInstr)
+        dw             (ffreepInstr)
+        dw             (ficompInstr)
+        dw             (fidivrInstr)
+        dw             (fisttpInstr)
+        dw             (fisubrInstr)
+        dw             (fldenvInstr)
+        dw             (fldl2eInstr)
+        dw             (fldl2tInstr)
+        dw             (fldlg2Instr)
+        dw             (fldln2Instr)
+        dw             (fnclexInstr)
+        dw             (fndisiInstr)
+        dw             (fninitInstr)
+        dw             (fnsaveInstr)
+        dw             (fnstcwInstr)
+        dw             (fnstswInstr)
+        dw             (FormatDirective)
+        dw             (fpatanInstr)
+        dw             (fprem1Instr)
+        dw             (frstorInstr)
+        dw             (fsavedInstr)
+        dw             (fsavewInstr)
+        dw             (fscaleInstr)
+        dw             (fsetpmInstr)
+        dw             (fstenvInstr)
+        dw             (fsubrpInstr)
+        dw             (fucomiInstr)
+        dw             (fucompInstr)
+        dw             (fxsaveInstr)
+        dw             (GlobalDirective)
+        dw             (haddpdInstr)
+        dw             (haddpsInstr)
+        dw             (hsubpdInstr)
+        dw             (hsubpsInstr)
+        dw             (IfNDefDirective)
+        dw             (invlpgInstr)
+        dw             (InvokeDirective)
+        DW             (ImportDirective)
+        dw             (leavedInstr)
+        dw             (lfenceInstr)
+        dw             (loopdzInstr)
+        dw             (loopdzInstr)
+        dw             (loopnzInstr)
+        dw             (loopnzInstr)
+        dw             (mfenceInstr)
+        dw             (movapdInstr)
+        dw             (movapsInstr)
+        dw             (movdqaInstr)
+        dw             (movdquInstr)
+        dw             (movhpdInstr)
+        dw             (movhpsInstr)
+        dw             (movlpdInstr)
+        dw             (movlpsInstr)
+        dw             (movntiInstr)
+        dw             (movntqInstr)
+        dw             (movsxdInstr)
+        dw             (movupdInstr)
+        dw             (movupsInstr)
+        db             operator,AddOp   ;offset
+        dw             (OptionDirective)
+        dw             (paddsbInstr)
+        dw             (paddswInstr)
+        db             Lang,1   ;pascal
+        dw             (pextrwInstr)
+        dw             (pfnaccInstr)
+        dw             (pfsubrInstr)
+        dw             (pinsrwInstr)
+        dw             (pmaxswInstr)
+        dw             (pmaxubInstr)
+        dw             (pminswInstr)
+        dw             (pminubInstr)
+        dw             (pmulhwInstr)
+        dw             (pmullwInstr)
+        dw             (pmvlzbInstr)
+        dw             (pmvnzbInstr)
+        db             Lang,2   ;prolog
+        dw             (psadbwInstr)
+        dw             (pshufdInstr)
+        dw             (pshufwInstr)
+        dw             (pslldqInstr)
+        dw             (psrldqInstr)
+        dw             (psubsbInstr)
+        dw             (psubswInstr)
+        dw             (pswapdInstr)
+        dw             (PublicDirective)
+        dw             (pushadInstr)
+        dw             (pushfdInstr)
+        dw             (pushfqInstr)
+        dw             (pushfwInstr)
+        dw             (RepeatDirective)
+        dw             (setalcInstr)
+        dw             (setnaeInstr)
+        dw             (setnbeInstr)
+        dw             (setngeInstr)
+        dw             (setnleInstr)
+        dw             (sfenceInstr)
+        dw             (shufpdInstr)
+        dw             (shufpsInstr)
+        dw             (sqrtpdInstr)
+        dw             (sqrtpsInstr)
+        dw             (sqrtsdInstr)
+        dw             (sqrtssInstr)
+        db             operator,12  ;strmid
+        dw             (StrucDirective)
+        dw             (SwapGSInstr)
+        dw             (sysretInstr)
+        dw             (wbinvdInstr)
+even 2
+        db  0
+Keyword7:
+Keyword7a:
+Keyword7b:
+Keyword7c:
+        db              "clflush"
+        db              "cmovnae"
+        db              "cmovnbe"
+        db              "cmovnge"
+        db              "cmovnle"
+        db              "cmpeqpd"
+        db              "cmpeqps"
+        db              "cmpeqsd"
+        db              "cmpeqss"
+        db              "cmplepd"
+        db              "cmpleps"
+        db              "cmplesd"
+        db              "cmpless"
+        db              "cmpltpd"
+        db              "cmpltps"
+        db              "cmpltsd"
+        db              "cmpltss"
+        db              "cmpxchg"
+        db              "comment"
+Keyword7d:
+Keyword7e:
+Keyword7f:
+        db              "fcmovbe"
+        db              "fcmovnb"
+        db              "fcmovne"
+        db              "fcmovnu"
+        db              "fdecstp"
+        db              "fincstp"
+        db              "fldenvd"
+        db              "fldenvw"
+        db              "fnldenv"
+        db              "fnrstor"
+        db              "fnsaved"
+        db              "fnsavew"
+        db              "fnstenv"
+        db              "frndint"
+        db              "frstord"
+        db              "frstorw"
+        db              "fsincos"
+        db              "fstenvd"
+        db              "fstenvw"
+        db              "fucomip"
+        db              "fucompp"
+        db              "fxrstor"
+        db              "fxtract"
+        db              "fyl2xp1"
+Keyword7g:
+Keyword7h:
+Keyword7i:
+        db              "include"
+Keyword7j:
+Keyword7k:
+Keyword7l:
+        db              "ldmxcsr"
+        db              "loadall"
+        db              "loopdne"
+        db              "loopdnz"
+Keyword7m:
+        db              "monitor"
+        db              "movddup"
+        db              "movdq2q"
+        db              "movhlps"
+        db              "movlhps"
+        db              "movntdq"
+        db              "movntpd"
+        db              "movntps"
+        db              "movq2dq"
+Keyword7n:
+Keyword7o:
+Keyword7p:
+        db              "paddsiw"
+        db              "paddusb"
+        db              "paddusw"
+        db              "pavgusb"
+        db              "pcmpeqb"
+        db              "pcmpeqd"
+        db              "pcmpeqw"
+        db              "pcmpgtb"
+        db              "pcmpgtd"
+        db              "pcmpgtw"
+        db              "pdistib"
+        db              "pfcmpeq"
+        db              "pfcmpge"
+        db              "pfcmpgt"
+        db              "pfpnacc"
+        db              "pfrsqrt"
+        db              "pmaddwd"
+        db              "pmulhrw"
+        db              "pmulhuw"
+        db              "pmuludq"
+        db              "pmvgezb"
+        db              "private"
+        db              "pshufhw"
+        db              "pshuflw"
+        db              "psubsiw"
+        db              "psubusb"
+        db              "psubusw"
+Keyword7q:
+Keyword7r:
+        db              "rsqrtps"
+        db              "rsqrtss"
+Keyword7s:
+        db              "section"
+        db              "segment"
+        db              "stdcall"
+        db              "stmxcsr"
+        db              "strleft"
+        db              "strscan"
+        db              "syscall"
+        db              "sysexit"
+Keyword7t:
+        db              "typedef"
+Keyword7u:
+        db              "ucomisd"
+        db              "ucomiss"
+Keyword7v:
+Keyword7w:
+Keyword7x:
+Keyword7y:
+Keyword7z:
+Keyword7desc:
+        dw             (clflushInstr)
+        dw             (cmovbInstr)
+        dw             (cmovaInstr)
+        dw             (cmovlInstr)
+        dw             (cmovgInstr)
+        dw             (cmpeqpdInstr)
+        dw             (cmpeqpsInstr)
+        dw             (cmpeqsdInstr)
+        dw             (cmpeqssInstr)
+        dw             (cmplepdInstr)
+        dw             (cmplepsInstr)
+        dw             (cmplesdInstr)
+        dw             (cmplessInstr)
+        dw             (cmpltpdInstr)
+        dw             (cmpltpsInstr)
+        dw             (cmpltsdInstr)
+        dw             (cmpltssInstr)
+        dw             (cmpxchgInstr)
+        dw             (CommentDirective)
+        dw             (fcmovbeInstr)
+        dw             (fcmovnbInstr)
+        dw             (fcmovneInstr)
+        dw             (fcmovnuInstr)
+        dw             (fdecstpInstr)
+        dw             (fincstpInstr)
+        dw             (fldenvdInstr)
+        dw             (fldenvwInstr)
+        dw             (fnldenvInstr)
+        dw             (fnrstorInstr)
+        dw             (fnsavedInstr)
+        dw             (fnsavewInstr)
+        dw             (fnstenvInstr)
+        dw             (frndintInstr)
+        dw             (frstordInstr)
+        dw             (frstorwInstr)
+        dw             (fsincosInstr)
+        dw             (fstenvdInstr)
+        dw             (fstenvwInstr)
+        dw             (fucomipInstr)
+        dw             (fucomppInstr)
+        dw             (fxrstorInstr)
+        dw             (fxtractInstr)
+        dw             (fyl2xp1Instr)
+        dw             (IncludeDirective)
+        dw             (ldmxcsrInstr)
+        dw             (loadallInstr)
+        dw             (loopdnzInstr)
+        dw             (loopdnzInstr)
+        dw             (monitorInstr)
+        dw             (movddupInstr)
+        dw             (movdq2qInstr)
+        dw             (movhlpsInstr)
+        dw             (movlhpsInstr)
+        dw             (movntdqInstr)
+        dw             (movntpdInstr)
+        dw             (movntpsInstr)
+        dw             (movq2dqInstr)
+        dw             (paddsiwInstr)
+        dw             (paddusbInstr)
+        dw             (padduswInstr)
+        dw             (pavgusbInstr)
+        dw             (pcmpeqbInstr)
+        dw             (pcmpeqdInstr)
+        dw             (pcmpeqwInstr)
+        dw             (pcmpgtbInstr)
+        dw             (pcmpgtdInstr)
+        dw             (pcmpgtwInstr)
+        dw             (pdistibInstr)
+        dw             (pfcmpeqInstr)
+        dw             (pfcmpgeInstr)
+        dw             (pfcmpgtInstr)
+        dw             (pfpnaccInstr)
+        dw             (pfrsqrtInstr)
+        dw             (pmaddwdInstr)
+        dw             (pmulhrwInstr)
+        dw             (pmulhuwInstr)
+        dw             (pmuludqInstr)
+        dw             (pmvgezbInstr)
+        db             options,11 ;private
+        dw             (pshufhwInstr)
+        dw             (pshuflwInstr)
+        dw             (psubsiwInstr)
+        dw             (psubusbInstr)
+        dw             (psubuswInstr)
+        dw             (rsqrtpsInstr)
+        dw             (rsqrtssInstr)
+        dw             (SegmentDirective)
+        dw             (SegmentDirective)
+        db             Lang,3   ;StdCall
+        dw             (stmxcsrInstr)
+        db             operator,13  ;strleft
+        db             operator,14  ;strscan
+        dw             (syscallInstr)
+        dw             (sysexitInstr)
+        dw             (typedefDirective)
+        dw             (ucomisdInstr)
+        dw             (ucomissInstr)
+even 2
+        db  0
+Keyword8:
+Keyword8a:
+        db              "addsubpd"
+        db              "addsubps"
+Keyword8b:
+Keyword8c:
+        db              "cmpneqpd"
+        db              "cmpneqps"
+        db              "cmpneqsd"
+        db              "cmpneqss"
+        db              "cmpnlepd"
+        db              "cmpnleps"
+        db              "cmpnlesd"
+        db              "cmpnless"
+        db              "cmpnltpd"
+        db              "cmpnltps"
+        db              "cmpnltsd"
+        db              "cmpnltss"
+        db              "cmpordpd"
+        db              "cmpordps"
+        db              "cmpordsd"
+        db              "cmpordss"
+        db              "cvtdq2pd"
+        db              "cvtdq2ps"
+        db              "cvtpd2dq"
+        db              "cvtpd2pi"
+        db              "cvtpd2ps"
+        db              "cvtpi2pd"
+        db              "cvtpi2ps"
+        db              "cvtps2dq"
+        db              "cvtps2pd"
+        db              "cvtps2pi"
+        db              "cvtsd2si"
+        db              "cvtsd2ss"
+        db              "cvtsi2sd"
+        db              "cvtsi2ss"
+        db              "cvtss2sd"
+        db              "cvtss2si"
+Keyword8d:
+Keyword8e:
+Keyword8f:
+        db              "fcmovnbe"
+        db              "fnstenvd"
+        db              "fnstenvw"
+        db              "function"
+Keyword8g:
+Keyword8h:
+Keyword8i:
+Keyword8j:
+Keyword8k:
+Keyword8l:
+Keyword8m:
+        db              "maskmovq"
+        db              "movmskpd"
+        db              "movmskps"
+        db              "movshdup"
+        db              "movsldup"
+Keyword8n:
+Keyword8o:
+Keyword8p:
+        db              "packssdw"
+        db              "packsswb"
+        db              "packuswb"
+        db              "pfrcpit1"
+        db              "pfrcpit2"
+        db              "pfrsqit1"
+        db              "pmachriw"
+        db              "pmovmskb"
+        db              "pmulhriw"
+        db              "prefetch"
+Keyword8q:
+Keyword8r:
+Keyword8s:
+        db              "strlcase"
+        db              "strright"
+        db              "strucase"
+        db              "sysenter"
+Keyword8t:
+Keyword8u:
+        db              "unpckhpd"
+        db              "unpckhps"
+        db              "unpcklpd"
+        db              "unpcklps"
+Keyword8v:
+Keyword8w:
+Keyword8x:
+Keyword8y:
+Keyword8z:
+Keyword8desc:
+        dw             (addsubpdInstr)
+        dw             (addsubpsInstr)
+        dw             (cmpneqpdInstr)
+        dw             (cmpneqpsInstr)
+        dw             (cmpneqsdInstr)
+        dw             (cmpneqssInstr)
+        dw             (cmpnlepdInstr)
+        dw             (cmpnlepsInstr)
+        dw             (cmpnlesdInstr)
+        dw             (cmpnlessInstr)
+        dw             (cmpnltpdInstr)
+        dw             (cmpnltpsInstr)
+        dw             (cmpnltsdInstr)
+        dw             (cmpnltssInstr)
+        dw             (cmpordpdInstr)
+        dw             (cmpordpsInstr)
+        dw             (cmpordsdInstr)
+        dw             (cmpordssInstr)
+        dw             (cvtdq2pdInstr)
+        dw             (cvtdq2psInstr)
+        dw             (cvtpd2dqInstr)
+        dw             (cvtpd2piInstr)
+        dw             (cvtpd2psInstr)
+        dw             (cvtpi2pdInstr)
+        dw             (cvtpi2psInstr)
+        dw             (cvtps2dqInstr)
+        dw             (cvtps2pdInstr)
+        dw             (cvtps2piInstr)
+        dw             (cvtsd2siInstr)
+        dw             (cvtsd2ssInstr)
+        dw             (cvtsi2sdInstr)
+        dw             (cvtsi2ssInstr)
+        dw             (cvtss2sdInstr)
+        dw             (cvtss2siInstr)
+        dw             (fcmovnbeInstr)
+        dw             (fnstenvdInstr)
+        dw             (fnstenvwInstr)
+        dw             (FunctionDirective)
+        dw             (maskmovqInstr)
+        dw             (movmskpdInstr)
+        dw             (movmskpsInstr)
+        dw             (movshdupInstr)
+        dw             (movsldupInstr)
+        dw             (packssdwInstr)
+        dw             (packsswbInstr)
+        dw             (packuswbInstr)
+        dw             (pfrcpit1Instr)
+        dw             (pfrcpit2Instr)
+        dw             (pfrsqit1Instr)
+        dw             (pmachriwInstr)
+        dw             (pmovmskbInstr)
+        dw             (pmulhriwInstr)
+        dw             (prefetchInstr)
+        db             operator,10  ;strlcase
+        db             operator,15  ;strright
+        db             operator,11  ;strucase
+
+        dw             (sysenterInstr)
+        dw             (unpckhpdInstr)
+        dw             (unpckhpsInstr)
+        dw             (unpcklpdInstr)
+        dw             (unpcklpsInstr)
+even 2
+        db  0
+Keyword9:
+Keyword9a:
+Keyword9b:
+Keyword9c:
+        db              "cmpxchg8b"
+        db              "cvttpd2dq"
+        db              "cvttpd2pi"
+        db              "cvttps2dq"
+        db              "cvttps2pi"
+        db              "cvttsd2si"
+        db              "cvttss2si"
+Keyword9d:
+Keyword9e:
+Keyword9f:
+Keyword9g:
+Keyword9h:
+Keyword9i:
+        db              "includerc"
+Keyword9j:
+Keyword9k:
+Keyword9l:
+Keyword9m:
+Keyword9n:
+Keyword9o:
+Keyword9p:
+        db              "prefetchw"
+        db              "punpckhbw"
+        db              "punpckhdq"
+        db              "punpckhwd"
+        db              "punpcklbw"
+        db              "punpckldq"
+        db              "punpcklwd"
+Keyword9q:
+Keyword9r:
+Keyword9s:
+Keyword9t:
+Keyword9u:
+Keyword9v:
+Keyword9w:
+Keyword9x:
+Keyword9y:
+Keyword9z:
+Keyword9desc:
+        dw             (cmpxchg8bInstr)
+        dw             (cvttpd2dqInstr)
+        dw             (cvttpd2piInstr)
+        dw             (cvttps2dqInstr)
+        dw             (cvttps2piInstr)
+        dw             (cvttsd2siInstr)
+        dw             (cvttss2siInstr)
+        dw             (IncludeRCDirective)
+        dw             (prefetchwInstr)
+        dw             (punpckhbwInstr)
+        dw             (punpckhdqInstr)
+        dw             (punpckhwdInstr)
+        dw             (punpcklbwInstr)
+        dw             (punpckldqInstr)
+        dw             (punpcklwdInstr)
+even 2
+        db  0
+Keyword10:
+Keyword10a:
+Keyword10b:
+Keyword10c:
+        db              "cmpunordpd"
+        db              "cmpunordps"
+        db              "cmpunordsd"
+        db              "cmpunordss"
+        db              "cmpxchg16b"
+Keyword10d:
+Keyword10e:
+Keyword10f:
+Keyword10g:
+Keyword10h:
+Keyword10i:
+        db              "includebin"
+        db              "includelib"
+Keyword10j:
+Keyword10k:
+Keyword10l:
+Keyword10m:
+        db              "maskmovdqu"
+Keyword10n:
+Keyword10o:
+Keyword10p:
+        db              "prefetcht0"
+        db              "prefetcht1"
+        db              "prefetcht2"
+Keyword10q:
+Keyword10r:
+Keyword10s:
+Keyword10t:
+Keyword10u:
+Keyword10v:
+Keyword10w:
+Keyword10x:
+Keyword10y:
+Keyword10z:
+Keyword10desc:
+        dw             (cmpunordpdInstr)
+        dw             (cmpunordpsInstr)
+        dw             (cmpunordsdInstr)
+        dw             (cmpunordssInstr)
+        dw             (CmpXChg16BInstr)
+        dw             (IncludeBinDirective)
+        dw             (IncludeLibDirective)
+        dw             (maskmovdquInstr)
+        dw             (prefetcht0Instr)
+        dw             (prefetcht1Instr)
+        dw             (prefetcht2Instr)
+even 2
+        db  0
+Keyword11:
+Keyword11a:
+Keyword11b:
+Keyword11c:
+Keyword11d:
+Keyword11e:
+Keyword11f:
+Keyword11g:
+Keyword11h:
+Keyword11i:
+Keyword11j:
+Keyword11k:
+Keyword11l:
+Keyword11m:
+Keyword11n:
+Keyword11o:
+Keyword11p:
+        db              "prefetchnta"
+Keyword11q:
+Keyword11r:
+Keyword11s:
+Keyword11t:
+Keyword11u:
+Keyword11v:
+Keyword11w:
+Keyword11x:
+Keyword11y:
+Keyword11z:
+Keyword11desc:
+        dw             (prefetchntaInstr)
+
